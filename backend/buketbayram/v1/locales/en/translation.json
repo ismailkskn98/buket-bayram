@@ -1,0 +1,16 @@
+{
+  "health": {
+    "ready": "The API is ready."
+  },
+  "admin": {
+    "authorized": "Administrator access verified."
+  },
+  "auth": {
+    "unauthorized": "You are not authorized to perform this action."
+  },
+  "errors": {
+    "not_found": "The requested resource was not found.",
+    "server_error": "An unexpected error occurred.",
+    "too_many_requests": "Too many requests. Please try again later."
+  }
+}

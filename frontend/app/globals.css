@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fbfaf7;
+  --color-foreground: #171916;
+  --color-muted: #efeee9;
+  --color-muted-foreground: #62665f;
+  --color-primary: #315a45;
+  --color-primary-foreground: #ffffff;
+  --color-border: #deded6;
+  --color-ring: #315a45;
+}
+
+@utility gridContainer {
+  display: grid;
+  grid-template-columns: 1fr min(92%, 90rem) 1fr;
+
+  & > * {
+    grid-column: 2;
+  }
+}
+
+@utility fluid {
+  grid-column: 1 / -1;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 22%, transparent);
+}

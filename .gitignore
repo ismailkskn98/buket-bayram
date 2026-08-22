@@ -1,0 +1,26 @@
+# Dependencies
+frontend/node_modules/
+backend/node_modules/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Environment files
+.env
+.env.*
+!frontend/.env.example
+!backend/.env.example
+
+# Runtime files
+backend/uploads/
+*.log
+
+# Editor and operating system
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local package cache
+.npm-cache/

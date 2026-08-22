@@ -1,0 +1,51 @@
+{
+  "Metadata": {
+    "title": "Dr. Buket Bayram | Dermatologist",
+    "description": "Learn about dermatology, dermocosmetic procedures and laser treatments in Üsküdar, and request an appointment via WhatsApp."
+  },
+  "Navigation": {
+    "home": "Home",
+    "treatments": "Treatments",
+    "about": "About",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "whatsapp": "Request via WhatsApp",
+    "whatsappMessage": "Hello, I would like to get information about an appointment."
+  },
+  "Home": {
+    "eyebrow": "Dermatologist",
+    "title": "A balanced specialist approach to medical dermatology and dermocosmetic care",
+    "description": "Find reliable information about skin, hair and nail health as well as dermocosmetic procedures, then request an appointment for a specialist evaluation.",
+    "medicalTitle": "Medical dermatology",
+    "medicalDescription": "Specialist examination and individualized evaluation for skin, hair and nail concerns.",
+    "cosmeticTitle": "Dermocosmetic procedures",
+    "cosmeticDescription": "A measured, physician-led approach that considers skin health and appearance together."
+  },
+  "Pages": {
+    "treatmentsEyebrow": "Services",
+    "treatmentsTitle": "Treatments",
+    "treatmentsDescription": "Explore medical dermatology, dermocosmetic and laser procedures based on your needs.",
+    "aboutEyebrow": "Dr. Buket Bayram",
+    "aboutTitle": "About",
+    "aboutDescription": "Learn about Dr. Buket Bayram's professional background, education, memberships and academic work.",
+    "blogEyebrow": "Information Center",
+    "blogTitle": "Dermatology articles",
+    "blogDescription": "Physician-reviewed educational content about skin, hair and nail health.",
+    "faqEyebrow": "Common Questions",
+    "faqTitle": "Frequently asked questions",
+    "faqDescription": "Common questions about consultations, procedures and the appointment process.",
+    "contactEyebrow": "Appointment",
+    "contactTitle": "Contact and appointment",
+    "contactDescription": "WhatsApp is our primary contact channel. Do not use it for medical emergencies.",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you are looking for may have moved or may no longer be available.",
+    "backHome": "Back to home"
+  },
+  "Footer": {
+    "specialty": "Dermatologist",
+    "addressLabel": "Practice",
+    "rights": "All rights reserved.",
+    "medicalNotice": "Information on this website does not replace a medical examination, diagnosis or treatment."
+  }
+}

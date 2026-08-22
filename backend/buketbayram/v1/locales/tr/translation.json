@@ -1,0 +1,16 @@
+{
+  "health": {
+    "ready": "API kullanıma hazır."
+  },
+  "admin": {
+    "authorized": "Yönetici erişimi doğrulandı."
+  },
+  "auth": {
+    "unauthorized": "Bu işlem için yetkiniz bulunmuyor."
+  },
+  "errors": {
+    "not_found": "İstenen kaynak bulunamadı.",
+    "server_error": "Beklenmeyen bir hata oluştu.",
+    "too_many_requests": "Çok fazla istek gönderildi. Lütfen daha sonra tekrar deneyin."
+  }
+}

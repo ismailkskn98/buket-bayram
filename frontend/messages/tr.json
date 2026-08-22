@@ -1,0 +1,51 @@
+{
+  "Metadata": {
+    "title": "Dr. Buket Bayram | Dermatoloji Uzmanı",
+    "description": "Üsküdar'da dermatoloji, dermokozmetik uygulamalar ve lazer tedavileri hakkında bilgi alın; WhatsApp üzerinden randevu talep edin."
+  },
+  "Navigation": {
+    "home": "Ana Sayfa",
+    "treatments": "Uygulamalar",
+    "about": "Hakkımda",
+    "blog": "Blog",
+    "faq": "S.S.S.",
+    "contact": "İletişim",
+    "whatsapp": "WhatsApp'tan Randevu Al",
+    "whatsappMessage": "Merhaba, randevu hakkında bilgi almak istiyorum."
+  },
+  "Home": {
+    "eyebrow": "Deri ve Zührevi Hastalıklar Uzmanı",
+    "title": "Tıbbi dermatoloji ve dermokozmetik uygulamalarda dengeli uzman yaklaşımı",
+    "description": "Cilt, saç ve tırnak sağlığından dermokozmetik uygulamalara kadar güvenilir bilgi edinin ve uzman değerlendirmesi için kolayca randevu talep edin.",
+    "medicalTitle": "Dermatolojik değerlendirme",
+    "medicalDescription": "Cilt, saç ve tırnak sorunları için uzman hekim muayenesi ve kişiye özel değerlendirme.",
+    "cosmeticTitle": "Dermokozmetik uygulamalar",
+    "cosmeticDescription": "Cilt sağlığını ve görünümünü birlikte ele alan ölçülü, hekim odaklı uygulama yaklaşımı."
+  },
+  "Pages": {
+    "treatmentsEyebrow": "Hizmetler",
+    "treatmentsTitle": "Uygulamalar",
+    "treatmentsDescription": "Dermatolojik, dermokozmetik ve lazer uygulamalarını ihtiyacınıza göre inceleyin.",
+    "aboutEyebrow": "Dr. Buket Bayram",
+    "aboutTitle": "Hakkımda",
+    "aboutDescription": "Mesleki özgeçmiş, eğitim, üyelik ve akademik çalışmalara yakından bakın.",
+    "blogEyebrow": "Bilgi Merkezi",
+    "blogTitle": "Dermatoloji yazıları",
+    "blogDescription": "Cilt, saç ve tırnak sağlığı hakkında hekim tarafından gözden geçirilen bilgilendirici içerikler.",
+    "faqEyebrow": "Merak Edilenler",
+    "faqTitle": "Sık sorulan sorular",
+    "faqDescription": "Muayene, uygulamalar ve randevu süreci hakkında sık karşılaşılan sorular.",
+    "contactEyebrow": "Randevu",
+    "contactTitle": "İletişim ve randevu",
+    "contactDescription": "Birincil iletişim kanalımız WhatsApp'tır. Acil durumlar için bu kanalı kullanmayın.",
+    "notFoundTitle": "Sayfa bulunamadı",
+    "notFoundDescription": "Aradığınız sayfa taşınmış veya artık erişilebilir olmayabilir.",
+    "backHome": "Ana sayfaya dön"
+  },
+  "Footer": {
+    "specialty": "Deri ve Zührevi Hastalıklar Uzmanı",
+    "addressLabel": "Muayenehane",
+    "rights": "Tüm hakları saklıdır.",
+    "medicalNotice": "Bu sitedeki bilgiler hekim muayenesi, tanı veya tedavinin yerine geçmez."
+  }
+}
