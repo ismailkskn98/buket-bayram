@@ -1,14 +1,24 @@
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/newsreader";
+@import "lenis/dist/lenis.css";
 @import "tailwindcss";
 
 @theme {
-  --color-background: #fbfaf7;
-  --color-foreground: #171916;
-  --color-muted: #efeee9;
-  --color-muted-foreground: #62665f;
-  --color-primary: #315a45;
-  --color-primary-foreground: #ffffff;
-  --color-border: #deded6;
-  --color-ring: #315a45;
+  --font-sans: "Manrope Variable", "Segoe UI", sans-serif;
+  --font-display: "Newsreader Variable", Georgia, serif;
+
+  --color-background: #f4f0e8;
+  --color-foreground: #18211b;
+  --color-muted: #e8e2d8;
+  --color-muted-foreground: #687069;
+  --color-primary: #2d5340;
+  --color-primary-foreground: #fffdf8;
+  --color-border: #d6cfc2;
+  --color-ring: #2d5340;
+  --color-sage: #aab9a8;
+  --color-clay: #b46f54;
+  --color-parchment: #fbf8f2;
+  --color-forest: #183126;
 }
 
 @utility gridContainer {
@@ -24,21 +34,48 @@
   grid-column: 1 / -1;
 }
 
+@utility bezelShell {
+  border-radius: 2rem;
+  padding: 0.375rem;
+  background: color-mix(in srgb, var(--color-foreground) 5%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-foreground) 7%, transparent);
+}
+
+@utility bezelCore {
+  border-radius: calc(2rem - 0.375rem);
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 55%),
+    0 28px 80px rgb(32 39 34 / 8%);
+}
+
 * {
   box-sizing: border-box;
   border-color: var(--color-border);
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
+  min-width: 320px;
   margin: 0;
+  overflow-x: clip;
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  background-image: url("/images/paper-grain.webp");
+  content: "";
+  opacity: 0.025;
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 a,
@@ -46,6 +83,23 @@ button {
   cursor: pointer;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 4px;
+}
+
 ::selection {
-  background: color-mix(in srgb, var(--color-primary) 22%, transparent);
+  background: color-mix(in srgb, var(--color-clay) 28%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

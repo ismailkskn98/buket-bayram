@@ -24,3 +24,5 @@ Thumbs.db
 
 # Local package cache
 .npm-cache/
+.agents/
+skills-lock.json
