@@ -7,7 +7,7 @@ export default async function HeroSection() {
   return (
     <section className="gridContainer bg-background pb-20 pt-8 sm:pb-28 sm:pt-10 lg:pb-32 lg:pt-12">
       <div className="homeHeroContent">
-        <h1 className="homeHeroTitle font-sans font-light text-foreground">
+        <h1 className="homeHeroTitle font-sans font-light text-primary">
           <span className="homeHeroTitleLine homeHeroTitleLineStart">AESTHETIC &amp;</span>
           <span className="homeHeroTitleLine homeHeroTitleLineEnd">BEAUTY CLINIC</span>
         </h1>
