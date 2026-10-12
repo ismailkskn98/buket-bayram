@@ -1,8 +1,7 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
-import {Button} from '@/components/ui/button';
 import {Link} from '@/i18n/navigation';
 
 import LocaleSwitcher from './locale-switcher';
@@ -14,6 +13,8 @@ export default function MobileNavigation({
   whatsappUrl
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef(null);
+  const firstLinkRef = useRef(null);
 
   useEffect(() => {
     if (!isOpen) {
@@ -22,9 +23,12 @@ export default function MobileNavigation({
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    firstLinkRef.current?.focus();
+
     const closeOnEscape = (event) => {
       if (event.key === 'Escape') {
         setIsOpen(false);
+        triggerRef.current?.focus();
       }
     };
 
@@ -41,28 +45,24 @@ export default function MobileNavigation({
   }
 
   return (
-    <div className="xl:hidden">
+    <div>
       <button
+        ref={triggerRef}
         type="button"
         aria-controls="mobile-navigation"
         aria-expanded={isOpen}
         aria-label={isOpen ? labels.close : labels.menu}
         onClick={() => setIsOpen((currentValue) => !currentValue)}
-        className="relative z-40 flex size-11 items-center justify-center rounded-full bg-foreground text-background shadow-[0_12px_30px_rgba(24,33,27,0.18)] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-95"
+        className="relative z-40 flex size-10 items-center justify-center rounded-full bg-[#e8e4df] text-[#4a4541] transition-[background-color,transform] duration-300 hover:bg-[#ddd7d0] active:scale-95"
       >
         <span
-          className={`absolute h-px w-5 bg-current transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-            isOpen ? 'translate-y-0 rotate-45' : '-translate-y-1.5'
+          className={`absolute h-px w-4 bg-current transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+            isOpen ? 'translate-y-0 rotate-45' : '-translate-y-[3px]'
           }`}
         />
         <span
-          className={`absolute h-px w-5 bg-current transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-            isOpen ? 'scale-x-0 opacity-0' : 'scale-x-100 opacity-100'
-          }`}
-        />
-        <span
-          className={`absolute h-px w-5 bg-current transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-            isOpen ? 'translate-y-0 -rotate-45' : 'translate-y-1.5'
+          className={`absolute h-px w-4 bg-current transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+            isOpen ? 'translate-y-0 -rotate-45' : 'translate-y-[3px]'
           }`}
         />
       </button>
@@ -72,21 +72,21 @@ export default function MobileNavigation({
         aria-hidden={!isOpen}
         aria-modal={isOpen ? true : undefined}
         role="dialog"
-        className={`fixed inset-0 z-30 bg-forest/94 px-4 pb-6 pt-28 text-parchment backdrop-blur-2xl transition-[opacity,visibility] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`fixed inset-0 z-30 overflow-y-auto bg-[#4a3c35]/98 px-4 pb-6 pt-24 text-[#f7f3ee] transition-[opacity,visibility] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
-        <div className="mx-auto flex min-h-full max-w-2xl flex-col justify-between">
+        <div className="mx-auto flex min-h-[calc(100dvh-7.5rem)] max-w-5xl flex-col justify-between">
           <nav aria-label={labels.menu} className="flex flex-col">
             {items.map((item, index) => (
               <Link
+                ref={index === 0 ? firstLinkRef : undefined}
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
                 tabIndex={isOpen ? 0 : -1}
-                style={{transitionDelay: isOpen ? `${100 + index * 55}ms` : '0ms'}}
-                className={`border-b border-white/10 py-4 font-display text-[clamp(2.35rem,11vw,4.6rem)] leading-none tracking-[-0.045em] transition-[transform,opacity,color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-sage ${
-                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+                className={`border-b border-white/14 py-4 text-[clamp(2.5rem,8vw,5.5rem)] font-light leading-[0.95] tracking-[-0.055em] transition-[transform,opacity,color] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-[#d1beb1] ${
+                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
               >
                 {item.label}
@@ -95,8 +95,8 @@ export default function MobileNavigation({
           </nav>
 
           <div
-            className={`mt-10 flex flex-col gap-4 transition-[transform,opacity] delay-300 duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            className={`mt-10 flex flex-col gap-5 transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] sm:flex-row sm:items-center sm:justify-between ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
           >
             <LocaleSwitcher
@@ -105,19 +105,15 @@ export default function MobileNavigation({
               turkishLabel={labels.turkishShort}
               englishLabel={labels.englishShort}
             />
-            <Button asChild variant="light" className="w-full justify-between pl-6 pr-2">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                tabIndex={isOpen ? 0 : -1}
-              >
-                <span>{labels.whatsapp}</span>
-                <span className="flex size-9 items-center justify-center rounded-full bg-forest/10 text-lg transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1 group-hover:-translate-y-px group-hover:scale-105">
-                  ↗
-                </span>
-              </a>
-            </Button>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={isOpen ? 0 : -1}
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#f7f3ee] px-6 text-sm font-semibold text-[#4a3c35] transition-transform duration-300 active:scale-[0.98]"
+            >
+              {labels.whatsapp}
+            </a>
           </div>
         </div>
       </div>

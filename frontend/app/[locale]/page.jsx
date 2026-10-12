@@ -21,7 +21,7 @@ export default async function HomePage({params}) {
   return (
     <div className="overflow-clip">
       <HomeMotion />
-      <HeroSection whatsappUrl={whatsappUrl} />
+      <HeroSection />
       <ServicesSection />
       <ApproachSection />
       <AboutSection />

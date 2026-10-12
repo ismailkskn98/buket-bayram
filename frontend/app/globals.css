@@ -27,6 +27,7 @@
 
   & > * {
     grid-column: 2;
+    min-width: 0;
   }
 }
 
@@ -91,6 +92,30 @@ button:focus-visible {
 
 ::selection {
   background: color-mix(in srgb, var(--color-clay) 28%, transparent);
+}
+
+.homeHeroContent {
+  container-type: inline-size;
+}
+
+.homeHeroTitle {
+  font-size: clamp(4rem, 25vw, 24.5rem);
+  font-size: clamp(4rem, 27.2cqi, 24.5rem);
+  text-indent: -0.058em;
+}
+
+.homeHeroMedia {
+  aspect-ratio: 2.06 / 1;
+}
+
+@media (max-width: 639px) {
+  .homeHeroTitle {
+    font-size: clamp(4rem, 22.2cqi, 6rem);
+  }
+
+  .homeHeroMedia {
+    aspect-ratio: 4 / 5;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
