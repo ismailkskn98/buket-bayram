@@ -1,28 +1,24 @@
-import {getLocale, getTranslations} from 'next-intl/server';
+import Image from "next/image";
+import { getLocale, getTranslations } from "next-intl/server";
 
-import {Link} from '@/i18n/navigation';
-import {siteConfig} from '@/config/site';
+import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/config/site";
 
-import MobileNavigation from './mobile-navigation';
+import MobileNavigation from "./mobile-navigation";
 
 const navigationItems = [
-  {href: '/treatments', label: 'treatments'},
-  {href: '/about', label: 'about'},
-  {href: '/blog', label: 'blog'},
-  {href: '/faq', label: 'faq'}
+  { href: "/treatments", label: "treatments" },
+  { href: "/about", label: "about" },
+  { href: "/blog", label: "blog" },
+  { href: "/faq", label: "faq" },
 ];
 
 export default async function SiteHeader() {
-  const [locale, t] = await Promise.all([
-    getLocale(),
-    getTranslations('Navigation')
-  ]);
-  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-    t('whatsappMessage')
-  )}`;
+  const [locale, t] = await Promise.all([getLocale(), getTranslations("Navigation")]);
+  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(t("whatsappMessage"))}`;
   const translatedNavigationItems = navigationItems.map((navigationItem) => ({
     href: navigationItem.href,
-    label: t(navigationItem.label)
+    label: t(navigationItem.label),
   }));
 
   return (
@@ -30,31 +26,12 @@ export default async function SiteHeader() {
       <div className="gridContainer">
         <div className="grid min-h-[4.25rem] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)]">
           <div className="min-w-0">
-            <Link
-              href="/"
-              aria-label={t('home')}
-              className="inline-flex text-sm font-semibold tracking-[-0.03em] text-[#4a4541] lg:hidden"
-            >
-              BB Clinic
+            <Link href="/" aria-label={`BB Clinic - ${t("home")}`} className="inline-flex items-center transition-opacity duration-300 hover:opacity-70">
+              <Image src="/images/logo/logo-siyah-yatay.webp" alt="" width={2033} height={425} sizes="(max-width: 639px) 8rem, 10.75rem" className="h-auto w-[clamp(8rem,11vw,10.75rem)]" />
             </Link>
-
-            <address className="hidden min-w-0 not-italic text-[0.62rem] leading-[1.45] text-[#69635f] lg:block">
-              <span className="block max-w-[19rem] truncate" title={siteConfig.address}>
-                {siteConfig.addressShort}
-              </span>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="transition-colors duration-300 hover:text-[#4a4541]"
-              >
-                {siteConfig.phoneLabel}
-              </a>
-            </address>
           </div>
 
-          <nav
-            aria-label={t('primaryNavigation')}
-            className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium text-[#6f6965] xl:flex"
-          >
+          <nav aria-label={t("primaryNavigation")} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium text-[#6f6965] xl:flex">
             {translatedNavigationItems.map((navigationItem, index) => (
               <div key={navigationItem.href} className="flex items-center">
                 {index > 0 ? (
@@ -62,10 +39,7 @@ export default async function SiteHeader() {
                     /
                   </span>
                 ) : null}
-                <Link
-                  href={navigationItem.href}
-                  className="py-2 transition-colors duration-300 hover:text-[#4a4541]"
-                >
+                <Link href={navigationItem.href} className="py-2 transition-colors duration-300 hover:text-[#4a4541]">
                   {navigationItem.label}
                 </Link>
               </div>
@@ -77,7 +51,7 @@ export default async function SiteHeader() {
               href="/contact"
               className="hidden min-h-10 items-center rounded-full bg-[#e8e4df] px-5 text-[0.68rem] font-semibold text-[#4a4541] transition-[background-color,transform] duration-300 hover:bg-[#ddd7d0] active:scale-[0.98] sm:inline-flex"
             >
-              {t('contact')}
+              {t("contact")}
             </Link>
             <a
               href={whatsappUrl}
@@ -85,18 +59,18 @@ export default async function SiteHeader() {
               rel="noreferrer"
               className="hidden min-h-10 items-center rounded-full bg-[#806657] px-5 text-[0.68rem] font-semibold text-[#fffaf5] transition-[background-color,transform] duration-300 hover:bg-[#665044] active:scale-[0.98] md:inline-flex"
             >
-              {t('whatsappShort')}
+              {t("whatsappShort")}
             </a>
             <MobileNavigation
               currentLocale={locale}
               items={translatedNavigationItems}
               labels={{
-                close: t('closeMenu'),
-                englishShort: t('englishShort'),
-                language: t('language'),
-                menu: t('openMenu'),
-                turkishShort: t('turkishShort'),
-                whatsapp: t('whatsappShort')
+                close: t("closeMenu"),
+                englishShort: t("englishShort"),
+                language: t("language"),
+                menu: t("openMenu"),
+                turkishShort: t("turkishShort"),
+                whatsapp: t("whatsappShort"),
               }}
               whatsappUrl={whatsappUrl}
             />
