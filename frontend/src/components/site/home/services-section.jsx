@@ -4,10 +4,24 @@ import {serviceCatalog} from '@/config/services';
 
 import ServicesRail from './services-rail';
 
-const services = serviceCatalog.map((service, index) => ({
-  ...service,
-  aspect: index % 2 === 0 ? 'portrait' : 'square'
-}));
+const featuredServiceKeys = new Set([
+  'botox',
+  'fullFaceFiller',
+  'lipFiller',
+  'mesotherapy',
+  'skinBooster',
+  'hifu',
+  'fractionalLaser',
+  'laserHairRemoval',
+  'acne'
+]);
+
+const services = serviceCatalog
+  .filter((service) => featuredServiceKeys.has(service.key))
+  .map((service, index) => ({
+    ...service,
+    aspect: index % 2 === 0 ? 'portrait' : 'square'
+  }));
 
 export default async function ServicesSection() {
   const t = await getTranslations('Home');
