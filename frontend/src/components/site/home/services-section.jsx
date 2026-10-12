@@ -1,34 +1,26 @@
+import Image from 'next/image';
 import {getTranslations} from 'next-intl/server';
 
 import {Link} from '@/i18n/navigation';
 
-const serviceCards = [
+const services = [
   {
     description: 'medicalDescription',
-    number: '01',
-    title: 'medicalTitle',
-    style: 'bg-forest text-parchment',
-    textStyle: 'text-parchment/65',
-    numberStyle: 'text-parchment/18',
-    className: 'md:col-span-7 md:row-span-2'
+    image: '/images/dermatology-examination.webp',
+    imageClassName: 'object-center',
+    title: 'medicalTitle'
   },
   {
     description: 'cosmeticDescription',
-    number: '02',
-    title: 'cosmeticTitle',
-    style: 'bg-[#d8c7b8] text-foreground',
-    textStyle: 'text-foreground/62',
-    numberStyle: 'text-foreground/12',
-    className: 'md:col-span-5'
+    image: '/images/bb-clinic-hero.webp',
+    imageClassName: 'object-[58%_center]',
+    title: 'cosmeticTitle'
   },
   {
     description: 'laserDescription',
-    number: '03',
-    title: 'laserTitle',
-    style: 'bg-sage text-forest',
-    textStyle: 'text-forest/65',
-    numberStyle: 'text-forest/12',
-    className: 'md:col-span-5'
+    image: '/images/skin-layers-editorial.webp',
+    imageClassName: 'object-center',
+    title: 'laserTitle'
   }
 ];
 
@@ -36,65 +28,57 @@ export default async function ServicesSection() {
   const t = await getTranslations('Home');
 
   return (
-    <section className="gridContainer bg-parchment py-24 sm:py-32 lg:py-40">
-      <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-        <div data-reveal>
-          <span className="inline-flex rounded-full bg-primary/9 px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.19em] text-primary ring-1 ring-primary/10">
-            {t('servicesEyebrow')}
-          </span>
-          <h2 className="mt-6 max-w-[12ch] font-display text-5xl leading-[0.93] tracking-[-0.045em] sm:text-7xl">
-            {t('servicesTitle')}
-          </h2>
-        </div>
+    <section className="gridContainer border-t border-primary/20 py-20 sm:py-28 lg:py-36">
+      <div className="homeSectionContent">
+        <p data-reveal className="text-xs text-primary sm:text-sm">
+          {t('servicesEyebrow')}
+        </p>
+
+        <h2 className="servicesDisplayTitle mt-5 font-light uppercase text-primary">
+          <span data-reveal className="block">{t('servicesDisplayStart')}</span>
+          <span data-reveal className="block text-right">{t('servicesDisplayEnd')}</span>
+        </h2>
+
         <p
           data-reveal
-          className="max-w-2xl text-base leading-7 text-muted-foreground lg:ml-auto lg:text-lg lg:leading-8"
+          className="ml-auto mt-8 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
         >
           {t('servicesDescription')}
         </p>
-      </div>
 
-      <div className="mt-16 grid gap-4 md:grid-cols-12 md:auto-rows-[17rem]">
-        {serviceCards.map((serviceCard) => (
-          <article
-            key={serviceCard.title}
-            data-reveal
-            className={`bezelShell min-h-72 rounded-[2.3rem] md:min-h-0 ${serviceCard.className}`}
-          >
-            <div
-              className={`bezelCore relative flex h-full min-h-72 flex-col justify-between overflow-hidden rounded-[calc(2.3rem-0.375rem)] p-7 sm:p-9 md:min-h-0 ${serviceCard.style}`}
-            >
-              <span
-                aria-hidden="true"
-                className={`absolute -right-2 -top-8 font-display text-[9rem] italic leading-none tracking-[-0.08em] sm:text-[11rem] ${serviceCard.numberStyle}`}
-              >
-                {serviceCard.number}
-              </span>
-              <div className="relative z-10">
-                <span className="text-[0.62rem] font-bold uppercase tracking-[0.19em] opacity-55">
-                  {t('serviceLabel')} · {serviceCard.number}
-                </span>
-                <h3 className="mt-5 max-w-[11ch] font-display text-4xl leading-[0.95] tracking-[-0.04em] sm:text-5xl">
-                  {t(serviceCard.title)}
-                </h3>
-              </div>
-              <div className="relative z-10 mt-12 flex items-end justify-between gap-5">
-                <p className={`max-w-md text-sm leading-6 ${serviceCard.textStyle}`}>
-                  {t(serviceCard.description)}
-                </p>
-                <Link
-                  href="/treatments"
-                  aria-label={`${t('serviceLink')}: ${t(serviceCard.title)}`}
-                  className="group flex size-11 shrink-0 items-center justify-center rounded-full bg-parchment text-forest shadow-[0_12px_30px_rgba(0,0,0,0.12)] transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:-translate-y-1 active:scale-95"
-                >
-                  <span className="transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5">
-                    →
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </article>
-        ))}
+        <div className="mt-14 grid gap-x-4 gap-y-12 md:grid-cols-3 lg:mt-20 lg:gap-x-6">
+          {services.map((service) => (
+            <article key={service.title} data-reveal>
+              <Link href="/treatments" className="group block">
+                <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+                  <Image
+                    src={service.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 767px) 92vw, 30vw"
+                    className={`object-cover transition-transform duration-1000 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.025] ${service.imageClassName}`}
+                  />
+                </div>
+                <div className="border-t border-primary/25 pt-5">
+                  <div className="flex items-start justify-between gap-5">
+                    <h3 className="max-w-[16ch] text-xl font-medium leading-tight tracking-[-0.025em] sm:text-2xl">
+                      {t(service.title)}
+                    </h3>
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 text-xl text-primary transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </div>
+                  <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">
+                    {t(service.description)}
+                  </p>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

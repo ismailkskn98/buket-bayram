@@ -1,4 +1,5 @@
-import {getLocale, getTranslations} from 'next-intl/server';
+import Image from 'next/image';
+import {getTranslations} from 'next-intl/server';
 
 import {Link} from '@/i18n/navigation';
 import {siteConfig} from '@/config/site';
@@ -12,86 +13,62 @@ const footerNavigationItems = [
 ];
 
 export default async function SiteFooter() {
-  const [locale, footer, navigation] = await Promise.all([
-    getLocale(),
+  const [footer, navigation] = await Promise.all([
     getTranslations('Footer'),
     getTranslations('Navigation')
   ]);
 
   return (
-    <footer className="bg-forest px-4 pb-5 pt-20 text-parchment sm:pt-28">
-      <div className="mx-auto max-w-[88rem]">
-        <div className="grid gap-14 lg:grid-cols-[1.25fr_0.75fr_0.9fr]">
+    <footer className="gridContainer overflow-hidden bg-primary pb-5 pt-14 text-primary-foreground sm:pt-20">
+      <div>
+        <div className="grid gap-12 border-t border-primary-foreground/25 pt-6 md:grid-cols-[1.2fr_0.7fr_1fr] md:gap-8">
           <div>
-            <Link
-              href="/"
-              className="font-display text-4xl font-medium tracking-[-0.045em] sm:text-5xl"
-            >
-              Dr. Buket Bayram
+            <Link href="/" aria-label={navigation('home')} className="inline-flex">
+              <Image
+                src="/images/logo/logo-beyaz-icon.webp"
+                alt=""
+                width={805}
+                height={1209}
+                sizes="3rem"
+                className="h-auto w-12"
+              />
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-parchment/60">
+            <p className="mt-5 max-w-xs text-sm leading-6 text-primary-foreground/65">
               {footer('specialty')}
             </p>
+          </div>
+
+          <nav aria-label={footer('quickLinks')} className="flex flex-col items-start gap-2.5 text-sm">
+            {footerNavigationItems.map((item) => (
+              <Link key={item.href} href={item.href} className="text-primary-foreground/70 hover:text-primary-foreground">
+                {navigation(item.label)}
+              </Link>
+            ))}
+          </nav>
+
+          <address className="not-italic md:text-right">
+            <p className="text-sm leading-6 text-primary-foreground/70">{siteConfig.address}</p>
+            <a href={`tel:${siteConfig.phone}`} className="mt-4 inline-block text-sm hover:underline">
+              {siteConfig.phoneLabel}
+            </a>
             <a
               href={`https://www.instagram.com/${siteConfig.instagram}/`}
               target="_blank"
               rel="noreferrer"
-              className="mt-7 inline-flex items-center gap-3 rounded-full bg-white/[0.07] px-4 py-2.5 text-sm ring-1 ring-white/10 transition-[transform,background-color] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/[0.12] active:scale-[0.98]"
+              className="mt-2 block text-sm hover:underline"
             >
-              <span className="size-1.5 rounded-full bg-clay" />
               @{siteConfig.instagram}
             </a>
-          </div>
-
-          <nav aria-label={footer('quickLinks')}>
-            <p className="text-[0.66rem] font-bold uppercase tracking-[0.2em] text-parchment/40">
-              {footer('quickLinks')}
-            </p>
-            <div className="mt-5 flex flex-col items-start gap-3">
-              {footerNavigationItems.map((navigationItem) => (
-                <Link
-                  key={navigationItem.href}
-                  href={navigationItem.href}
-                  className="text-sm text-parchment/70 transition-[color,transform] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:translate-x-1 hover:text-parchment"
-                >
-                  {navigation(navigationItem.label)}
-                </Link>
-              ))}
-            </div>
-          </nav>
-
-          <address className="not-italic">
-            <p className="text-[0.66rem] font-bold uppercase tracking-[0.2em] text-parchment/40">
-              {footer('addressLabel')}
-            </p>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-parchment/70">
-              {siteConfig.address}
-            </p>
-            <div className="mt-5 flex flex-col items-start gap-2 text-sm">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="text-parchment/70 transition-colors duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-parchment"
-              >
-                {siteConfig.phoneLabel}
-              </a>
-              <a
-                href={`https://wa.me/${siteConfig.whatsapp}`}
-                target="_blank"
-                rel="noreferrer"
-                className="text-parchment/70 transition-colors duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-parchment"
-              >
-                {siteConfig.whatsappLabel}
-              </a>
-            </div>
           </address>
         </div>
 
-        <div className="mt-20 grid gap-5 border-t border-white/10 pt-6 text-xs leading-5 text-parchment/45 md:grid-cols-[1fr_auto] md:items-end">
+        <p className="footerWordmark mt-20 whitespace-nowrap font-light uppercase leading-[0.7] tracking-[-0.055em] text-primary-foreground">
+          BB Clinic
+        </p>
+
+        <div className="mt-8 grid gap-4 border-t border-primary-foreground/25 pt-5 text-xs leading-5 text-primary-foreground/55 md:grid-cols-[1fr_auto]">
           <p className="max-w-3xl">{footer('medicalNotice')}</p>
-          <p>
-            © {new Date().getFullYear()} {siteConfig.name}. {footer('rights')} ·{' '}
-            {locale.toUpperCase()}
-          </p>
+          <p>© {new Date().getFullYear()} {siteConfig.name}. {footer('rights')}</p>
         </div>
       </div>
     </footer>

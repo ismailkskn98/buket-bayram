@@ -39,6 +39,8 @@
     "trustPersonal": "Individual evaluation",
     "trustLocation": "Üsküdar · Istanbul",
     "servicesEyebrow": "Areas of expertise",
+    "servicesDisplayStart": "Expertise &",
+    "servicesDisplayEnd": "Treatments",
     "servicesTitle": "A complete perspective on skin health.",
     "servicesDescription": "Every area is part of a process that begins with reliable information and becomes personal through physician evaluation. Suitability and planning are determined after examination.",
     "serviceLabel": "Area",
@@ -79,7 +81,8 @@
     "contactTitle": "Take the first step towards a specialist evaluation.",
     "contactDescription": "WhatsApp is our primary appointment request channel. Our team will respond to arrange a suitable time. Do not use this channel for medical emergencies.",
     "contactAddressLabel": "Practice",
-    "contactPhoneLabel": "Phone"
+    "contactPhoneLabel": "Phone",
+    "contactImageAlt": "Editorial portrait showing natural skin texture"
   },
   "Pages": {
     "treatmentsEyebrow": "Services",

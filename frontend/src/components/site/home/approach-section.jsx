@@ -1,51 +1,40 @@
 import {getTranslations} from 'next-intl/server';
 
 const approachSteps = [
-  {number: '01', title: 'approachStepOneTitle', description: 'approachStepOneDescription'},
-  {number: '02', title: 'approachStepTwoTitle', description: 'approachStepTwoDescription'},
-  {number: '03', title: 'approachStepThreeTitle', description: 'approachStepThreeDescription'}
+  {title: 'approachStepOneTitle', description: 'approachStepOneDescription'},
+  {title: 'approachStepTwoTitle', description: 'approachStepTwoDescription'},
+  {title: 'approachStepThreeTitle', description: 'approachStepThreeDescription'}
 ];
 
 export default async function ApproachSection() {
   const t = await getTranslations('Home');
 
   return (
-    <section className="gridContainer bg-forest py-24 text-parchment sm:py-32 lg:py-40">
-      <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
-        <div data-reveal className="lg:sticky lg:top-32 lg:self-start">
-          <span className="inline-flex rounded-full bg-white/[0.07] px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-[0.19em] text-sage ring-1 ring-white/10">
-            {t('approachEyebrow')}
-          </span>
-          <h2 className="mt-7 max-w-[10ch] font-display text-5xl leading-[0.9] tracking-[-0.045em] sm:text-7xl lg:text-8xl">
+    <section className="gridContainer bg-primary-soft py-20 sm:py-28 lg:py-36">
+      <div>
+        <div data-reveal className="mx-auto max-w-5xl text-center">
+          <h2 className="text-[clamp(2.7rem,6.1vw,6.5rem)] font-light leading-[0.94] tracking-[-0.055em] text-primary">
             {t('approachTitle')}
           </h2>
-          <p className="mt-8 max-w-lg text-base leading-7 text-parchment/58 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {t('approachDescription')}
           </p>
         </div>
 
-        <ol className="space-y-4">
-          {approachSteps.map((step) => (
+        <ol className="mt-16 grid border-t border-primary/25 md:grid-cols-3 lg:mt-24">
+          {approachSteps.map((step, index) => (
             <li
-              key={step.number}
+              key={step.title}
               data-reveal
-              className="bezelShell rounded-[2.1rem] bg-white/[0.055] p-1.5 ring-white/10"
+              className="border-b border-primary/20 py-8 md:border-b-0 md:px-7 md:py-10 md:first:pl-0 md:last:pr-0 md:[&:not(:first-child)]:border-l"
             >
-              <div className="bezelCore rounded-[calc(2.1rem-0.375rem)] bg-[#213d30] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] sm:p-9">
-                <div className="flex items-start justify-between gap-8">
-                  <div>
-                    <h3 className="font-display text-3xl leading-none tracking-[-0.03em] sm:text-4xl">
-                      {t(step.title)}
-                    </h3>
-                    <p className="mt-5 max-w-lg text-sm leading-7 text-parchment/58">
-                      {t(step.description)}
-                    </p>
-                  </div>
-                  <span className="font-display text-3xl italic text-clay sm:text-4xl">
-                    {step.number}
-                  </span>
-                </div>
-              </div>
+              <span className="text-xs text-primary/55">0{index + 1}</span>
+              <h3 className="mt-10 text-2xl font-medium tracking-[-0.03em] sm:text-3xl">
+                {t(step.title)}
+              </h3>
+              <p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">
+                {t(step.description)}
+              </p>
             </li>
           ))}
         </ol>

@@ -39,6 +39,8 @@
     "trustPersonal": "Kişiye özel değerlendirme",
     "trustLocation": "Üsküdar · İstanbul",
     "servicesEyebrow": "Uzmanlık alanları",
+    "servicesDisplayStart": "Uzmanlık &",
+    "servicesDisplayEnd": "Uygulamalar",
     "servicesTitle": "Cilt sağlığına bütüncül bir bakış.",
     "servicesDescription": "Her başlık, doğru bilgiyle başlayan ve hekim değerlendirmesiyle kişiselleşen bir sürecin parçasıdır. Uygunluk ve planlama muayene sonrasında belirlenir.",
     "serviceLabel": "Alan",
@@ -79,7 +81,8 @@
     "contactTitle": "Uzman değerlendirmesi için ilk adımı atın.",
     "contactDescription": "WhatsApp birincil randevu talep kanalımızdır. Ekibimiz uygun zaman planlaması için size dönüş sağlar. Tıbbi aciller için bu kanalı kullanmayın.",
     "contactAddressLabel": "Muayenehane",
-    "contactPhoneLabel": "Telefon"
+    "contactPhoneLabel": "Telefon",
+    "contactImageAlt": "Doğal cilt dokusunu gösteren editoryal portre"
   },
   "Pages": {
     "treatmentsEyebrow": "Hizmetler",

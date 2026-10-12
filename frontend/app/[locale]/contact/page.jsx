@@ -22,8 +22,8 @@ export default async function ContactPage({params}) {
         title={pages('contactTitle')}
         description={pages('contactDescription')}
       />
-      <section className="pb-20 sm:pb-28">
-        <div className="mx-auto w-[min(92%,72rem)]">
+      <section className="gridContainer py-16 sm:py-20">
+        <div>
           <Button asChild>
             <a href={whatsappUrl} target="_blank" rel="noreferrer">
               {navigation('whatsapp')}
