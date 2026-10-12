@@ -6,7 +6,7 @@
   "Navigation": {
     "home": "Home",
     "primaryNavigation": "Primary navigation",
-    "treatments": "Treatments",
+    "treatments": "Services",
     "about": "About",
     "blog": "Blog",
     "faq": "FAQ",
@@ -18,6 +18,12 @@
     "englishShort": "EN",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
+    "closeServices": "Close services menu",
+    "megaFace": "Face and rejuvenation",
+    "megaSkin": "Skin and laser",
+    "megaBodyHair": "Body and hair",
+    "viewAllServices": "View all services",
+    "exploreService": "Explore",
     "whatsappMessage": "Hello, I would like to get information about an appointment."
   },
   "Home": {
@@ -38,19 +44,95 @@
     "trustSpecialist": "Specialist dermatologist approach",
     "trustPersonal": "Individual evaluation",
     "trustLocation": "Üsküdar · Istanbul",
-    "servicesEyebrow": "Areas of expertise",
-    "servicesDisplayStart": "Expertise &",
-    "servicesDisplayEnd": "Treatments",
+    "servicesEyebrow": "Services",
     "servicesTitle": "A complete perspective on skin health.",
-    "servicesDescription": "Every area is part of a process that begins with reliable information and becomes personal through physician evaluation. Suitability and planning are determined after examination.",
+    "servicesDescription": "Medical dermatology, dermocosmetic and laser services are planned around your skin's needs after a specialist evaluation.",
     "serviceLabel": "Area",
-    "serviceLink": "Explore area",
+    "serviceLink": "Explore service",
     "medicalTitle": "Medical dermatology",
     "medicalDescription": "Specialist examination for skin, hair and nail concerns, with individualized evaluation and follow-up when needed.",
     "cosmeticTitle": "Dermocosmetic procedures",
     "cosmeticDescription": "A measured, physician-led approach that considers skin health, appearance and natural balance together.",
     "laserTitle": "Laser procedures",
     "laserDescription": "Controlled, individualized laser procedures planned according to skin needs and a personal suitability assessment.",
+    "serviceItems": {
+      "botox": {
+        "title": "Botox",
+        "description": "A measured, individual plan based on facial movement, muscle activity and a physician's assessment."
+      },
+      "fullFaceFiller": {
+        "title": "Full-face filler treatments",
+        "description": "Balanced, gradual filler planning that considers facial proportions as a whole rather than as isolated areas."
+      },
+      "lipFiller": {
+        "title": "Lip filler",
+        "description": "A personal approach that considers lip shape, movement and facial proportions while preserving a natural appearance."
+      },
+      "mesotherapy": {
+        "title": "Mesotherapy & skin rejuvenation",
+        "description": "Supportive treatments shaped by a physician's assessment of the skin's hydration, vitality and texture needs."
+      },
+      "prp": {
+        "title": "PRP",
+        "description": "A regenerative approach using plasma prepared from the patient's own blood after an individual suitability assessment."
+      },
+      "skinBooster": {
+        "title": "Skin Booster & Profhilo",
+        "description": "Treatment options planned around individual needs to support the skin's hydration balance and overall quality."
+      },
+      "polynucleotide": {
+        "title": "Polynucleotide / Salmon DNA",
+        "description": "A care plan personalised by treatment area, skin structure and expectations to support overall skin quality."
+      },
+      "hifu": {
+        "title": "HIFU facial rejuvenation",
+        "description": "A non-surgical approach using focused ultrasound, planned around facial anatomy and individual needs."
+      },
+      "fractionalLaser": {
+        "title": "Fractional laser",
+        "description": "A controlled laser treatment that addresses skin texture and the appearance of scars after specialist assessment."
+      },
+      "laserHairRemoval": {
+        "title": "Laser hair removal",
+        "description": "A treatment process with device, energy and session planning tailored to the individual's hair and skin type."
+      },
+      "pigmentation": {
+        "title": "Pigmentation treatments",
+        "description": "A process in which treatment options may be combined after assessing the type, depth and cause of pigmentation."
+      },
+      "skinRenewal": {
+        "title": "Skin renewal",
+        "description": "Individual planning that brings together medical skin-care options according to texture, tone and hydration needs."
+      },
+      "acne": {
+        "title": "Acne & acne-scar treatments",
+        "description": "A staged approach that evaluates active acne and scar appearance separately according to the individual's skin type."
+      },
+      "bodyContouring": {
+        "title": "Targeted body contouring",
+        "description": "A personal plan developed with suitable methods after assessing body structure, the target area and expectations."
+      },
+      "bodyFirming": {
+        "title": "Body firming",
+        "description": "A supportive approach planned with energy-based options according to tissue quality and treatment area."
+      },
+      "celluliteStretchMarks": {
+        "title": "Cellulite & stretch-mark treatments",
+        "description": "A personal process using individual or combined methods according to tissue structure and visible concerns."
+      },
+      "hairMesotherapy": {
+        "title": "Hair mesotherapy & hair PRP",
+        "description": "Supportive treatments planned around scalp needs after investigating the underlying cause of hair loss."
+      },
+      "neckDecolleteHands": {
+        "title": "Neck, décolleté & hand rejuvenation",
+        "description": "A care plan that evaluates the texture, hydration and pigmentation needs of these delicate areas separately."
+      },
+      "sweatingBotox": {
+        "title": "Botox for excessive sweating",
+        "description": "A botulinum toxin treatment planned after evaluating the affected area and individual suitability."
+      }
+    },
     "approachEyebrow": "Evaluation process",
     "approachTitle": "Understand first. Plan together next.",
     "approachDescription": "The website provides general information; personal diagnosis and treatment planning can only take shape through a specialist physician evaluation.",
@@ -85,8 +167,8 @@
     "contactImageAlt": "Editorial portrait showing natural skin texture"
   },
   "Pages": {
-    "treatmentsEyebrow": "Services",
-    "treatmentsTitle": "Treatments",
+    "treatmentsEyebrow": "Dermatology services",
+    "treatmentsTitle": "Services",
     "treatmentsDescription": "Explore medical dermatology, dermocosmetic and laser procedures based on your needs.",
     "aboutEyebrow": "Dr. Buket Bayram",
     "aboutTitle": "About",

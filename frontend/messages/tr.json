@@ -6,7 +6,7 @@
   "Navigation": {
     "home": "Ana Sayfa",
     "primaryNavigation": "Ana navigasyon",
-    "treatments": "Uygulamalar",
+    "treatments": "Hizmetlerimiz",
     "about": "Hakkımda",
     "blog": "Blog",
     "faq": "S.S.S.",
@@ -18,6 +18,12 @@
     "englishShort": "EN",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
+    "closeServices": "Hizmetler menüsünü kapat",
+    "megaFace": "Yüz ve gençleştirme",
+    "megaSkin": "Cilt ve lazer",
+    "megaBodyHair": "Vücut ve saç",
+    "viewAllServices": "Tüm hizmetleri incele",
+    "exploreService": "İncele",
     "whatsappMessage": "Merhaba, randevu hakkında bilgi almak istiyorum."
   },
   "Home": {
@@ -27,7 +33,7 @@
     "heroTitleEnd": "başlar.",
     "description": "Tıbbi dermatolojiden dermokozmetik uygulamalara; cilt, saç ve tırnak sağlığını uzman değerlendirmesiyle ele alan sakin ve dengeli bir yaklaşım.",
     "primaryCta": "WhatsApp'tan randevu talep et",
-    "secondaryCta": "Uygulamaları keşfet",
+    "secondaryCta": "Hizmetleri keşfet",
     "heroImageAlt": "Dermatoloğun yetişkin bir hastanın cildini dikkatle değerlendirdiği aydınlık muayene ortamı",
     "heroPromisePersonal": "Kişiye özel planlama",
     "heroPromiseScientific": "Uzman hekim yaklaşımı",
@@ -38,19 +44,95 @@
     "trustSpecialist": "Uzman dermatolog yaklaşımı",
     "trustPersonal": "Kişiye özel değerlendirme",
     "trustLocation": "Üsküdar · İstanbul",
-    "servicesEyebrow": "Uzmanlık alanları",
-    "servicesDisplayStart": "Uzmanlık &",
-    "servicesDisplayEnd": "Uygulamalar",
+    "servicesEyebrow": "Hizmetlerimiz",
     "servicesTitle": "Cilt sağlığına bütüncül bir bakış.",
-    "servicesDescription": "Her başlık, doğru bilgiyle başlayan ve hekim değerlendirmesiyle kişiselleşen bir sürecin parçasıdır. Uygunluk ve planlama muayene sonrasında belirlenir.",
+    "servicesDescription": "Tıbbi dermatoloji, dermokozmetik ve lazer hizmetleri; cildinizin ihtiyacına göre uzman hekim değerlendirmesiyle planlanır.",
     "serviceLabel": "Alan",
-    "serviceLink": "Alanı incele",
+    "serviceLink": "Detayları incele",
     "medicalTitle": "Tıbbi dermatoloji",
     "medicalDescription": "Cilt, saç ve tırnak sorunlarında uzman hekim muayenesi; ihtiyaca göre kişiye özel değerlendirme ve takip.",
     "cosmeticTitle": "Dermokozmetik uygulamalar",
     "cosmeticDescription": "Cilt sağlığı ve görünümünü birlikte ele alan, doğal dengeyi gözeten ölçülü ve hekim odaklı yaklaşım.",
     "laserTitle": "Lazer uygulamaları",
     "laserDescription": "Cilt ihtiyacı ve uygunluk değerlendirmesine göre planlanan, kontrollü ve kişiselleştirilmiş lazer uygulamaları.",
+    "serviceItems": {
+      "botox": {
+        "title": "Botoks",
+        "description": "Mimik kasları ve yüz hareketleri değerlendirilerek kişiye özel, ölçülü bir uygulama planı oluşturulur."
+      },
+      "fullFaceFiller": {
+        "title": "Tüm yüz dolgu uygulamaları",
+        "description": "Yüz oranlarını tek tek bölgeler yerine bir bütün olarak ele alan, dengeli ve kademeli dolgu planlaması."
+      },
+      "lipFiller": {
+        "title": "Dudak dolgusu",
+        "description": "Dudak yapısı, hareketi ve yüz oranları gözetilerek doğal görünümü korumayı amaçlayan kişisel yaklaşım."
+      },
+      "mesotherapy": {
+        "title": "Mezoterapi & cilt gençleştirme",
+        "description": "Cildin nem, canlılık ve doku ihtiyacına göre hekim değerlendirmesiyle şekillenen destekleyici uygulamalar."
+      },
+      "prp": {
+        "title": "PRP",
+        "description": "Kişinin kendi kanından hazırlanan plazmanın, uygunluk değerlendirmesi sonrasında planlandığı yenileyici yaklaşım."
+      },
+      "skinBooster": {
+        "title": "Skin Booster & Profhilo",
+        "description": "Cildin nem dengesini ve kalitesini desteklemeye yönelik, ihtiyaca göre planlanan uygulama seçenekleri."
+      },
+      "polynucleotide": {
+        "title": "Polinükleotid / Somon DNA",
+        "description": "Cilt kalitesini desteklemek amacıyla bölge, cilt yapısı ve beklentiye göre kişiselleştirilen bakım planı."
+      },
+      "hifu": {
+        "title": "HIFU yüz gençleştirme",
+        "description": "Odaklanmış ultrason teknolojisinin yüz anatomisi ve ihtiyaçlar doğrultusunda planlandığı ameliyatsız yaklaşım."
+      },
+      "fractionalLaser": {
+        "title": "Fraksiyonel lazer",
+        "description": "Cilt dokusu ve iz görünümünün uzman değerlendirmesiyle ele alındığı kontrollü lazer uygulaması."
+      },
+      "laserHairRemoval": {
+        "title": "Lazer epilasyon",
+        "description": "Kıl ve cilt yapısına uygun cihaz, doz ve seans planının kişiye özel belirlendiği uygulama süreci."
+      },
+      "pigmentation": {
+        "title": "Leke tedavileri",
+        "description": "Lekenin türü, derinliği ve oluşum nedeni değerlendirilerek farklı yöntemlerin birlikte planlanabildiği süreç."
+      },
+      "skinRenewal": {
+        "title": "Cilt yenileme",
+        "description": "Cilt dokusu, tonu ve nem ihtiyacına göre medikal bakım seçeneklerini bir araya getiren kişisel planlama."
+      },
+      "acne": {
+        "title": "Akne & akne izi tedavileri",
+        "description": "Aktif akne ve iz görünümünü ayrı ayrı değerlendiren, cilt tipine göre aşamalı olarak planlanan yaklaşım."
+      },
+      "bodyContouring": {
+        "title": "Bölgesel incelme",
+        "description": "Vücut yapısı, hedef bölge ve beklentiler değerlendirildikten sonra uygun yöntemlerle oluşturulan kişisel plan."
+      },
+      "bodyFirming": {
+        "title": "Vücut sıkılaştırma",
+        "description": "Doku kalitesi ve uygulama bölgesine göre enerji temelli seçeneklerle planlanan destekleyici yaklaşım."
+      },
+      "celluliteStretchMarks": {
+        "title": "Selülit & çatlak tedavileri",
+        "description": "Doku yapısı ve görünümün derecesine göre tek veya kombine yöntemlerle ele alınan kişisel süreç."
+      },
+      "hairMesotherapy": {
+        "title": "Saç mezoterapisi & saç PRP",
+        "description": "Saç dökülmesinin nedeni araştırıldıktan sonra saçlı deri ihtiyacına göre planlanan destekleyici uygulamalar."
+      },
+      "neckDecolleteHands": {
+        "title": "Boyun, dekolte & el gençleştirme",
+        "description": "İnce ve hassas bölgelerin doku, nem ve leke ihtiyacına göre ayrı ayrı değerlendirildiği bakım planı."
+      },
+      "sweatingBotox": {
+        "title": "Terleme botoksu",
+        "description": "Aşırı terleme şikayetinde bölge ve kişisel uygunluk değerlendirilerek planlanan botulinum toksin uygulaması."
+      }
+    },
     "approachEyebrow": "Değerlendirme süreci",
     "approachTitle": "Önce anlamak. Sonra birlikte planlamak.",
     "approachDescription": "Web sitesi genel bilgi sunar; kişisel tanı ve tedavi planı ise yalnızca uzman hekim değerlendirmesiyle şekillenir.",
@@ -85,9 +167,9 @@
     "contactImageAlt": "Doğal cilt dokusunu gösteren editoryal portre"
   },
   "Pages": {
-    "treatmentsEyebrow": "Hizmetler",
-    "treatmentsTitle": "Uygulamalar",
-    "treatmentsDescription": "Dermatolojik, dermokozmetik ve lazer uygulamalarını ihtiyacınıza göre inceleyin.",
+    "treatmentsEyebrow": "Dermatoloji hizmetleri",
+    "treatmentsTitle": "Hizmetlerimiz",
+    "treatmentsDescription": "Tıbbi dermatoloji, dermokozmetik ve lazer hizmetlerini ihtiyacınıza göre inceleyin.",
     "aboutEyebrow": "Dr. Buket Bayram",
     "aboutTitle": "Hakkımda",
     "aboutDescription": "Mesleki özgeçmiş, eğitim, üyelik ve akademik çalışmalara yakından bakın.",

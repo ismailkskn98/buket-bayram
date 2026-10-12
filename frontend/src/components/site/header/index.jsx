@@ -1,24 +1,39 @@
-import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import Image from 'next/image';
+import {getLocale, getTranslations} from 'next-intl/server';
 
-import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/config/site";
+import {serviceCatalog} from '@/config/services';
+import {siteConfig} from '@/config/site';
+import {Link} from '@/i18n/navigation';
 
-import MobileNavigation from "./mobile-navigation";
+import MobileNavigation from './mobile-navigation';
+import ServicesMegaMenu from './services-mega-menu';
 
 const navigationItems = [
-  { href: "/treatments", label: "treatments" },
-  { href: "/about", label: "about" },
-  { href: "/blog", label: "blog" },
-  { href: "/faq", label: "faq" },
+  {href: '/about', label: 'about'},
+  {href: '/blog', label: 'blog'},
+  {href: '/faq', label: 'faq'}
 ];
 
 export default async function SiteHeader() {
-  const [locale, t] = await Promise.all([getLocale(), getTranslations("Navigation")]);
-  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(t("whatsappMessage"))}`;
+  const [locale, t, tHome] = await Promise.all([
+    getLocale(),
+    getTranslations('Navigation'),
+    getTranslations('Home')
+  ]);
+  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(t('whatsappMessage'))}`;
   const translatedNavigationItems = navigationItems.map((navigationItem) => ({
     href: navigationItem.href,
-    label: t(navigationItem.label),
+    label: t(navigationItem.label)
+  }));
+  const mobileNavigationItems = [
+    {href: '/treatments', label: t('treatments')},
+    ...translatedNavigationItems
+  ];
+  const translatedServices = serviceCatalog.map((service, index) => ({
+    ...service,
+    description: tHome(`serviceItems.${service.key}.description`),
+    index: index + 1,
+    title: tHome(`serviceItems.${service.key}.title`)
   }));
 
   return (
@@ -30,14 +45,26 @@ export default async function SiteHeader() {
               <Image src="/images/logo/logo-bordo-icon.webp" alt="" width={1024} height={1536} sizes="(max-width: 639px) 2rem, 2.3rem" className="mt-1 h-auto w-[clamp(2rem,3vw,2.3rem)]" />
             </Link>
           </div>
-          <nav aria-label={t("primaryNavigation")} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium text-muted-foreground xl:flex">
-            {translatedNavigationItems.map((navigationItem, index) => (
+          <nav aria-label={t('primaryNavigation')} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium xl:flex">
+            <ServicesMegaMenu
+              groups={[
+                {key: 'face', label: t('megaFace')},
+                {key: 'skin', label: t('megaSkin')},
+                {key: 'bodyHair', label: t('megaBodyHair')}
+              ]}
+              labels={{
+                close: t('closeServices'),
+                explore: t('exploreService'),
+                trigger: t('treatments'),
+                viewAll: t('viewAllServices')
+              }}
+              services={translatedServices}
+            />
+            {translatedNavigationItems.map((navigationItem) => (
               <div key={navigationItem.href} className="flex items-center">
-                {index > 0 ? (
-                  <span aria-hidden="true" className="mx-3 text-primary/30">
-                    /
-                  </span>
-                ) : null}
+                <span aria-hidden="true" className="mx-3 text-primary/30">
+                  /
+                </span>
                 <Link href={navigationItem.href} className="py-2 transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-primary">
                   {navigationItem.label}
                 </Link>
@@ -62,7 +89,7 @@ export default async function SiteHeader() {
             </a>
             <MobileNavigation
               currentLocale={locale}
-              items={translatedNavigationItems}
+              items={mobileNavigationItems}
               labels={{
                 close: t("closeMenu"),
                 englishShort: t("englishShort"),

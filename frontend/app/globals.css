@@ -77,6 +77,60 @@ button:focus-visible {
   background: color-mix(in srgb, var(--color-primary) 24%, transparent);
 }
 
+.megaMenuLayout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(0, 0.76fr)
+    minmax(0, 0.82fr)
+    minmax(15rem, 1fr);
+  gap: clamp(1.5rem, 2.4vw, 3rem);
+}
+
+.megaMenuServiceLink > span:last-child {
+  text-decoration-color: transparent;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+  transition: text-decoration-color 300ms ease;
+}
+
+.megaMenuServiceLink:is(:hover, :focus-visible) > span:last-child {
+  text-decoration-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
+}
+
+.megaMenuImage {
+  animation: mega-menu-image-in 420ms cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+@keyframes mega-menu-image-in {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 1280px) and (max-height: 760px) {
+  .megaMenuLayout {
+    grid-template-columns:
+      minmax(0, 1.45fr)
+      minmax(0, 0.76fr)
+      minmax(0, 0.82fr)
+      minmax(13rem, 0.9fr);
+    gap: clamp(1.25rem, 2vw, 2rem);
+  }
+
+  .megaMenuPreview {
+    max-width: 15rem;
+    justify-self: end;
+  }
+}
+
 .homeHeroContent {
   container-type: inline-size;
 }
@@ -116,13 +170,6 @@ button:focus-visible {
   aspect-ratio: 2.06 / 1;
 }
 
-.servicesDisplayTitle {
-  font-size: clamp(3.75rem, 12.6vw, 11.25rem);
-  font-size: clamp(3.75rem, 13.7cqi, 11.25rem);
-  line-height: 0.78;
-  letter-spacing: -0.05em;
-}
-
 .pageHeroTitle {
   max-width: 100%;
   font-size: clamp(3.8rem, 13.5vw, 12.5rem);
@@ -147,7 +194,6 @@ button:focus-visible {
     line-height: 0.8;
   }
 
-  .servicesDisplayTitle,
   .pageHeroTitle {
     font-size: clamp(2.65rem, 11.8cqi, 4rem);
     line-height: 0.84;
@@ -162,7 +208,158 @@ button:focus-visible {
   }
 }
 
+.servicesRailViewport {
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: max(4vw, calc((100vw - 90rem) / 2));
+  scrollbar-width: none;
+}
+
+.servicesRailViewport::-webkit-scrollbar {
+  display: none;
+}
+
+.servicesRailTrack {
+  padding-inline: max(4vw, calc((100vw - 90rem) / 2));
+}
+
+.servicesRailProgress {
+  margin-top: clamp(1.75rem, 3.5vh, 3rem);
+}
+
+.serviceCardMedia {
+  isolation: isolate;
+}
+
+.serviceCardOverlay {
+  display: none;
+}
+
+.serviceCardCta {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 500ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.serviceCardLink:is(:hover, :focus-visible) .serviceCardCta {
+  background-size: 38% 1px;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .serviceCardSummary {
+    display: none;
+  }
+
+  .serviceCardOverlay {
+    position: absolute;
+    z-index: 1;
+    inset: -2px;
+    display: flex;
+    align-items: flex-start;
+    background: color-mix(in srgb, var(--color-background) 95%, var(--color-primary-soft));
+    opacity: 0;
+    padding: clamp(1.25rem, 2vw, 2rem);
+    pointer-events: none;
+    transition: opacity 450ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .serviceCardOverlay > div {
+    transform: translateY(0.75rem);
+    transition: transform 500ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .serviceCardOverlayCta {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+  }
+
+  .serviceCardLink:is(:hover, :focus-visible) .serviceCardOverlay {
+    opacity: 1;
+  }
+
+  .serviceCardLink:is(:hover, :focus-visible) .serviceCardOverlay > div {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .servicesRailScrollArea[data-motion="ready"] {
+    height: calc(
+      100svh - var(--services-header-offset, 4.25rem) +
+        var(--services-scroll-distance, 100vh)
+    );
+  }
+
+  .servicesRailStage {
+    display: flex;
+    height: calc(100svh - 4.25rem);
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(1.5rem, 4vh, 3rem);
+  }
+
+  .servicesRailScrollArea[data-motion="ready"] .servicesRailStage {
+    position: sticky;
+    top: var(--services-header-offset, 4.25rem);
+    height: calc(100svh - var(--services-header-offset, 4.25rem));
+  }
+
+  .servicesRailStage .servicesRailViewport {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    align-items: center;
+  }
+
+  .servicesRailScrollArea[data-motion="ready"] .servicesRailViewport {
+    overflow-x: hidden;
+  }
+
+  .servicesRailProgress {
+    flex: none;
+  }
+}
+
+@media (min-width: 768px) and (max-height: 720px) {
+  .serviceCard {
+    width: clamp(15rem, 20vw, 20rem);
+  }
+
+  .servicesRailStage {
+    padding-block: clamp(1rem, 2.5vh, 1.5rem);
+  }
+
+  .servicesRailProgress {
+    margin-top: clamp(1rem, 2vh, 1.5rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+
+  .megaMenuImage {
+    animation: none;
+  }
+
+  .servicesRailViewport {
+    overflow-x: auto;
+  }
+
+  .servicesRailTrack {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .servicesRailStage {
+    height: auto;
+    position: static;
+  }
+
+  .servicesRailScrollArea {
+    height: auto !important;
+  }
 
   *,
   *::before,
