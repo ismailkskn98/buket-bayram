@@ -7,14 +7,17 @@
   --font-sans: "Manrope Variable", "Segoe UI", sans-serif;
   --font-display: "Newsreader Variable", Georgia, serif;
 
-  --color-background: #f4f0e8;
-  --color-foreground: #18211b;
-  --color-muted: #e8e2d8;
-  --color-muted-foreground: #687069;
-  --color-primary: #2d5340;
-  --color-primary-foreground: #fffdf8;
-  --color-border: #d6cfc2;
-  --color-ring: #2d5340;
+  --color-background: #f5f3ef;
+  --color-foreground: #4a4541;
+  --color-muted: #e8e4df;
+  --color-muted-foreground: #68625e;
+  --color-primary: #6d3636;
+  --color-primary-hover: #572b2b;
+  --color-primary-soft: #eee5e5;
+  --color-primary-soft-hover: #e4d5d5;
+  --color-primary-foreground: #fffaf5;
+  --color-border: #d9d0ca;
+  --color-ring: #6d3636;
   --color-sage: #aab9a8;
   --color-clay: #b46f54;
   --color-parchment: #fbf8f2;
@@ -91,7 +94,7 @@ button:focus-visible {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--color-clay) 28%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 24%, transparent);
 }
 
 .homeHeroContent {
@@ -99,9 +102,29 @@ button:focus-visible {
 }
 
 .homeHeroTitle {
-  font-size: clamp(4rem, 25vw, 24.5rem);
-  font-size: clamp(4rem, 27.2cqi, 24.5rem);
-  text-indent: -0.065em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.homeHeroTitleLine {
+  display: block;
+  font-size: clamp(2.625rem, 13.15vw, 12.875rem);
+  font-size: clamp(2.625rem, 14.3cqi, 12.875rem);
+  line-height: 0.74;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.homeHeroTitleLineStart {
+  align-self: flex-start;
+  transform: translateX(-0.035em);
+}
+
+.homeHeroTitleLineEnd {
+  align-self: flex-end;
+  margin-top: 0.1em;
+  transform: translateX(-0.05em);
 }
 
 .homeHeroMedia {
@@ -109,10 +132,6 @@ button:focus-visible {
 }
 
 @media (max-width: 639px) {
-  .homeHeroTitle {
-    font-size: clamp(4rem, 22.2cqi, 6rem);
-  }
-
   .homeHeroMedia {
     aspect-ratio: 4 / 5;
   }

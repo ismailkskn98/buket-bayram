@@ -22,24 +22,23 @@ export default async function SiteHeader() {
   }));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#4a4541]/10 bg-[#f5f3ef]/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-primary/15 bg-background/95 backdrop-blur-xl">
       <div className="gridContainer">
         <div className="grid min-h-[4.25rem] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)]">
           <div className="min-w-0">
-            <Link href="/" aria-label={`BB Clinic - ${t("home")}`} className="inline-flex items-center transition-opacity duration-300 hover:opacity-70">
-              <Image src="/images/logo/logo-siyah-yatay.webp" alt="" width={2033} height={425} sizes="(max-width: 639px) 8rem, 10.75rem" className="h-auto w-[clamp(8rem,11vw,10.75rem)]" />
+            <Link href="/" aria-label={`BB Clinic - ${t("home")}`} className="inline-flex items-center transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:opacity-75">
+              <Image src="/images/logo/logo-bordo-icon.webp" alt="" width={1024} height={1536} sizes="(max-width: 639px) 2rem, 2.3rem" className="mt-1 h-auto w-[clamp(2rem,3vw,2.3rem)]" />
             </Link>
           </div>
-
-          <nav aria-label={t("primaryNavigation")} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium text-[#6f6965] xl:flex">
+          <nav aria-label={t("primaryNavigation")} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium text-muted-foreground xl:flex">
             {translatedNavigationItems.map((navigationItem, index) => (
               <div key={navigationItem.href} className="flex items-center">
                 {index > 0 ? (
-                  <span aria-hidden="true" className="mx-3 text-[#b5afa9]">
+                  <span aria-hidden="true" className="mx-3 text-primary/30">
                     /
                   </span>
                 ) : null}
-                <Link href={navigationItem.href} className="py-2 transition-colors duration-300 hover:text-[#4a4541]">
+                <Link href={navigationItem.href} className="py-2 transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-primary">
                   {navigationItem.label}
                 </Link>
               </div>
@@ -49,7 +48,7 @@ export default async function SiteHeader() {
           <div className="flex items-center justify-self-end gap-2">
             <Link
               href="/contact"
-              className="hidden min-h-10 items-center rounded-full bg-[#e8e4df] px-5 text-[0.68rem] font-semibold text-[#4a4541] transition-[background-color,transform] duration-300 hover:bg-[#ddd7d0] active:scale-[0.98] sm:inline-flex"
+              className="hidden min-h-10 items-center rounded-full bg-primary-soft px-5 text-[0.68rem] font-semibold text-primary transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-primary-soft-hover active:scale-[0.98] sm:inline-flex"
             >
               {t("contact")}
             </Link>
@@ -57,7 +56,7 @@ export default async function SiteHeader() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="hidden min-h-10 items-center rounded-full bg-[#806657] px-5 text-[0.68rem] font-semibold text-[#fffaf5] transition-[background-color,transform] duration-300 hover:bg-[#665044] active:scale-[0.98] md:inline-flex"
+              className="hidden min-h-10 items-center rounded-full bg-primary px-5 text-[0.68rem] font-semibold text-primary-foreground transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-primary-hover active:scale-[0.98] md:inline-flex"
             >
               {t("whatsappShort")}
             </a>

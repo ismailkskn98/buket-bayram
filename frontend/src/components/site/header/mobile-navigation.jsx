@@ -53,7 +53,7 @@ export default function MobileNavigation({
         aria-expanded={isOpen}
         aria-label={isOpen ? labels.close : labels.menu}
         onClick={() => setIsOpen((currentValue) => !currentValue)}
-        className="relative z-40 flex size-10 items-center justify-center rounded-full bg-[#e8e4df] text-[#4a4541] transition-[background-color,transform] duration-300 hover:bg-[#ddd7d0] active:scale-95"
+        className="relative z-40 flex size-10 items-center justify-center rounded-full bg-primary-soft text-primary transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-primary-soft-hover active:scale-95"
       >
         <span
           className={`absolute h-px w-4 bg-current transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
@@ -72,7 +72,7 @@ export default function MobileNavigation({
         aria-hidden={!isOpen}
         aria-modal={isOpen ? true : undefined}
         role="dialog"
-        className={`fixed inset-0 z-30 overflow-y-auto bg-[#4a3c35]/98 px-4 pb-6 pt-24 text-[#f7f3ee] transition-[opacity,visibility] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`fixed inset-0 z-30 overflow-y-auto bg-primary/98 px-4 pb-6 pt-24 text-primary-foreground transition-[opacity,visibility] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           isOpen ? 'visible opacity-100' : 'invisible opacity-0'
         }`}
       >
@@ -85,7 +85,7 @@ export default function MobileNavigation({
                 href={item.href}
                 onClick={closeMenu}
                 tabIndex={isOpen ? 0 : -1}
-                className={`border-b border-white/14 py-4 text-[clamp(2.5rem,8vw,5.5rem)] font-light leading-[0.95] tracking-[-0.055em] transition-[transform,opacity,color] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-[#d1beb1] ${
+                className={`border-b border-primary-foreground/15 py-4 text-[clamp(2.5rem,8vw,5.5rem)] font-light leading-[0.95] tracking-[-0.055em] transition-[transform,opacity,color] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:text-primary-foreground/70 ${
                   isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
               >
@@ -110,7 +110,7 @@ export default function MobileNavigation({
               target="_blank"
               rel="noreferrer"
               tabIndex={isOpen ? 0 : -1}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#f7f3ee] px-6 text-sm font-semibold text-[#4a3c35] transition-transform duration-300 active:scale-[0.98]"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary-foreground px-6 text-sm font-semibold text-primary transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]"
             >
               {labels.whatsapp}
             </a>
