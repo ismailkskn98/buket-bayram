@@ -6,7 +6,7 @@ import {useEffect, useRef, useState} from 'react';
 import {Link} from '@/i18n/navigation';
 
 const groupColumns = {
-  face: 'grid grid-cols-2 gap-x-[clamp(1rem,2vw,2.5rem)]',
+  face: 'grid grid-cols-2 gap-x-[clamp(0.75rem,1.25vw,1.5rem)]',
   skin: 'grid gap-y-1',
   bodyHair: 'grid gap-y-1'
 };
@@ -137,22 +137,26 @@ export default function ServicesMegaMenu({groups, labels, services}) {
         aria-hidden={!isOpen}
         onMouseEnter={cancelScheduledClose}
         onMouseLeave={scheduleMenuClose}
-        className={`fixed inset-x-0 top-[4.25rem] z-20 max-h-[calc(100dvh-4.25rem)] origin-top overflow-y-auto border-b border-primary/20 bg-background shadow-[0_1.5rem_4rem_color-mix(in_srgb,var(--color-primary)_10%,transparent)] transition-[opacity,transform,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`fixed inset-x-0 top-[4.25rem] z-20 max-h-[calc(100dvh-4.25rem)] origin-top overflow-y-auto overscroll-contain whitespace-normal border-b border-primary/20 bg-background shadow-[0_1.5rem_4rem_color-mix(in_srgb,var(--color-primary)_10%,transparent)] transition-[opacity,transform,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           isOpen
             ? 'visible translate-y-0 opacity-100'
             : 'invisible pointer-events-none -translate-y-2 opacity-0'
         }`}
       >
         <div className="gridContainer">
-          <div className="megaMenuLayout py-[clamp(1.75rem,4vh,3.25rem)]">
+          <div className="megaMenuLayout">
             {groups.map((group) => {
               const groupServices = services.filter(
                 (service) => service.group === group.key
               );
 
               return (
-                <section key={group.key} aria-labelledby={`mega-${group.key}`}>
-                  <div className="mb-[clamp(1rem,2.5vh,1.75rem)] flex items-center justify-between gap-4 border-b border-primary/20 pb-2.5">
+                <section
+                  key={group.key}
+                  aria-labelledby={`mega-${group.key}`}
+                  className="min-w-0"
+                >
+                  <div className="megaMenuGroupHeader flex min-w-0 items-center justify-between gap-3 border-b border-primary/20">
                     <h2
                       id={`mega-${group.key}`}
                       className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground"
@@ -181,7 +185,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
                           onClick={closeMenu}
                           onFocus={() => setActiveServiceKey(service.key)}
                           onMouseEnter={() => setActiveServiceKey(service.key)}
-                          className={`megaMenuServiceLink grid grid-cols-[1.6rem_minmax(0,1fr)] items-start gap-2 py-1.5 transition-colors duration-300 ${
+                          className={`megaMenuServiceLink grid min-w-0 grid-cols-[1.35rem_minmax(0,1fr)] items-start gap-1.5 py-1.5 transition-colors duration-300 ${
                             activeServiceKey === service.key
                               ? 'text-primary'
                               : 'text-foreground/72 hover:text-primary'
@@ -190,7 +194,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
                           <span className="pt-1 text-[0.55rem] font-semibold tabular-nums text-muted-foreground/70">
                             {String(service.index).padStart(2, '0')}
                           </span>
-                          <span className="text-[clamp(0.92rem,1.12vw,1.15rem)] font-medium leading-[1.16] tracking-[-0.025em]">
+                          <span className="min-w-0 whitespace-normal text-[clamp(0.84rem,0.95vw,1.03rem)] font-medium leading-[1.22] tracking-[-0.025em]">
                             {service.title}
                           </span>
                         </Link>
@@ -219,7 +223,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
                   <p className="text-base font-medium leading-tight tracking-[-0.025em] text-foreground">
                     {activeService.title}
                   </p>
-                  <p className="mt-1.5 line-clamp-2 max-w-[33ch] text-[0.68rem] leading-4 text-muted-foreground">
+                  <p className="megaMenuPreviewDescription mt-1.5 line-clamp-2 max-w-[33ch] text-[0.68rem] leading-4 text-muted-foreground">
                     {activeService.description}
                   </p>
                 </div>
