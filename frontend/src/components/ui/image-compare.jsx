@@ -197,9 +197,7 @@ export function ImageCompare({
       </svg>
       <span className="cmp-grip">
         <span className="cmp-knob">
-          <svg width="18" height="10" viewBox="0 0 18 10" aria-hidden="true">
-            <path d="M6 1 2 5l4 4M12 1l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <span aria-hidden="true" className="text-sm tracking-[-0.2em]">← →</span>
         </span>
       </span>
     </div>

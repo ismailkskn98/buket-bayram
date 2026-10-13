@@ -5,6 +5,7 @@ backend/node_modules/
 # Next.js
 frontend/.next/
 frontend/out/
+frontend/tmp/
 
 # Environment files
 .env
@@ -26,3 +27,4 @@ Thumbs.db
 .npm-cache/
 .agents/
 skills-lock.json
+OneElementScroll-main/

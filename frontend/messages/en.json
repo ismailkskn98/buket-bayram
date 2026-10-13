@@ -133,6 +133,13 @@
         "description": "A botulinum toxin treatment planned after evaluating the affected area and individual suitability."
       }
     },
+    "resultsTitle": "Every skin is different. Every plan is personal.",
+    "resultsDescription": "Skin structure, needs and expectations are assessed together. The aim is a measured process that preserves the face's natural expression.",
+    "resultsHint": "Drag the image to compare.",
+    "resultsDisclaimer": "Treatment response and results can vary from person to person.",
+    "resultsImageAlt": "Comparative skin portrait showing the appearance of acne",
+    "resultsBeforeLabel": "Before",
+    "resultsAfterLabel": "After",
     "approachEyebrow": "Evaluation process",
     "approachTitle": "Understand first. Plan together next.",
     "approachDescription": "The website provides general information; personal diagnosis and treatment planning can only take shape through a specialist physician evaluation.",
@@ -142,6 +149,8 @@
     "approachStepTwoDescription": "Skin, hair or nail needs are assessed from a dermatologist's perspective and suitable options are explained.",
     "approachStepThreeTitle": "Plan",
     "approachStepThreeDescription": "The process is planned in a clear, measured and trackable way according to personal needs and suitability.",
+    "approachStepFourTitle": "Follow up",
+    "approachStepFourDescription": "When needed, the process is reassessed together through check-ups and care recommendations.",
     "aboutEyebrow": "Dermatologist",
     "aboutSpecialty": "An approach that brings medical dermatology and dermocosmetic procedures together on the same specialist foundation.",
     "aboutSectionLabel": "About the physician",
@@ -149,16 +158,21 @@
     "aboutDescription": "Dr. Buket Bayram graduated from Samsun 19 Mayıs University Faculty of Medicine and completed her dermatology residency at Istanbul Göztepe SSK Training and Research Hospital. Her professional approach combines current dermatology knowledge with clear communication and balanced treatment planning.",
     "aboutPrinciple": "Every skin has different needs; its evaluation should be personal too.",
     "aboutCta": "Meet Dr. Buket Bayram",
+    "aboutImageAlt": "A dermatologist assessing a patient's skin with a dermatoscope during an examination",
     "knowledgeEyebrow": "Knowledge centre",
     "knowledgeTitle": "Move forward with reliable knowledge about your skin.",
     "knowledgeDescription": "Explore dermatological concerns and treatment processes more clearly through physician-reviewed educational content.",
     "knowledgeOneCategory": "Skin health",
     "knowledgeOneTitle": "When do moles require specialist evaluation?",
+    "knowledgeOneImageAlt": "A dermatologist assessing the skin around a patient's face",
     "knowledgeTwoCategory": "Pigmentation",
     "knowledgeTwoTitle": "Why is the evaluation of skin pigmentation personal?",
+    "knowledgeTwoImageAlt": "A clinical laser skin procedure",
     "knowledgeThreeCategory": "Hair health",
     "knowledgeThreeTitle": "The right starting point for hair loss: understanding the cause",
+    "knowledgeThreeImageAlt": "A specialist examining the scalp",
     "knowledgeCta": "Explore all articles",
+    "knowledgeReadCta": "Read article",
     "contactEyebrow": "Appointment and contact",
     "contactTitle": "Take the first step towards a specialist evaluation.",
     "contactDescription": "WhatsApp is our primary appointment request channel. Our team will respond to arrange a suitable time. Do not use this channel for medical emergencies.",
@@ -192,5 +206,11 @@
     "quickLinks": "Quick links",
     "rights": "All rights reserved.",
     "medicalNotice": "Information on this website does not replace a medical examination, diagnosis or treatment."
+  },
+  "compare": {
+    "before": "Before",
+    "after": "After",
+    "ariaLabel": "Before and after comparison for {alt}",
+    "valueText": "{before} {beforePercentage} percent, {after} {afterPercentage} percent"
   }
 }

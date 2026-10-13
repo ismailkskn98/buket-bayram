@@ -1,11 +1,11 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 
-import AboutSection from '@/components/site/home/about-section';
-import ApproachSection from '@/components/site/home/approach-section';
+import ApproachAboutSection from '@/components/site/home/approach-about-section';
 import ContactSection from '@/components/site/home/contact-section';
 import HeroSection from '@/components/site/home/hero-section';
 import HomeMotion from '@/components/site/home/home-motion';
 import KnowledgeSection from '@/components/site/home/knowledge-section';
+import ResultsSection from '@/components/site/home/results-section';
 import ServicesSection from '@/components/site/home/services-section';
 import {siteConfig} from '@/config/site';
 
@@ -23,8 +23,8 @@ export default async function HomePage({params}) {
       <HomeMotion />
       <HeroSection />
       <ServicesSection />
-      <ApproachSection />
-      <AboutSection />
+      <ResultsSection />
+      <ApproachAboutSection />
       <KnowledgeSection />
       <ContactSection whatsappUrl={whatsappUrl} />
     </div>

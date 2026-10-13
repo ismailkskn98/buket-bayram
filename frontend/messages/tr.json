@@ -133,6 +133,13 @@
         "description": "Aşırı terleme şikayetinde bölge ve kişisel uygunluk değerlendirilerek planlanan botulinum toksin uygulaması."
       }
     },
+    "resultsTitle": "Her cilt farklı. Her plan kişisel.",
+    "resultsDescription": "Cilt yapısı, ihtiyaç ve beklenti birlikte değerlendirilir. Amaç, yüzün doğal ifadesini koruyan ölçülü bir süreç planlamaktır.",
+    "resultsHint": "Görseli sürükleyerek karşılaştırın.",
+    "resultsDisclaimer": "Tedaviye yanıt ve elde edilen sonuçlar kişiden kişiye değişebilir.",
+    "resultsImageAlt": "Akne görünümünü gösteren karşılaştırmalı cilt portresi",
+    "resultsBeforeLabel": "Önce",
+    "resultsAfterLabel": "Sonra",
     "approachEyebrow": "Değerlendirme süreci",
     "approachTitle": "Önce anlamak. Sonra birlikte planlamak.",
     "approachDescription": "Web sitesi genel bilgi sunar; kişisel tanı ve tedavi planı ise yalnızca uzman hekim değerlendirmesiyle şekillenir.",
@@ -142,6 +149,8 @@
     "approachStepTwoDescription": "Cilt, saç veya tırnak ihtiyacı uzman dermatolog bakışıyla incelenir; uygun seçenekler açıklanır.",
     "approachStepThreeTitle": "Planlamak",
     "approachStepThreeDescription": "Süreç, kişisel ihtiyaç ve uygunluk doğrultusunda anlaşılır, ölçülü ve takip edilebilir biçimde planlanır.",
+    "approachStepFourTitle": "Takip etmek",
+    "approachStepFourDescription": "Gerektiğinde kontroller ve bakım önerileriyle süreç birlikte yeniden değerlendirilir.",
     "aboutEyebrow": "Deri ve Zührevi Hastalıklar Uzmanı",
     "aboutSpecialty": "Tıbbi dermatoloji ile dermokozmetik uygulamaları aynı uzmanlık zemini üzerinde buluşturan yaklaşım.",
     "aboutSectionLabel": "Hekim hakkında",
@@ -149,16 +158,21 @@
     "aboutDescription": "Dr. Buket Bayram, Samsun 19 Mayıs Üniversitesi Tıp Fakültesi'nden mezun olmuş; dermatoloji uzmanlık eğitimini İstanbul Göztepe SSK Eğitim ve Araştırma Hastanesi'nde tamamlamıştır. Mesleki yaklaşımında güncel dermatoloji bilgisini, açık iletişim ve dengeli uygulama planlamasıyla bir araya getirir.",
     "aboutPrinciple": "Her cildin ihtiyacı farklı; değerlendirme de kişiye özel.",
     "aboutCta": "Dr. Buket Bayram'ı tanıyın",
+    "aboutImageAlt": "Dermatoloğun muayene sırasında hastasının cildini dermatoskopla değerlendirmesi",
     "knowledgeEyebrow": "Bilgi merkezi",
     "knowledgeTitle": "Cildiniz hakkında doğru bilgiyle ilerleyin.",
     "knowledgeDescription": "Hekim tarafından gözden geçirilen içeriklerle dermatolojik sorunları ve uygulama süreçlerini daha anlaşılır biçimde keşfedin.",
     "knowledgeOneCategory": "Cilt sağlığı",
     "knowledgeOneTitle": "Benler ne zaman uzman değerlendirmesi gerektirir?",
+    "knowledgeOneImageAlt": "Dermatoloğun yüz bölgesinde cilt değerlendirmesi yapması",
     "knowledgeTwoCategory": "Leke",
     "knowledgeTwoTitle": "Cilt lekelerinde değerlendirme neden kişiye özeldir?",
+    "knowledgeTwoImageAlt": "Klinik ortamında lazerle cilt uygulaması",
     "knowledgeThreeCategory": "Saç sağlığı",
     "knowledgeThreeTitle": "Saç dökülmesinde doğru başlangıç: nedeni anlamak",
+    "knowledgeThreeImageAlt": "Saçlı derinin uzman tarafından incelenmesi",
     "knowledgeCta": "Tüm yazıları incele",
+    "knowledgeReadCta": "Yazıyı oku",
     "contactEyebrow": "Randevu ve iletişim",
     "contactTitle": "Uzman değerlendirmesi için ilk adımı atın.",
     "contactDescription": "WhatsApp birincil randevu talep kanalımızdır. Ekibimiz uygun zaman planlaması için size dönüş sağlar. Tıbbi aciller için bu kanalı kullanmayın.",
@@ -192,5 +206,11 @@
     "quickLinks": "Hızlı bağlantılar",
     "rights": "Tüm hakları saklıdır.",
     "medicalNotice": "Bu sitedeki bilgiler hekim muayenesi, tanı veya tedavinin yerine geçmez."
+  },
+  "compare": {
+    "before": "Önce",
+    "after": "Sonra",
+    "ariaLabel": "{alt} için öncesi ve sonrası karşılaştırması",
+    "valueText": "{before} yüzde {beforePercentage}, {after} yüzde {afterPercentage}"
   }
 }
