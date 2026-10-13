@@ -4,7 +4,10 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.js');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  poweredByHeader: false
+  poweredByHeader: false,
+  images: {
+    qualities: [75, 90]
+  }
 };
 
 export default withNextIntl(nextConfig);

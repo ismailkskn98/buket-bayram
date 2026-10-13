@@ -42,9 +42,16 @@ export default function ApproachAboutMotion() {
       const introCopy = root.querySelector("[data-one-element-copy]");
       const parentElement = root.querySelector("[data-one-element-source]");
       const stepElements = [...root.querySelectorAll("[data-one-element-step]")];
-      const image = root.querySelector("[data-one-element-image]");
+      const imageLayers = [...root.querySelectorAll("[data-one-element-image]")];
 
-      if (!oneElement || !introScrim || !introCopy || !parentElement || stepElements.length !== 2) {
+      if (
+        !oneElement ||
+        !introScrim ||
+        !introCopy ||
+        !parentElement ||
+        stepElements.length !== 2 ||
+        imageLayers.length !== 3
+      ) {
         return;
       }
 
@@ -67,7 +74,7 @@ export default function ApproachAboutMotion() {
             scrollTrigger: {
               trigger: parentElement,
               start: "clamp(center center)",
-              endTrigger: stepElements.at(-1.5),
+              endTrigger: stepElements.at(-1),
               end: "clamp(center center)",
               scrub: true,
               immediateRender: false,
@@ -84,6 +91,17 @@ export default function ApproachAboutMotion() {
               index ? "+=0.5" : 0,
             );
           });
+
+          const imageTransition = {
+            duration: 0.72,
+            ease: "sine.inOut",
+          };
+
+          timeline
+            .to(imageLayers[0], { opacity: 0, ...imageTransition }, 0.22)
+            .to(imageLayers[1], { opacity: 1, ...imageTransition }, 0.22)
+            .to(imageLayers[1], { opacity: 0, ...imageTransition }, 1.56)
+            .to(imageLayers[2], { opacity: 1, ...imageTransition }, 1.56);
 
           gsap.to([introScrim, introCopy], {
             autoAlpha: 0,
@@ -135,9 +153,11 @@ export default function ApproachAboutMotion() {
       createFlipOnScrollAnimation();
       window.addEventListener("resize", handleResize, { passive: true });
 
-      if (image && !image.complete) {
+      const pendingImages = imageLayers.filter((image) => !image.complete);
+
+      pendingImages.forEach((image) => {
         image.addEventListener("load", refreshLayout, { once: true });
-      }
+      });
 
       document.fonts?.ready.then(refreshLayout);
 
@@ -148,7 +168,9 @@ export default function ApproachAboutMotion() {
       cleanupMotion = () => {
         window.cancelAnimationFrame(refreshFrame);
         window.removeEventListener("resize", handleResize);
-        image?.removeEventListener("load", refreshLayout);
+        pendingImages.forEach((image) => {
+          image.removeEventListener("load", refreshLayout);
+        });
         resizeCall?.kill();
         flipContext?.revert();
         delete root.dataset.motion;

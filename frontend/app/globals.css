@@ -444,6 +444,25 @@ button:focus-visible {
   aspect-ratio: 4 / 5;
 }
 
+.oneElementImage {
+  object-fit: cover;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.oneElementImageIntro {
+  object-position: center;
+  opacity: 1;
+}
+
+.oneElementImageProcess {
+  object-position: center 38%;
+}
+
+.oneElementImageAbout {
+  object-position: center;
+}
+
 .oneElementIntroScrim {
   position: absolute;
   z-index: 4;
@@ -557,10 +576,17 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   content: '';
-  background-image: url('/images/dermatology-examination.webp');
   background-position: center;
   background-size: cover;
   transition: opacity 180ms ease;
+}
+
+.oneElementTargetPortrait::before {
+  background-image: url('/images/services/facial-consultation.webp');
+}
+
+.oneElementTargetAbout::before {
+  background-image: url('/images/dermatology-examination.webp');
 }
 
 .oneElementTargetPortrait {
@@ -677,12 +703,12 @@ button:focus-visible {
   }
 
   .oneElementIntro {
-    align-items: center;
+    align-items: start;
     padding-block: 0;
   }
 
   .oneElementIntroFrame {
-    height: clamp(36rem, 76svh, 52rem);
+    height: 100svh;
     min-height: 0;
   }
 
@@ -770,8 +796,8 @@ button:focus-visible {
     padding-block: clamp(2.25rem, 5svh, 3.5rem);
   }
 
-  .oneElementIntroFrame {
-    height: clamp(32rem, 80svh, 38rem);
+  .oneElementIntro {
+    padding-block: 0;
   }
 
   .oneElementProcessGrid {

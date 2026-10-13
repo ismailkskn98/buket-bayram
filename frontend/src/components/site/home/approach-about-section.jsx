@@ -27,12 +27,33 @@ export default async function ApproachAboutSection() {
           <div data-one-element className="oneElementVisual">
             <Image
               data-one-element-image
-              src="/images/dermatology-examination.webp"
-              alt={t('aboutImageAlt')}
+              src="/images/healthy-skin-editorial.webp"
+              alt=""
               fill
               priority={false}
+              quality={90}
               sizes="(max-width: 1023px) 92vw, 100vw"
-              className="object-cover object-center"
+              className="oneElementImage oneElementImageIntro"
+            />
+            <Image
+              data-one-element-image
+              src="/images/services/facial-consultation.webp"
+              alt=""
+              fill
+              priority={false}
+              quality={90}
+              sizes="(max-width: 1023px) 92vw, 60vw"
+              className="oneElementImage oneElementImageProcess"
+            />
+            <Image
+              data-one-element-image
+              src="/images/dermatology-examination.webp"
+              alt=""
+              fill
+              priority={false}
+              quality={90}
+              sizes="(max-width: 1023px) 92vw, 36vw"
+              className="oneElementImage oneElementImageAbout"
             />
 
             <div
