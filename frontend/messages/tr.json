@@ -159,6 +159,36 @@
     "aboutPrinciple": "Her cildin ihtiyacı farklı; değerlendirme de kişiye özel.",
     "aboutCta": "Dr. Buket Bayram'ı tanıyın",
     "aboutImageAlt": "Dermatoloğun muayene sırasında hastasının cildini dermatoskopla değerlendirmesi",
+    "faqEyebrow": "Sık sorulan sorular",
+    "faqTitle": "Karar vermeden önce merak ettikleriniz.",
+    "faqDescription": "Muayene, uygulama ve takip sürecine dair temel başlıkları burada yanıtladık. Kişisel sorularınız için uzman değerlendirmesi gerekir.",
+    "faqCta": "Tüm soruları incele",
+    "faqItems": {
+      "consultation": {
+        "question": "İlk muayenede neler değerlendirilir?",
+        "answer": "Şikâyetiniz, cilt geçmişiniz, günlük rutininiz, kullandığınız ürünler ve beklentileriniz birlikte ele alınır. Gerektiğinde ileri inceleme planlanabilir."
+      },
+      "suitability": {
+        "question": "Hangi uygulamanın bana uygun olduğuna nasıl karar verilir?",
+        "answer": "Uygun yöntem; cilt yapınız, ihtiyacınız, sağlık geçmişiniz ve beklentiniz birlikte değerlendirilerek belirlenir. Her işlem herkes için uygun olmayabilir."
+      },
+      "preparation": {
+        "question": "Uygulama öncesinde hazırlık gerekir mi?",
+        "answer": "Hazırlık uygulamaya göre değişir. Randevu öncesinde kullandığınız ilaçlar ve cilt ürünleri hakkında bilgi paylaşmanız istenir; size özel yönlendirme muayenede yapılır."
+      },
+      "recovery": {
+        "question": "Uygulama sonrası günlük yaşama ne zaman dönülür?",
+        "answer": "İyileşme süresi seçilen yönteme ve kişisel yanıta bağlıdır. Olası geçici etkiler ile bakım önerileri işlem öncesinde açıkça paylaşılır."
+      },
+      "sessions": {
+        "question": "Kaç seans gerekir?",
+        "answer": "Seans sayısı cilt ihtiyacına, uygulamanın türüne ve alınan yanıta göre değişir. Süreç ilk değerlendirmede planlanır, kontrollerde gerekirse güncellenir."
+      },
+      "appointment": {
+        "question": "Randevu nasıl alınır?",
+        "answer": "WhatsApp veya telefon üzerinden randevu talebi bırakabilirsiniz. Ekibimiz uygun gün ve saat seçenekleri için sizinle iletişime geçer."
+      }
+    },
     "knowledgeEyebrow": "Bilgi merkezi",
     "knowledgeTitle": "Cildiniz hakkında doğru bilgiyle ilerleyin.",
     "knowledgeDescription": "Hekim tarafından gözden geçirilen içeriklerle dermatolojik sorunları ve uygulama süreçlerini daha anlaşılır biçimde keşfedin.",

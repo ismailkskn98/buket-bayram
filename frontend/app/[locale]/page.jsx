@@ -2,6 +2,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 
 import ApproachAboutSection from '@/components/site/home/approach-about-section';
 import ContactSection from '@/components/site/home/contact-section';
+import FaqSection from '@/components/site/home/faq-section';
 import HeroSection from '@/components/site/home/hero-section';
 import HomeMotion from '@/components/site/home/home-motion';
 import KnowledgeSection from '@/components/site/home/knowledge-section';
@@ -25,6 +26,7 @@ export default async function HomePage({params}) {
       <ServicesSection />
       <ResultsSection />
       <ApproachAboutSection />
+      <FaqSection />
       <KnowledgeSection />
       <ContactSection whatsappUrl={whatsappUrl} />
     </div>

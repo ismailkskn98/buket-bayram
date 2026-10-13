@@ -159,6 +159,36 @@
     "aboutPrinciple": "Every skin has different needs; its evaluation should be personal too.",
     "aboutCta": "Meet Dr. Buket Bayram",
     "aboutImageAlt": "A dermatologist assessing a patient's skin with a dermatoscope during an examination",
+    "faqEyebrow": "Frequently asked questions",
+    "faqTitle": "What to know before you decide.",
+    "faqDescription": "Clear answers about consultations, treatments and follow-up. Your personal questions require an individual specialist assessment.",
+    "faqCta": "Explore all questions",
+    "faqItems": {
+      "consultation": {
+        "question": "What is considered during the first consultation?",
+        "answer": "Your concern, skin history, daily routine, current products and expectations are considered together. Further assessment may be planned when needed."
+      },
+      "suitability": {
+        "question": "How do you decide which treatment is suitable for me?",
+        "answer": "The appropriate option is determined by considering your skin, needs, medical history and expectations together. Not every treatment is suitable for everyone."
+      },
+      "preparation": {
+        "question": "Do I need to prepare before a treatment?",
+        "answer": "Preparation varies by treatment. Before your appointment, you may be asked about medications and skin products; individual guidance is provided during your consultation."
+      },
+      "recovery": {
+        "question": "When can I return to daily life after treatment?",
+        "answer": "Recovery depends on the selected method and individual response. Possible temporary effects and aftercare recommendations are explained before treatment."
+      },
+      "sessions": {
+        "question": "How many sessions will I need?",
+        "answer": "The number of sessions varies with your skin's needs, the treatment and your response. The process is planned at the first assessment and adjusted during follow-up when necessary."
+      },
+      "appointment": {
+        "question": "How can I make an appointment?",
+        "answer": "You can send an appointment request by WhatsApp or phone. Our team will contact you with suitable date and time options."
+      }
+    },
     "knowledgeEyebrow": "Knowledge centre",
     "knowledgeTitle": "Move forward with reliable knowledge about your skin.",
     "knowledgeDescription": "Explore dermatological concerns and treatment processes more clearly through physician-reviewed educational content.",
