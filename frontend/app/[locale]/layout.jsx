@@ -66,8 +66,10 @@ export default async function LocaleLayout({children, params}) {
       <body>
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
+          <div data-site-page-surface className="sitePageSurface">
+            <main>{children}</main>
+            <SiteFooter />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

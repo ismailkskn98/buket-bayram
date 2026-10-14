@@ -2,6 +2,8 @@
 @import "lenis/dist/lenis.css";
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --font-sans: var(--font-montserrat), "Segoe UI", sans-serif;
 
@@ -80,6 +82,490 @@ button:focus-visible {
 .siteHeaderLogo {
   width: clamp(10.75rem, 15vw, 13rem);
   height: auto;
+}
+
+.sitePageSurface {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  transform-origin: right top;
+}
+
+.siteMenuTrigger {
+  position: relative;
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary-foreground) 22%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary-foreground) 10%, transparent);
+  color: var(--color-primary-foreground);
+  transition:
+    background-color 350ms cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 350ms cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 350ms cubic-bezier(0.32, 0.72, 0, 1),
+    transform 500ms cubic-bezier(0.32, 0.72, 0, 1),
+    visibility 0s linear 500ms;
+}
+
+.siteMenuTrigger:hover {
+  border-color: color-mix(in srgb, var(--color-primary-foreground) 42%, transparent);
+  background: color-mix(in srgb, var(--color-primary-foreground) 18%, transparent);
+}
+
+.siteMenuTriggerLine {
+  position: absolute;
+  width: 1rem;
+  height: 1px;
+  background: currentColor;
+  transition: transform 500ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.siteMenuTriggerLineTop {
+  transform: translateY(-3px);
+}
+
+.siteMenuTriggerLineBottom {
+  transform: translateY(3px);
+}
+
+.siteMenuTrigger[aria-expanded="true"] .siteMenuTriggerLineTop {
+  transform: rotate(45deg);
+}
+
+.siteMenuTrigger[aria-expanded="true"] .siteMenuTriggerLineBottom {
+  transform: rotate(-45deg);
+}
+
+.siteMenuFloatingTrigger {
+  position: fixed;
+  z-index: 72;
+  top: clamp(1rem, 2vw, 1.5rem);
+  right: clamp(1rem, 2vw, 2rem);
+  width: 3rem;
+  height: 3rem;
+  border-color: color-mix(in srgb, var(--color-primary-foreground) 35%, transparent);
+  background: var(--color-primary);
+  box-shadow: 0 0.75rem 2.5rem color-mix(in srgb, var(--color-primary) 22%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.75rem) scale(0.9);
+  visibility: hidden;
+}
+
+.siteMenuFloatingTrigger:is(:hover, :focus-visible) {
+  border-color: color-mix(in srgb, var(--color-primary-foreground) 56%, transparent);
+  background: var(--color-primary-hover);
+  color: var(--color-primary-foreground);
+  box-shadow: 0 1rem 3rem color-mix(in srgb, var(--color-primary) 32%, transparent);
+}
+
+.siteMenuHeaderTrigger,
+.siteMenuOverlayClose {
+  display: flex;
+}
+
+.siteMenuFloatingTrigger {
+  display: none;
+}
+
+.siteMenuFloatingTrigger.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.siteScrollTopButton {
+  position: fixed;
+  z-index: 58;
+  right: clamp(1rem, 2vw, 2rem);
+  bottom: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 24%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-background) 88%, transparent);
+  box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--color-primary) 12%, transparent);
+  color: var(--color-primary);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.75rem) scale(0.9);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    opacity 350ms cubic-bezier(0.32, 0.72, 0, 1),
+    transform 500ms cubic-bezier(0.32, 0.72, 0, 1),
+    visibility 0s linear 500ms;
+  visibility: hidden;
+}
+
+.siteScrollTopButton.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.siteScrollTopButton:is(:hover, :focus-visible) {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.siteScrollTopButton svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.siteMenuOverlay {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-primary) 78%, #160f0f);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.siteMenuContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  transform: translate(-5.2vw, -9.3vh) scale(1.5) rotate(-15deg);
+  transform-origin: left bottom;
+  will-change: opacity, transform;
+}
+
+.siteMenuInner {
+  width: 92%;
+  max-width: 90rem;
+  height: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(1rem, 2.5vh, 2rem);
+  padding-block: clamp(1.125rem, 3.5vh, 2.5rem);
+  color: var(--color-primary-foreground);
+}
+
+.siteMenuTopbar,
+.siteMenuFooter {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.siteMenuLogo {
+  width: clamp(10rem, 14vw, 12rem);
+  height: auto;
+}
+
+.siteMenuOverlayClose {
+  background: color-mix(in srgb, var(--color-primary-foreground) 12%, transparent);
+}
+
+.siteMenuBody {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(0, 3fr) minmax(30rem, 2fr);
+  gap: clamp(2rem, 4vw, 5rem);
+}
+
+.siteMenuPreview {
+  display: flex;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.siteMenuPreviewFrame {
+  position: relative;
+  width: min(45%, 23rem);
+  height: min(100%, 35rem);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-primary-foreground) 8%, transparent);
+}
+
+.siteMenuPreviewLayer {
+  position: absolute;
+  inset: 0;
+  animation: site-menu-preview-in 750ms cubic-bezier(0.32, 0.72, 0, 1) both;
+  will-change: opacity, transform;
+}
+
+@keyframes site-menu-preview-in {
+  from {
+    opacity: 0;
+    transform: scale(1.25) rotate(10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+.siteMenuNavigation {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-block: clamp(0.25rem, 2vh, 1.5rem);
+  padding-right: 0.5rem;
+  scrollbar-color: color-mix(in srgb, var(--color-primary-foreground) 32%, transparent) transparent;
+  scrollbar-width: thin;
+}
+
+.siteMenuPrimaryLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.siteMenuRevealMask {
+  overflow: hidden;
+  padding-bottom: 0.25rem;
+}
+
+.siteMenuPrimaryLink,
+.siteMenuGroupTitle,
+.siteMenuServiceLink,
+.siteMenuFooterLink,
+.siteMenuFooterActions {
+  display: inline-block;
+  opacity: 0.25;
+  transform: translateY(120%);
+  will-change: opacity, transform;
+}
+
+.siteMenuPrimaryLink {
+  position: relative;
+  font-size: clamp(2.2rem, 3.15vw, 3.5rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.siteMenuPrimaryLink::after,
+.siteMenuServiceLink::after,
+.siteMenuFooterLink::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.12rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.siteMenuServices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.4vw, 1.5rem);
+  margin-top: clamp(1.5rem, 4vh, 2.75rem);
+}
+
+.siteMenuGroupTitle {
+  margin-bottom: 0.6rem;
+  color: color-mix(in srgb, var(--color-primary-foreground) 56%, transparent);
+  font-size: 0.57rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.siteMenuServiceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+
+.siteMenuServiceLink,
+.siteMenuFooterLink {
+  position: relative;
+  width: fit-content;
+  color: color-mix(in srgb, var(--color-primary-foreground) 68%, transparent);
+  font-size: clamp(0.7rem, 0.72vw, 0.82rem);
+  font-weight: 400;
+  line-height: 1.35;
+  transition: color 300ms ease;
+}
+
+.siteMenuFooter {
+  padding-top: 0.75rem;
+}
+
+.siteMenuFooterActions {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.siteMenuFooterActions .siteMenuFooterLink {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .siteMenuPrimaryLink:hover::after,
+  .siteMenuServiceLink:hover::after,
+  .siteMenuFooterLink:hover::after,
+  .siteMenuPrimaryLink:focus-visible::after,
+  .siteMenuServiceLink:focus-visible::after,
+  .siteMenuFooterLink:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .siteMenuServiceLink:hover,
+  .siteMenuFooterLink:hover {
+    color: var(--color-primary-foreground);
+  }
+}
+
+@media (min-width: 1280px) and (max-height: 760px) {
+  .siteMenuInner {
+    gap: 0.75rem;
+    padding-block: 1rem;
+  }
+
+  .siteMenuLogo {
+    width: 10rem;
+  }
+
+  .siteMenuPrimaryLink {
+    font-size: clamp(2rem, 2.7vw, 2.8rem);
+  }
+
+  .siteMenuServices {
+    margin-top: 1rem;
+  }
+
+  .siteMenuServiceList {
+    gap: 0.24rem;
+  }
+
+  .siteMenuPreviewFrame {
+    height: min(100%, 28rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .siteMenuHeaderTrigger,
+  .siteMenuOverlayClose {
+    display: none;
+  }
+
+  .siteMenuFloatingTrigger {
+    display: flex;
+  }
+}
+
+@media (max-width: 1279px) {
+  .siteMenuOverlay {
+    overflow-y: auto;
+  }
+
+  .siteMenuContent {
+    min-height: 100%;
+    height: auto;
+    transform: translate(-3rem, -3rem) scale(1.2) rotate(-8deg);
+  }
+
+  .siteMenuInner {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .siteMenuBody {
+    display: block;
+  }
+
+  .siteMenuPreview {
+    display: none;
+  }
+
+  .siteMenuNavigation {
+    overflow: visible;
+    padding-block: clamp(1rem, 4vh, 2.5rem);
+  }
+
+  .siteMenuPrimaryLink {
+    font-size: clamp(2.25rem, 8vw, 4.75rem);
+  }
+
+  .siteMenuServices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .siteMenuInner {
+    width: min(90%, 90rem);
+    gap: 0.5rem;
+    padding-block: 1rem;
+  }
+
+  .siteMenuLogo {
+    width: clamp(8.75rem, 44vw, 10.5rem);
+  }
+
+  .siteMenuPrimaryLink {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .siteMenuServices {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .siteMenuServiceLink {
+    font-size: 0.72rem;
+  }
+
+  .siteMenuFooter {
+    align-items: flex-end;
+  }
+
+  .siteMenuFooterActions {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  .siteScrollTopButton {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 379px) {
+  .siteMenuServices {
+    grid-template-columns: 1fr;
+  }
 }
 
 .megaMenuBackdrop,
@@ -396,12 +882,12 @@ button:focus-visible {
 
 @media (min-width: 768px) {
   .servicesRailScrollArea[data-motion="ready"] {
-    height: calc(100svh - var(--services-header-offset, 4.25rem) + var(--services-scroll-distance, 100vh));
+    height: calc(100svh - var(--services-header-offset, 0px) + var(--services-scroll-distance, 100vh));
   }
 
   .servicesRailStage {
     display: flex;
-    height: calc(100svh - 4.25rem);
+    height: 100svh;
     flex-direction: column;
     justify-content: center;
     padding-block: clamp(1.5rem, 4vh, 3rem);
@@ -409,8 +895,8 @@ button:focus-visible {
 
   .servicesRailScrollArea[data-motion="ready"] .servicesRailStage {
     position: sticky;
-    top: var(--services-header-offset, 4.25rem);
-    height: calc(100svh - var(--services-header-offset, 4.25rem));
+    top: var(--services-header-offset, 0px);
+    height: calc(100svh - var(--services-header-offset, 0px));
   }
 
   .servicesRailStage .servicesRailViewport {
@@ -446,6 +932,10 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
 
   .megaMenuImage {
+    animation: none;
+  }
+
+  .siteMenuPreviewLayer {
     animation: none;
   }
 
@@ -923,7 +1413,6 @@ button:focus-visible {
     transition: none;
   }
 }
-
 
 /* ══ Image compare ════════════════════════════════════════ */
 .cmp {
@@ -1675,7 +2164,7 @@ button:focus-visible {
      inner buttons already sit on rgba(var(--ink-rgb), 0.05)
      with no border, which is what flat wants anyway, so they
      need nothing.
-  
+
      The frost is switched off at the element rather than through
      a token. A var() holding a url() filter cannot be validated
      at parse time, so the browser would treat it as invalid at
@@ -1687,11 +2176,11 @@ button:focus-visible {
      one unconditionally, and a grey line round everything makes
      a wall of components look like a wall of boxes rather than
      a wall of things.
-  
+
      The line is not load-bearing. A flat pane is a fill against
      a different fill and reads on its own; the ring was there
      to sharpen an edge that was already there.
-  
+
      Placed ABOVE the glass rules on purpose. Glass draws its
      own lit rim, and that rim is the material rather than a
      stroke — it is what gives a pane thickness. So glass wins
@@ -1718,19 +2207,19 @@ button:focus-visible {
      is a rectangle with a border rather than a pane with
      thickness: real edges are lit unevenly, and evenly lit ones
      read as ink.
-  
+
      So the ring becomes a gradient — bright at the corner
      facing the light, almost nothing along the sides that run
      edge-on to it, and a second weaker catch at the far corner
      where the light has come through the pane and out again.
-  
+
      Painting a gradient in a border needs the border box filled
      and the padding box punched out of it, which is what the
      two masks do: one covers the whole element, one covers only
      the inside, and compositing them apart leaves the rim. It
      is the only way to get a gradient into a border without a
      second element to draw it on.
-  
+
      Only under glass. Flat keeps its honest hairline, which is
      what a solid pane should have. */
 [data-surface="glass"] .lab::before,
@@ -1759,14 +2248,14 @@ button:focus-visible {
 /* ── thickness ───────────────────────────────────────────────
      Three marks, and between them they are the difference
      between a pane and a wash.
-  
+
      The lit line along the top is where light enters the edge of
      a real sheet. The ring is the sheet's own thickness seen
      from straight on. The shadow underneath says the pane is
      ABOVE the page rather than painted onto it — which is the
      one thing a backdrop-filter alone can never say, because a
      filter has no depth.
-  
+
      All three ride on --glass and are gone at zero, where the
      fallbacks take over and the surface is flat. */
 [data-surface="glass"] .lab,

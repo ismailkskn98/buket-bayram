@@ -94,9 +94,7 @@ export default function ServicesRail({
 
           const getDistance = () =>
             Math.max(0, track.scrollWidth - viewport.clientWidth);
-          const getHeaderOffset = () =>
-            document.querySelector('header.sticky')?.getBoundingClientRect()
-              .height || 68;
+          const getHeaderOffset = () => 0;
           const getScrollDistance = () =>
             Math.max(getDistance() * 0.62, window.innerWidth * 0.85);
           const updateStickyGeometry = () => {

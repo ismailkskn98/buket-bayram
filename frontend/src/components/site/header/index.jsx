@@ -5,7 +5,7 @@ import { serviceCatalog } from "@/config/services";
 import { siteConfig } from "@/config/site";
 import { Link } from "@/i18n/navigation";
 
-import MobileNavigation from "./mobile-navigation";
+import NavigationMenu from "./navigation-menu";
 import ServicesMegaMenu from "./services-mega-menu";
 
 const navigationItems = [
@@ -21,7 +21,11 @@ export default async function SiteHeader() {
     href: navigationItem.href,
     label: t(navigationItem.label),
   }));
-  const mobileNavigationItems = [{ href: "/treatments", label: t("treatments") }, ...translatedNavigationItems];
+  const menuNavigationItems = [
+    { href: "/treatments", label: t("treatments") },
+    ...translatedNavigationItems,
+    { href: "/contact", label: t("contact") },
+  ];
   const translatedServices = serviceCatalog.map((service, index) => ({
     ...service,
     description: tHome(`serviceItems.${service.key}.description`),
@@ -30,7 +34,7 @@ export default async function SiteHeader() {
   }));
 
   return (
-    <header className="sticky top-0 z-40 border-b border-primary-foreground/15 bg-primary text-primary-foreground">
+    <header className="relative z-[60] border-b border-primary-foreground/15 bg-primary text-primary-foreground">
       <div className="gridContainer">
         <div className="grid min-h-[4.25rem] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)]">
           <div className="min-w-0">
@@ -88,17 +92,26 @@ export default async function SiteHeader() {
             >
               {t("whatsappShort")}
             </a>
-            <MobileNavigation
+            <NavigationMenu
               currentLocale={locale}
-              items={mobileNavigationItems}
+              groups={[
+                { key: "face", label: t("megaFace") },
+                { key: "skin", label: t("megaSkin") },
+                { key: "bodyHair", label: t("megaBodyHair") },
+              ]}
+              items={menuNavigationItems}
               labels={{
+                backToTop: t("backToTop"),
                 close: t("closeMenu"),
+                contact: t("contact"),
                 englishShort: t("englishShort"),
                 language: t("language"),
                 menu: t("openMenu"),
+                navigation: t("primaryNavigation"),
                 turkishShort: t("turkishShort"),
                 whatsapp: t("whatsappShort"),
               }}
+              services={translatedServices}
               whatsappUrl={whatsappUrl}
             />
           </div>
