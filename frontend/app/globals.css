@@ -1,4 +1,5 @@
 @import "@fontsource-variable/manrope";
+@import "@fontsource-variable/newsreader";
 @import "lenis/dist/lenis.css";
 @import "tailwindcss";
 
@@ -178,7 +179,7 @@ button:focus-visible {
 
 .homeHeroTitleLineStart {
   align-self: flex-start;
-  transform: translateX(-0.035em);
+
 }
 
 .homeHeroTitleLineEnd {
@@ -205,8 +206,62 @@ button:focus-visible {
   font-size: clamp(3.5rem, 9.55cqi, 8.5rem);
 }
 
-.footerWordmark {
-  font-size: clamp(5rem, 17vw, 15rem);
+.siteFooter {
+  --footer-press-shade: color-mix(in srgb, var(--color-primary) 32%, transparent);
+  --footer-press-light: rgb(255 255 255 / 0.72);
+  --footer-press-floor: color-mix(in srgb, var(--color-primary) 16%, transparent);
+  --footer-press-lip: rgb(255 255 255 / 0.4);
+}
+
+.footerLink {
+  text-decoration-color: transparent;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  transition:
+    color 240ms ease,
+    text-decoration-color 240ms ease;
+}
+
+.footerLink:is(:hover, :focus-visible) {
+  color: var(--color-primary);
+  text-decoration-color: color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+.footerPressedWordmark {
+  align-self: end;
+  margin-top: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.footerPressedMark {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: color-mix(in srgb, var(--color-primary) 7%, var(--color-primary-soft));
+  transform: translateY(0.035em);
+}
+
+.footerPressedText {
+  font-family: "Newsreader Variable", Georgia, serif;
+  font-size: 180px;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+
+.footerPressShade {
+  flood-color: var(--footer-press-shade);
+}
+
+.footerPressLight {
+  flood-color: var(--footer-press-light);
+}
+
+.footerPressFloor {
+  flood-color: var(--footer-press-floor);
+}
+
+.footerPressLip {
+  flood-color: var(--footer-press-lip);
 }
 
 @media (max-width: 639px) {
@@ -423,11 +478,9 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
   background-color: var(--color-muted);
-  background-image: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-primary) 8%, transparent),
-    transparent
-  );
+  background-image: linear-gradient(135deg,
+      color-mix(in srgb, var(--color-primary) 8%, transparent),
+      transparent);
 }
 
 .oneElementTarget {
@@ -468,12 +521,10 @@ button:focus-visible {
   z-index: 4;
   inset: 0;
   background:
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       rgb(25 13 13 / 0.66) 0%,
       rgb(25 13 13 / 0.28) 48%,
-      transparent 78%
-    ),
+      transparent 78%),
     linear-gradient(0deg, rgb(25 13 13 / 0.34), transparent 48%);
   pointer-events: none;
 }
@@ -488,7 +539,7 @@ button:focus-visible {
   color: #fffaf6;
 }
 
-.oneElementIntroCopy > p:first-child,
+.oneElementIntroCopy>p:first-child,
 .oneElementProcessHeader {
   font-size: 0.7rem;
   line-height: 1.2;
@@ -506,7 +557,7 @@ button:focus-visible {
   text-wrap: balance;
 }
 
-.oneElementIntroCopy > p:last-child {
+.oneElementIntroCopy>p:last-child {
   max-width: 41rem;
   margin-top: clamp(1.25rem, 3vw, 2rem);
   color: rgb(255 250 246 / 0.82);
@@ -545,7 +596,7 @@ button:focus-visible {
   border-top: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
 }
 
-.oneElementProcessStep > span {
+.oneElementProcessStep>span {
   color: color-mix(in srgb, var(--color-primary) 62%, transparent);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -636,7 +687,7 @@ button:focus-visible {
   letter-spacing: -0.045em;
 }
 
-.oneElementAboutCopy > p:not(.oneElementAboutEyebrow) {
+.oneElementAboutCopy>p:not(.oneElementAboutEyebrow) {
   max-width: 42rem;
   margin-top: 1.75rem;
   color: var(--color-muted-foreground);
@@ -828,7 +879,7 @@ button:focus-visible {
     font-size: clamp(1.8rem, 2.7vw, 2.65rem);
   }
 
-  .oneElementAboutCopy > p:not(.oneElementAboutEyebrow) {
+  .oneElementAboutCopy>p:not(.oneElementAboutEyebrow) {
     margin-top: 1rem;
     font-size: 0.875rem;
     line-height: 1.65;
@@ -841,6 +892,7 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .oneElementTarget::before,
   .oneElementAboutCopy a {
     transition: none;
