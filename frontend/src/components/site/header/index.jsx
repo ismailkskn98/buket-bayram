@@ -1,39 +1,32 @@
-import Image from 'next/image';
-import {getLocale, getTranslations} from 'next-intl/server';
+import Image from "next/image";
+import { getLocale, getTranslations } from "next-intl/server";
 
-import {serviceCatalog} from '@/config/services';
-import {siteConfig} from '@/config/site';
-import {Link} from '@/i18n/navigation';
+import { serviceCatalog } from "@/config/services";
+import { siteConfig } from "@/config/site";
+import { Link } from "@/i18n/navigation";
 
-import MobileNavigation from './mobile-navigation';
-import ServicesMegaMenu from './services-mega-menu';
+import MobileNavigation from "./mobile-navigation";
+import ServicesMegaMenu from "./services-mega-menu";
 
 const navigationItems = [
-  {href: '/about', label: 'about'},
-  {href: '/blog', label: 'blog'},
-  {href: '/faq', label: 'faq'}
+  { href: "/about", label: "about" },
+  { href: "/blog", label: "blog" },
+  { href: "/faq", label: "faq" },
 ];
 
 export default async function SiteHeader() {
-  const [locale, t, tHome] = await Promise.all([
-    getLocale(),
-    getTranslations('Navigation'),
-    getTranslations('Home')
-  ]);
-  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(t('whatsappMessage'))}`;
+  const [locale, t, tHome] = await Promise.all([getLocale(), getTranslations("Navigation"), getTranslations("Home")]);
+  const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(t("whatsappMessage"))}`;
   const translatedNavigationItems = navigationItems.map((navigationItem) => ({
     href: navigationItem.href,
-    label: t(navigationItem.label)
+    label: t(navigationItem.label),
   }));
-  const mobileNavigationItems = [
-    {href: '/treatments', label: t('treatments')},
-    ...translatedNavigationItems
-  ];
+  const mobileNavigationItems = [{ href: "/treatments", label: t("treatments") }, ...translatedNavigationItems];
   const translatedServices = serviceCatalog.map((service, index) => ({
     ...service,
     description: tHome(`serviceItems.${service.key}.description`),
     index: index + 1,
-    title: tHome(`serviceItems.${service.key}.title`)
+    title: tHome(`serviceItems.${service.key}.title`),
   }));
 
   return (
@@ -42,21 +35,21 @@ export default async function SiteHeader() {
         <div className="grid min-h-[4.25rem] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)]">
           <div className="min-w-0">
             <Link href="/" aria-label={`BB Clinic - ${t("home")}`} className="inline-flex items-center transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:opacity-75">
-              <Image src="/images/logo/logo-bordo-icon.webp" alt="" width={1024} height={1536} sizes="(max-width: 639px) 2rem, 2.3rem" className="mt-1 h-auto w-[clamp(2rem,3vw,2.3rem)]" />
+              <Image src="/images/logo/logo-yatay.webp" alt="" width={1024} height={1536} unoptimized className="mt-1 h-auto w-70" />
             </Link>
           </div>
-          <nav aria-label={t('primaryNavigation')} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium xl:flex">
+          <nav aria-label={t("primaryNavigation")} className="hidden items-center whitespace-nowrap text-[0.68rem] font-medium xl:flex">
             <ServicesMegaMenu
               groups={[
-                {key: 'face', label: t('megaFace')},
-                {key: 'skin', label: t('megaSkin')},
-                {key: 'bodyHair', label: t('megaBodyHair')}
+                { key: "face", label: t("megaFace") },
+                { key: "skin", label: t("megaSkin") },
+                { key: "bodyHair", label: t("megaBodyHair") },
               ]}
               labels={{
-                close: t('closeServices'),
-                explore: t('exploreService'),
-                trigger: t('treatments'),
-                viewAll: t('viewAllServices')
+                close: t("closeServices"),
+                explore: t("exploreService"),
+                trigger: t("treatments"),
+                viewAll: t("viewAllServices"),
               }}
               services={translatedServices}
             />
