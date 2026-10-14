@@ -1,3 +1,5 @@
+import {montserrat} from '@/fonts';
+
 import '../../globals.css';
 
 export const metadata = {
@@ -11,7 +13,7 @@ export const metadata = {
 
 export default function AdminLayout({children}) {
   return (
-    <html lang="tr">
+    <html lang="tr" className={montserrat.variable}>
       <body className="bg-white">{children}</body>
     </html>
   );

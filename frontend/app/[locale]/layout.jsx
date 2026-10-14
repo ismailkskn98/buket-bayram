@@ -11,6 +11,7 @@ import SiteFooter from '@/components/site/footer';
 import SiteHeader from '@/components/site/header';
 import {routing} from '@/i18n/routing';
 import {siteConfig} from '@/config/site';
+import {montserrat} from '@/fonts';
 
 import '../globals.css';
 
@@ -61,7 +62,7 @@ export default async function LocaleLayout({children, params}) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={montserrat.variable}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
@@ -26,13 +25,41 @@ export default async function SiteFooter() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}`;
 
   return (
-    <footer id="site-footer" className="siteFooter gridContainer overflow-hidden border-t border-primary/15 bg-primary-soft pt-[clamp(3.5rem,7vw,6.5rem)] text-foreground">
+    <footer id="site-footer" className="siteFooter gridContainer overflow-hidden border-t border-primary/15 bg-[#EFEFEF] pt-[clamp(3.5rem,7vw,6.5rem)] text-foreground">
       <div className="grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
         <div className="sm:col-span-2 lg:col-span-4">
-          <Link href="/" aria-label={navigation("home")} className="inline-flex">
-            <Image src="/images/logo/logo-bordo-icon.webp" alt="" width={805} height={1209} sizes="3rem" className="h-auto w-11 sm:w-12" />
-          </Link>
-          <p className="mt-6 max-w-sm text-[clamp(1rem,1.35vw,1.2rem)] leading-[1.65] tracking-[-0.018em] text-foreground/75">{footer("brandStatement")}</p>
+          <p className="text-[0.68rem] font-medium uppercase tracking-[0.16em] text-primary/60">{footer("specialty")}</p>
+          <div className="mt-5 max-w-sm space-y-3 text-sm leading-6 tracking-[-0.01em] text-foreground/68">
+            <p>{footer("brandStatement")}</p>
+            <p>{footer("brandDescription")}</p>
+          </div>
+
+          <div className="mt-7 flex items-center gap-2.5">
+            <a
+              href={`https://www.instagram.com/${siteConfig.instagram}/`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-primary/20 text-primary/75 transition-[color,background-color,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[17px] fill-none stroke-current" strokeWidth="1.6">
+                <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.35" cy="6.75" r="1" className="fill-current stroke-none" />
+              </svg>
+            </a>
+            <a
+              href={`https://www.facebook.com/${siteConfig.facebook}/`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-primary/20 text-primary/75 transition-[color,background-color,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[17px] fill-current">
+                <path d="M13.6 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.4V13h2.8v8h3.4Z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <nav aria-label={footer("servicesTitle")} className="lg:col-span-2 lg:col-start-6">
@@ -70,13 +97,6 @@ export default async function SiteFooter() {
               </a>
             </div>
           </address>
-
-          <div className="mt-8">
-            <p className="text-xs text-primary/60">{footer("socialTitle")}</p>
-            <a href={`https://www.instagram.com/${siteConfig.instagram}/`} target="_blank" rel="noreferrer" className="footerLink mt-4 inline-flex text-sm text-foreground/70">
-              Instagram
-            </a>
-          </div>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 export default function PressedWordmark() {
   return (
     <div className="footerPressedWordmark" aria-hidden="true">
-      <svg viewBox="0 0 1000 190" preserveAspectRatio="xMidYMid meet" className="footerPressedMark">
+      <svg viewBox="0 0 1000 190" preserveAspectRatio="xMidYMid meet" className="footerPressedMark pointer-events-none select-none">
         <defs>
           <filter id="bbclinic-deboss" x="-2%" y="-8%" width="104%" height="116%" colorInterpolationFilters="sRGB">
             <feOffset in="SourceAlpha" dy="0.95" result="down" />
@@ -37,7 +37,7 @@ export default function PressedWordmark() {
           </filter>
         </defs>
 
-        <text x="494" y="158" textAnchor="middle" textLength="1008" lengthAdjust="spacingAndGlyphs" className="footerPressedText" filter="url(#bbclinic-deboss)" fill="currentColor">
+        <text x="494" y="158" textAnchor="middle" textLength="1008" lengthAdjust="spacingAndGlyphs" className="footerPressedText" filter="url(#bbclinic-deboss)" fill="#E2E2E2">
           BBCLINIC
         </text>
       </svg>

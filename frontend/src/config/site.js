@@ -6,6 +6,7 @@ export const siteConfig = {
   whatsapp: '905306420443',
   whatsappLabel: '+90 530 642 04 43',
   instagram: 'dr.buket_bayram',
+  facebook: 'drbuketbayram',
   addressShort: 'Halk Cad. No:50, Üsküdar / İstanbul',
   address:
     'Aziz Mahmut Hüdai Mahallesi, Halk Caddesi No:50 K:4 D:9 34762 Üsküdar/ İstanbul'

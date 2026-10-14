@@ -1,10 +1,9 @@
-@import "@fontsource-variable/manrope";
 @import "@fontsource-variable/newsreader";
 @import "lenis/dist/lenis.css";
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Manrope Variable", "Segoe UI", sans-serif;
+  --font-sans: var(--font-montserrat), "Segoe UI", sans-serif;
 
   --color-background: #f5f3ef;
   --color-foreground: #4a4541;
@@ -170,8 +169,6 @@ button:focus-visible {
 
 .homeHeroTitleLine {
   display: block;
-  font-size: clamp(2.625rem, 13.15vw, 12.875rem);
-  font-size: clamp(2.625rem, 14.3cqi, 12.875rem);
   line-height: 0.74;
   letter-spacing: -0.025em;
   white-space: nowrap;
@@ -179,13 +176,15 @@ button:focus-visible {
 
 .homeHeroTitleLineStart {
   align-self: flex-start;
-
+  font-size: clamp(2.5rem, 13.15vw, 12.875rem);
+  font-size: clamp(2.5rem, 14.3cqi, 12.875rem);
 }
 
 .homeHeroTitleLineEnd {
   align-self: flex-end;
+  font-size: clamp(2.25rem, 12.4vw, 11.125rem);
+  font-size: clamp(2.25rem, 13.48cqi, 11.125rem);
   margin-top: 0.1em;
-  transform: translateX(-0.05em);
 }
 
 .homeHeroMedia {
@@ -266,7 +265,6 @@ button:focus-visible {
 
 @media (max-width: 639px) {
   .homeHeroTitleLine {
-    font-size: clamp(2.2rem, 12.2cqi, 3.75rem);
     line-height: 0.8;
   }
 
