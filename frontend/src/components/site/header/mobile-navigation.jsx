@@ -53,7 +53,7 @@ export default function MobileNavigation({
         aria-expanded={isOpen}
         aria-label={isOpen ? labels.close : labels.menu}
         onClick={() => setIsOpen((currentValue) => !currentValue)}
-        className="relative z-40 flex size-10 items-center justify-center rounded-full bg-primary-soft text-primary transition-[background-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-primary-soft-hover active:scale-95"
+        className="relative z-40 flex size-10 items-center justify-center rounded-full border border-primary-foreground/15 bg-primary-foreground/10 text-primary-foreground transition-[background-color,border-color,transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-primary-foreground/30 hover:bg-primary-foreground/20 active:scale-95"
       >
         <span
           className={`absolute h-px w-4 bg-current transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${

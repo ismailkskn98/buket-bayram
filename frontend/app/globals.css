@@ -77,6 +77,33 @@ button:focus-visible {
   background: color-mix(in srgb, var(--color-primary) 24%, transparent);
 }
 
+.siteHeaderLogo {
+  width: clamp(10.75rem, 15vw, 13rem);
+  height: auto;
+}
+
+.megaMenuBackdrop,
+.megaMenuPanel {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 280ms cubic-bezier(0.32, 0.72, 0, 1),
+    visibility 0s linear 280ms;
+}
+
+.megaMenuBackdrop[data-open="true"],
+.megaMenuPanel[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.megaMenuPanel {
+  scrollbar-gutter: stable;
+}
+
 .megaMenuLayout {
   display: grid;
   grid-template-columns:

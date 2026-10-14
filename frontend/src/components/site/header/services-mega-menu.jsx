@@ -106,7 +106,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
         }}
         onFocus={openMenu}
         onKeyDown={handleTriggerKeyDown}
-        className="group flex items-center gap-1.5 py-2 text-muted-foreground transition-colors duration-300 hover:text-primary"
+        className="group flex items-center gap-1.5 py-2 text-primary-foreground/75 transition-colors duration-300 hover:text-primary-foreground"
       >
         <span>{labels.trigger}</span>
         <span
@@ -123,25 +123,19 @@ export default function ServicesMegaMenu({groups, labels, services}) {
         type="button"
         tabIndex={-1}
         aria-label={labels.close}
+        data-open={isOpen}
         onClick={closeMenu}
         onMouseEnter={scheduleMenuClose}
-        className={`fixed inset-x-0 bottom-0 top-[4.25rem] z-10 bg-foreground/10 transition-[opacity,visibility] duration-300 ${
-          isOpen
-            ? 'visible opacity-100'
-            : 'invisible pointer-events-none opacity-0'
-        }`}
+        className="megaMenuBackdrop fixed inset-x-0 bottom-0 top-[4.25rem] z-10 bg-foreground/10"
       />
 
       <div
         id="services-mega-menu"
         aria-hidden={!isOpen}
+        data-open={isOpen}
         onMouseEnter={cancelScheduledClose}
         onMouseLeave={scheduleMenuClose}
-        className={`fixed inset-x-0 top-[4.25rem] z-20 max-h-[calc(100dvh-4.25rem)] origin-top overflow-y-auto overscroll-contain whitespace-normal border-b border-primary/20 bg-background shadow-[0_1.5rem_4rem_color-mix(in_srgb,var(--color-primary)_10%,transparent)] transition-[opacity,transform,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-          isOpen
-            ? 'visible translate-y-0 opacity-100'
-            : 'invisible pointer-events-none -translate-y-2 opacity-0'
-        }`}
+        className="megaMenuPanel fixed inset-x-0 top-[4.25rem] z-20 max-h-[calc(100dvh-4.25rem)] overflow-y-auto overscroll-contain whitespace-normal border-b border-primary/20 bg-background shadow-[0_1.5rem_4rem_color-mix(in_srgb,var(--color-primary)_10%,transparent)]"
       >
         <div className="gridContainer">
           <div className="megaMenuLayout">
