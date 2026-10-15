@@ -291,6 +291,13 @@
     "notFoundDescription": "Aradığınız sayfa taşınmış veya artık erişilebilir olmayabilir.",
     "backHome": "Ana sayfaya dön"
   },
+  "UnderConstruction": {
+    "status": "Yapım aşamasında",
+    "title": "Çok yakında",
+    "description": "Bu alan demo sunumu için henüz yayında değil. Bu sırada ana sayfadan kliniğimizi ve yaklaşımımızı inceleyebilirsiniz.",
+    "homeCta": "Ana sayfaya dön",
+    "progress": "İçerik hazırlanıyor"
+  },
   "Footer": {
     "specialty": "Deri ve Zührevi Hastalıklar Uzmanı",
     "brandStatement": "Bilimsel dermatoloji bilgisini kişiye özel değerlendirme ve ölçülü uygulama planlamasıyla bir araya getiriyoruz.",

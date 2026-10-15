@@ -291,6 +291,13 @@
     "notFoundDescription": "The page you are looking for may have moved or may no longer be available.",
     "backHome": "Back to home"
   },
+  "UnderConstruction": {
+    "status": "Work in progress",
+    "title": "Coming soon",
+    "description": "This area is not yet available in the demo. In the meantime, return to the homepage to explore our clinic and approach.",
+    "homeCta": "Back to homepage",
+    "progress": "Content in progress"
+  },
   "Footer": {
     "specialty": "Dermatologist",
     "brandStatement": "We bring medical dermatology together with individual assessment and measured treatment planning.",
