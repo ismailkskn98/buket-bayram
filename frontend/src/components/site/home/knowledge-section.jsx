@@ -28,7 +28,7 @@ export default async function KnowledgeSection() {
   const t = await getTranslations('Home');
 
   return (
-    <section aria-labelledby="knowledge-title" className="gridContainer border-t border-primary/8 py-[clamp(5rem,10vw,9rem)]">
+    <section aria-labelledby="knowledge-title" className="gridContainer homeSectionSpace border-t border-primary/8">
       <div>
         <header data-reveal className="mx-auto max-w-3xl text-center">
           <h2 id="knowledge-title" className="homeSectionTitle text-primary">
@@ -45,7 +45,7 @@ export default async function KnowledgeSection() {
           </Link>
         </header>
 
-        <div className="mt-[clamp(3.5rem,7vw,6rem)] grid gap-10 lg:grid-cols-12 lg:gap-8">
+        <div className="mt-[clamp(3rem,6svh,5rem)] grid gap-10 lg:grid-cols-12 lg:gap-8">
           <article data-reveal className="lg:col-span-7">
             <Link href="/blog" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden bg-muted sm:aspect-[16/10]">

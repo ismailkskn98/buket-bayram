@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: calc(100svh - 4.25rem);
+  min-height: min(calc(100svh - 4.25rem), 66rem);
   overflow: clip;
   background: var(--color-background);
 }
@@ -23,7 +23,7 @@
   color: color-mix(in srgb, var(--color-primary) 6.5%, transparent);
   font-size: clamp(10rem, 32vw, 30rem);
   font-weight: 500;
-  letter-spacing: -0.09em;
+  letter-spacing: 0.04em;
   line-height: 0.7;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -47,7 +47,7 @@
   text-wrap: balance;
 }
 
-.title > span {
+.title>span {
   display: block;
 }
 
@@ -139,7 +139,7 @@
 
 .visualStage {
   position: relative;
-  min-height: clamp(31rem, 123vw, 43rem);
+  min-height: clamp(22rem, 107.5vw, 43rem);
 }
 
 .faceHalo {
@@ -150,12 +150,10 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(
-      circle,
+    radial-gradient(circle,
       color-mix(in srgb, #fff9ef 88%, transparent) 0 34%,
       color-mix(in srgb, var(--color-primary-soft) 68%, transparent) 52%,
-      transparent 72%
-    );
+      transparent 72%);
   filter: blur(0.4rem);
   pointer-events: none;
   transform: translateX(-50%);
@@ -178,22 +176,18 @@
   z-index: 2;
   top: 0;
   left: 50%;
-  width: min(96vw, 35rem);
+  width: min(86vw, 35rem);
   aspect-ratio: 1122 / 1402;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 0 86%,
-    rgba(0, 0, 0, 0.96) 90%,
-    rgba(0, 0, 0, 0.58) 95%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 0 86%,
-    rgba(0, 0, 0, 0.96) 90%,
-    rgba(0, 0, 0, 0.58) 95%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(to bottom,
+      #000 0 86%,
+      rgba(0, 0, 0, 0.96) 90%,
+      rgba(0, 0, 0, 0.58) 95%,
+      transparent 100%);
+  mask-image: linear-gradient(to bottom,
+      #000 0 86%,
+      rgba(0, 0, 0, 0.96) 90%,
+      rgba(0, 0, 0, 0.58) 95%,
+      transparent 100%);
   pointer-events: none;
   transform: translateX(-50%);
 }
@@ -228,13 +222,11 @@
 .scanLight::before {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    color-mix(in srgb, #fff8eb 62%, transparent) 44%,
-    color-mix(in srgb, #f4d9cf 44%, transparent) 58%,
-    transparent
-  );
+  background: linear-gradient(180deg,
+      transparent,
+      color-mix(in srgb, #fff8eb 62%, transparent) 44%,
+      color-mix(in srgb, #f4d9cf 44%, transparent) 58%,
+      transparent);
   content: '';
   filter: blur(0.7rem);
 }
@@ -245,14 +237,12 @@
   bottom: 43%;
   left: 5%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--color-primary) 28%, #fff8eb) 20%,
-    #fff8eb 50%,
-    color-mix(in srgb, var(--color-primary) 28%, #fff8eb) 80%,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      color-mix(in srgb, var(--color-primary) 28%, #fff8eb) 20%,
+      #fff8eb 50%,
+      color-mix(in srgb, var(--color-primary) 28%, #fff8eb) 80%,
+      transparent);
   box-shadow: 0 0 1.3rem color-mix(in srgb, #f4d9cf 72%, transparent);
   content: '';
 }
@@ -316,7 +306,7 @@
   transition: color 220ms ease;
 }
 
-.mobileServiceTab > span {
+.mobileServiceTab>span {
   color: color-mix(in srgb, var(--color-primary) 44%, transparent);
   font-size: 0.63rem;
   letter-spacing: 0.08em;
@@ -336,6 +326,7 @@
 }
 
 @keyframes revealAfter {
+
   0%,
   8%,
   100% {
@@ -353,6 +344,7 @@
 }
 
 @keyframes scanPingPong {
+
   0%,
   6% {
     opacity: 0;
@@ -441,7 +433,7 @@
     line-height: 0.96;
   }
 
-  .title > span:last-child {
+  .title>span:last-child {
     margin-top: 0.08em;
   }
 
@@ -483,27 +475,32 @@
   }
 
   .visualStage {
-    width: min(100%, 76rem);
-    min-height: clamp(34rem, calc(100svh - 10.25rem), 54rem);
+    --portrait-half: min(19vw, calc((100svh - 10.75rem) * 0.4), 24rem);
+    --portrait-width: calc(var(--portrait-half) + var(--portrait-half));
+    --callout-width: clamp(10.75rem, 13vw, 14rem);
+    --callout-gap: clamp(0.9rem, 1.4vw, 1.5rem);
+
+    width: 100%;
+    min-height: min(47.5vw, calc(100svh - 10.75rem), 60rem);
     margin-inline: auto;
   }
 
   .faceHalo {
-    top: 5%;
+    top: 4%;
     left: 50%;
-    width: min(40vw, calc((100svh - 10rem) * 0.82), 44rem);
+    width: min(calc(var(--portrait-width) + 5rem), 82%);
   }
 
   .faceOrbit {
-    top: 8%;
+    top: 7%;
     left: 50%;
-    width: min(37vw, calc((100svh - 10rem) * 0.76), 40rem);
+    width: calc(var(--portrait-width) - clamp(0.5rem, 1vw, 1rem));
   }
 
   .portraitFrame {
     top: 0;
     left: 50%;
-    width: min(38vw, calc((100svh - 10.75rem) * 0.8), 42rem);
+    width: var(--portrait-width);
   }
 
   .desktopCallouts {
@@ -516,23 +513,25 @@
 
   .callout {
     position: absolute;
-    width: clamp(11rem, 14vw, 14rem);
+    width: var(--callout-width);
     pointer-events: auto;
   }
 
   .callout[data-service='acne'] {
     top: 50%;
-    left: clamp(0rem, 2vw, 2rem);
+    left: calc(50% - var(--portrait-half) - var(--callout-gap) - var(--callout-width));
   }
 
   .callout[data-service='rejuvenation'] {
     top: 14%;
-    right: clamp(0rem, 2vw, 2rem);
+    right: auto;
+    left: calc(50% + var(--portrait-half) + var(--callout-gap));
   }
 
   .callout[data-service='fillers'] {
     top: 58%;
-    right: clamp(0rem, 2vw, 2rem);
+    right: auto;
+    left: calc(50% + var(--portrait-half) + var(--callout-gap));
   }
 
   .calloutButton {
@@ -572,7 +571,7 @@
 
   .callout[data-service='acne'] .connector {
     --connector-angle: 8deg;
-    --connector-length: clamp(8rem, 12vw, 13rem);
+    --connector-length: calc(var(--callout-gap) + clamp(3.25rem, 4vw, 4.75rem));
     left: calc(100% + 0.65rem);
     transform-origin: left center;
   }
@@ -585,12 +584,12 @@
 
   .callout[data-service='rejuvenation'] .connector {
     --connector-angle: -8deg;
-    --connector-length: clamp(6.5rem, 9vw, 10rem);
+    --connector-length: calc(var(--callout-gap) + clamp(2.5rem, 3.25vw, 4rem));
   }
 
   .callout[data-service='fillers'] .connector {
     --connector-angle: 8deg;
-    --connector-length: clamp(7rem, 10vw, 11rem);
+    --connector-length: calc(var(--callout-gap) + clamp(3.25rem, 4vw, 4.75rem));
   }
 
   .connectorDot {
@@ -680,11 +679,9 @@
   }
 
   .visualStage {
-    min-height: calc(100svh - 11.25rem);
-  }
+    --portrait-half: min(17vw, calc((100svh - 10.5rem) * 0.41), 18rem);
 
-  .portraitFrame {
-    width: min(33vw, calc((100svh - 11.25rem) * 0.8), 35rem);
+    min-height: min(42.5vw, calc(100svh - 9.5rem), 45rem);
   }
 
   .callout[data-service='fillers'] {

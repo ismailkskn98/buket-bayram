@@ -8,8 +8,8 @@ export default async function ContactSection({whatsappUrl}) {
   const t = await getTranslations('Home');
 
   return (
-    <section aria-labelledby="contact-title" className="gridContainer py-[clamp(4rem,8vw,8rem)]">
-      <div className="contactEditorial relative isolate min-h-[44rem] overflow-hidden bg-primary-soft sm:min-h-[42rem] lg:min-h-[40rem]">
+    <section aria-labelledby="contact-title" className="gridContainer homeSectionSpaceCompact">
+      <div className="contactEditorial relative isolate min-h-[clamp(36rem,76svh,40rem)] overflow-hidden bg-primary-soft">
         <Image
           src="/images/healthy-skin-editorial.webp"
           alt={t('contactImageAlt')}
@@ -19,7 +19,7 @@ export default async function ContactSection({whatsappUrl}) {
         />
         <div aria-hidden="true" className="contactEditorialScrim absolute inset-0" />
 
-        <div data-reveal className="relative flex min-h-[44rem] max-w-xl flex-col justify-between p-7 sm:min-h-[42rem] sm:p-10 lg:min-h-[40rem] lg:p-14">
+        <div data-reveal className="relative flex min-h-[clamp(36rem,76svh,40rem)] max-w-xl flex-col justify-between p-7 sm:p-10 lg:p-14">
           <div>
             <p className="homeEyebrow text-primary">
               {t('contactEyebrow')}

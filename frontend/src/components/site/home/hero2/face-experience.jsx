@@ -17,10 +17,26 @@ export default function FaceExperience({ services, imageAlt, caption }) {
         <span aria-hidden="true" className={styles.faceOrbit} />
 
         <div className={styles.portraitFrame}>
-          <Image src="/images/hero2/hero-model-before-2.webp" alt="" fill preload quality={90} sizes="(min-width: 1280px) 42rem, (min-width: 768px) 36rem, 96vw" className={styles.portraitImage} />
+          <Image
+            src="/images/hero2/hero-model-before-2.webp"
+            alt=""
+            fill
+            preload
+            quality={90}
+            sizes="(min-width: 1920px) 48rem, (min-width: 1200px) 38vw, (min-width: 768px) 39rem, 86vw"
+            className={styles.portraitImage}
+          />
 
           <div aria-hidden="true" className={styles.afterLayer}>
-            <Image src="/images/hero2/hero-model-after.webp" alt="" fill preload quality={90} sizes="(min-width: 1280px) 42rem, (min-width: 768px) 36rem, 96vw" className={styles.portraitImage} />
+            <Image
+              src="/images/hero2/hero-model-after.webp"
+              alt=""
+              fill
+              preload
+              quality={90}
+              sizes="(min-width: 1920px) 48rem, (min-width: 1200px) 38vw, (min-width: 768px) 39rem, 86vw"
+              className={styles.portraitImage}
+            />
           </div>
 
           <span aria-hidden="true" className={styles.scanLight} />

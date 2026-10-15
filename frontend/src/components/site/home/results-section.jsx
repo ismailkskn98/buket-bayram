@@ -8,7 +8,7 @@ export default async function ResultsSection() {
   return (
     <section
       aria-labelledby="results-title"
-      className="gridContainer py-[clamp(5rem,10vw,9rem)] lg:py-[clamp(4rem,8svh,9rem)]"
+      className="gridContainer homeSectionSpace"
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-y-0">
         <div data-reveal className="lg:col-span-5 lg:pr-[clamp(1rem,3vw,3rem)]">

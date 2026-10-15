@@ -14,7 +14,7 @@ export default async function TeamSection() {
   const t = await getTranslations("Home");
 
   return (
-    <section id="team" aria-labelledby="team-title" className="gridContainer relative overflow-hidden bg-primary py-[clamp(4.5rem,8vw,8rem)] text-primary-foreground">
+    <section id="team" aria-labelledby="team-title" className="gridContainer homeSectionSpace relative overflow-hidden bg-primary text-primary-foreground">
       <div className='absolute inset-0 bg-[url("/images/bg-pattern.png")] bg-repeat bg-center fluid pointer-events-none select-none opacity-[0.025]' />
       <div className="relative z-10">
         <header data-reveal className="grid gap-7 lg:grid-cols-12 lg:gap-[clamp(1.5rem,3vw,3.5rem)]">
@@ -27,9 +27,9 @@ export default async function TeamSection() {
           <p className="homeSectionBody max-w-md text-primary-foreground/68 lg:col-span-3 lg:pt-2">{t("teamDescription")}</p>
         </header>
 
-        <div data-stagger-group className="mt-[clamp(3rem,6vw,5.5rem)] grid grid-cols-2 gap-x-[clamp(0.75rem,1.25vw,1.5rem)] gap-y-[clamp(2rem,5vw,3.5rem)] sm:grid-cols-3 lg:grid-cols-6">
+        <div data-stagger-group className="mt-[clamp(2.75rem,6svh,5rem)] grid grid-cols-2 gap-x-[clamp(0.75rem,1.25vw,1.5rem)] gap-y-[clamp(2rem,5vw,3.5rem)] sm:grid-cols-3 lg:grid-cols-6">
           {teamMembers.map((member, index) => (
-            <article key={member.key} data-stagger-item className="group lg:even:pt-[clamp(1.5rem,3vw,3.25rem)]">
+            <article key={member.key} data-stagger-item className="group lg:even:pt-[clamp(1.25rem,3svh,2.75rem)]">
               <div className="relative aspect-[4/5] overflow-hidden bg-primary-foreground/8">
                 <Image
                   src={member.image}

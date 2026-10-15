@@ -17,7 +17,7 @@ export default async function FaqSection() {
   return (
     <section
       aria-labelledby="home-faq-title"
-      className="gridContainer py-[clamp(4.5rem,8vw,7rem)]"
+      className="gridContainer homeSectionSpaceCompact"
     >
       <div className="grid gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <header data-reveal className="self-start">

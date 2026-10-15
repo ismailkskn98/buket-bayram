@@ -21,6 +21,8 @@
 }
 
 :root {
+  --home-space-section: clamp(4rem, 8svh, 7rem);
+  --home-space-section-compact: clamp(3.5rem, 7svh, 6.5rem);
   --home-type-eyebrow: clamp(0.75rem, calc(0.72rem + 0.08vw), 0.8125rem);
   --home-type-section-title: clamp(2.5rem, calc(2rem + 1.75vw), 4.25rem);
   --home-type-compact-title: clamp(2.25rem, calc(2.05rem + 1.1vw), 3.75rem);
@@ -771,6 +773,14 @@ button:focus-visible {
   container-type: inline-size;
 }
 
+.homeSectionSpace {
+  padding-block: var(--home-space-section);
+}
+
+.homeSectionSpaceCompact {
+  padding-block: var(--home-space-section-compact);
+}
+
 .homeEyebrow {
   font-size: var(--home-type-eyebrow);
   line-height: 1.5;
@@ -974,6 +984,10 @@ button:focus-visible {
   margin-top: clamp(1.75rem, 3.5vh, 3rem);
 }
 
+.servicesScroller {
+  --services-stage-height: clamp(38rem, 86svh, 54rem);
+}
+
 .contactEditorialScrim {
   background: linear-gradient(90deg,
       var(--color-primary-soft) 0%,
@@ -1043,12 +1057,12 @@ button:focus-visible {
 
 @media (min-width: 768px) {
   .servicesRailScrollArea[data-motion="ready"] {
-    height: calc(100svh - var(--services-header-offset, 0px) + var(--services-scroll-distance, 100vh));
+    height: calc(var(--services-stage-height) + var(--services-scroll-distance, 100vh));
   }
 
   .servicesRailStage {
     display: flex;
-    height: 100svh;
+    height: var(--services-stage-height);
     flex-direction: column;
     justify-content: center;
     padding-block: clamp(1.5rem, 4vh, 3rem);
@@ -1056,8 +1070,7 @@ button:focus-visible {
 
   .servicesRailScrollArea[data-motion="ready"] .servicesRailStage {
     position: sticky;
-    top: var(--services-header-offset, 0px);
-    height: calc(100svh - var(--services-header-offset, 0px));
+    top: var(--services-stage-offset, 0px);
   }
 
   .servicesRailStage .servicesRailViewport {
@@ -1435,11 +1448,12 @@ button:focus-visible {
 
 @media (min-width: 1024px) {
   .oneElementScene {
-    min-height: 100svh;
+    min-height: clamp(42rem, 92svh, 58rem);
     padding-block: clamp(3.5rem, 8svh, 7rem);
   }
 
   .oneElementIntro {
+    min-height: 100svh;
     align-items: start;
     padding-block: 0;
   }
