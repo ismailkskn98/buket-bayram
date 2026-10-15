@@ -7,7 +7,7 @@
 @theme {
   --font-sans: var(--font-montserrat), "Segoe UI", sans-serif;
 
-  --color-background: #f5f3ef;
+  --color-background: #ffff;
   --color-foreground: #4a4541;
   --color-muted: #e8e4df;
   --color-muted-foreground: #68625e;
@@ -166,6 +166,18 @@ button:focus-visible {
 .siteMenuHeaderTrigger,
 .siteMenuOverlayClose {
   display: flex;
+}
+
+.siteMenuHeaderTrigger {
+  border-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 4%, transparent);
+  color: var(--color-primary);
+}
+
+.siteMenuHeaderTrigger:is(:hover, :focus-visible) {
+  border-color: color-mix(in srgb, var(--color-primary) 36%, transparent);
+  background: color-mix(in srgb, var(--color-primary) 9%, transparent);
+  color: var(--color-primary-hover);
 }
 
 .siteMenuFloatingTrigger {

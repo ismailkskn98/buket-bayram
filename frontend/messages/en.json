@@ -36,6 +36,32 @@
     "primaryCta": "Request an appointment on WhatsApp",
     "secondaryCta": "Explore treatments",
     "heroImageAlt": "A dermatologist carefully assessing an adult patient's skin in a bright consultation room",
+    "heroTransformationAlt": "A gentle transition on the same representative model from visible acne, redness and uneven tone to calmer skin with natural texture",
+    "heroTransformationDisclaimer": "Representative visual; results may vary from person to person.",
+    "hero2Backdrop": "SKIN",
+    "hero2Title": "A personal approach to your skin.",
+    "hero2TitleLead": "A personal approach",
+    "hero2TitleEnd": "to your skin.",
+    "hero2Description": "We consider skin health, facial anatomy and natural expression together to shape a plan around you.",
+    "hero2PrimaryCta": "Request an appointment",
+    "hero2SecondaryCta": "Explore services",
+    "hero2ImageAlt": "Representative three-dimensional face visualization transitioning from visible acne and fine lines to a more balanced skin appearance",
+    "hero2Caption": "Representative skin visualization.",
+    "hero2Replay": "Replay",
+    "hero2Services": {
+      "fillers": {
+        "title": "Filler applications",
+        "description": "Personalized applications planned with facial anatomy and natural proportions in mind."
+      },
+      "acne": {
+        "title": "Acne and skin health",
+        "description": "Specialist evaluation that considers acne, marks and skin barrier needs together."
+      },
+      "rejuvenation": {
+        "title": "Skin rejuvenation",
+        "description": "Personalized options designed to support skin texture, hydration and vitality."
+      }
+    },
     "heroPromisePersonal": "Personal treatment planning",
     "heroPromiseScientific": "Specialist physician care",
     "heroPromiseNatural": "Natural-looking outcomes",

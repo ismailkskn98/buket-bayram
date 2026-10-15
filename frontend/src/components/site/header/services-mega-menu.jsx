@@ -106,7 +106,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
         }}
         onFocus={openMenu}
         onKeyDown={handleTriggerKeyDown}
-        className="group flex items-center gap-1.5 py-2 text-primary-foreground/75 transition-colors duration-300 hover:text-primary-foreground"
+        className="group flex items-center gap-1.5 py-2 text-foreground/65 transition-colors duration-300 hover:text-primary"
       >
         <span>{labels.trigger}</span>
         <span

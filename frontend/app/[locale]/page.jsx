@@ -3,7 +3,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import ApproachAboutSection from '@/components/site/home/approach-about-section';
 import ContactSection from '@/components/site/home/contact-section';
 import FaqSection from '@/components/site/home/faq-section';
-import HeroSection from '@/components/site/home/hero-section';
+import HeroSection from '@/components/site/home/hero2';
 import HomeMotion from '@/components/site/home/home-motion';
 import KnowledgeSection from '@/components/site/home/knowledge-section';
 import ResultsSection from '@/components/site/home/results-section';
@@ -23,7 +23,7 @@ export default async function HomePage({params}) {
   return (
     <div className="overflow-clip">
       <HomeMotion />
-      <HeroSection />
+      <HeroSection whatsappUrl={whatsappUrl} />
       <ServicesSection />
       <ResultsSection />
       <ApproachAboutSection />

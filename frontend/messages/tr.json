@@ -36,6 +36,32 @@
     "primaryCta": "WhatsApp'tan randevu talep et",
     "secondaryCta": "Hizmetleri keşfet",
     "heroImageAlt": "Dermatoloğun yetişkin bir hastanın cildini dikkatle değerlendirdiği aydınlık muayene ortamı",
+    "heroTransformationAlt": "Aynı temsili modelde akne, kızarıklık ve düzensiz cilt görünümünün daha sakin, doğal dokulu bir cilt görünümüne yumuşak geçişi",
+    "heroTransformationDisclaimer": "Temsili görsel; sonuçlar kişiden kişiye değişebilir.",
+    "hero2Backdrop": "CİLT",
+    "hero2Title": "Cildinize özel bir yaklaşım.",
+    "hero2TitleLead": "Cildinize özel",
+    "hero2TitleEnd": "bir yaklaşım.",
+    "hero2Description": "Cilt sağlığını, yüz anatomisini ve doğal ifadeyi birlikte değerlendirerek size özel bir süreç planlıyoruz.",
+    "hero2PrimaryCta": "Randevu talep et",
+    "hero2SecondaryCta": "Hizmetleri keşfet",
+    "hero2ImageAlt": "Akne ve ince çizgi görünümünden daha dengeli bir cilt görünümüne geçen temsili üç boyutlu yüz görselleştirmesi",
+    "hero2Caption": "Temsili cilt görselleştirmesidir.",
+    "hero2Replay": "Tekrar oynat",
+    "hero2Services": {
+      "fillers": {
+        "title": "Dolgu uygulamaları",
+        "description": "Yüz anatomisi ve doğal oranlar gözetilerek kişiye özel planlanan uygulamalar."
+      },
+      "acne": {
+        "title": "Akne ve cilt sağlığı",
+        "description": "Akne, iz ve cilt bariyeri ihtiyacını birlikte ele alan uzman değerlendirmesi."
+      },
+      "rejuvenation": {
+        "title": "Cilt gençleştirme",
+        "description": "Cilt dokusu, nemi ve canlılığını desteklemeye yönelik kişisel uygulama seçenekleri."
+      }
+    },
     "heroPromisePersonal": "Kişiye özel planlama",
     "heroPromiseScientific": "Uzman hekim yaklaşımı",
     "heroPromiseNatural": "Doğallığı gözeten sonuçlar",
