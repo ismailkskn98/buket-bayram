@@ -48,26 +48,28 @@ export default function HomeMotion() {
         gsap.ticker.lagSmoothing(0);
 
         const animationContext = gsap.context(() => {
-          const heroTimeline = gsap.timeline({
-            defaults: {duration: 1.05, ease: 'power4.out'}
-          });
+          if (document.querySelector('[data-hero-reveal], [data-hero-media]')) {
+            const heroTimeline = gsap.timeline({
+              defaults: {duration: 1.05, ease: 'power4.out'}
+            });
 
-          heroTimeline
-            .to('[data-hero-reveal]', {
-              y: 0,
-              opacity: 1,
-              stagger: 0.08
-            })
-            .to(
-              '[data-hero-line]',
-              {scaleX: 1, transformOrigin: 'left center'},
-              0.3
-            )
-            .to(
-              '[data-hero-media]',
-              {y: 0, opacity: 1, scale: 1, duration: 1.25},
-              0.18
-            );
+            heroTimeline
+              .to('[data-hero-reveal]', {
+                y: 0,
+                opacity: 1,
+                stagger: 0.08
+              })
+              .to(
+                '[data-hero-line]',
+                {scaleX: 1, transformOrigin: 'left center'},
+                0.3
+              )
+              .to(
+                '[data-hero-media]',
+                {y: 0, opacity: 1, scale: 1, duration: 1.25},
+                0.18
+              );
+          }
 
           gsap.utils.toArray('[data-reveal]').forEach((element) => {
             gsap.to(element, {

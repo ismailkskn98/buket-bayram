@@ -8,25 +8,25 @@ export default async function ResultsSection() {
   return (
     <section
       aria-labelledby="results-title"
-      className="gridContainer py-[clamp(5rem,10vw,9rem)]"
+      className="gridContainer py-[clamp(5rem,10vw,9rem)] lg:py-[clamp(4rem,8svh,9rem)]"
     >
       <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-y-0">
         <div data-reveal className="lg:col-span-5 lg:pr-[clamp(1rem,3vw,3rem)]">
           <h2
             id="results-title"
-            className="max-w-[12ch] text-[clamp(2.75rem,5.2vw,5rem)] font-light leading-[0.96] tracking-[-0.055em] text-primary"
+            className="homeSectionTitle max-w-[13ch] text-primary"
           >
             {t('resultsTitle')}
           </h2>
-          <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+          <p className="homeSectionBody mt-6 max-w-md text-muted-foreground">
             {t('resultsDescription')}
           </p>
 
           <div className="mt-10 max-w-md border-t border-primary/10 pt-5">
-            <p className="text-sm font-medium text-primary">
+            <p className="homeCardBody font-medium text-primary">
               {t('resultsHint')}
             </p>
-            <p className="mt-2 text-xs leading-5 text-muted-foreground">
+            <p className="homeFineText mt-2 text-muted-foreground">
               {t('resultsDisclaimer')}
             </p>
           </div>
@@ -42,7 +42,7 @@ export default async function ResultsSection() {
             alt={t('resultsImageAlt')}
             beforeLabel={t('resultsBeforeLabel')}
             afterLabel={t('resultsAfterLabel')}
-            className="aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5]"
+            className="aspect-[4/5] sm:aspect-[16/11] lg:ml-auto lg:aspect-[4/5] lg:w-[min(100%,64svh)]"
             sizes="(max-width: 639px) 92vw, (max-width: 1023px) 92vw, 46vw"
           />
         </div>

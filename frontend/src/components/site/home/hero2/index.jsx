@@ -33,7 +33,11 @@ export default async function Hero2({whatsappUrl}) {
         </span>
 
         <div className={styles.copyBlock}>
-          <h1 data-hero-reveal id="home-hero-title" className={styles.title}>
+          <h1
+            data-hero2-reveal="heading"
+            id="home-hero-title"
+            className={styles.title}
+          >
             <span>{t('hero2TitleLead')}</span>
             <span>{t('hero2TitleEnd')}</span>
           </h1>
@@ -45,7 +49,7 @@ export default async function Hero2({whatsappUrl}) {
           caption={t('hero2Caption')}
         />
 
-        <div data-hero-reveal className={styles.supportRail}>
+        <div data-hero2-reveal="support" className={styles.supportRail}>
           <p className={styles.description}>{t('hero2Description')}</p>
 
           <div className={styles.actions}>

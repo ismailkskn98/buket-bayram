@@ -208,7 +208,7 @@
   position: absolute;
   inset: 0;
   clip-path: inset(100% 0 0 0);
-  animation: revealAfter 6s ease-in-out 0.65s infinite both;
+  animation: revealAfter 6s ease-in-out 1.6s infinite both;
   will-change: clip-path;
 }
 
@@ -221,7 +221,7 @@
   height: 5%;
   opacity: 0;
   pointer-events: none;
-  animation: scanPingPong 6s ease-in-out 0.65s infinite both;
+  animation: scanPingPong 6s ease-in-out 1.6s infinite both;
   will-change: opacity, transform;
 }
 
@@ -470,6 +470,10 @@
     grid-row: auto;
     justify-content: flex-end;
     margin: 0;
+  }
+
+  .primaryAction {
+    display: none;
   }
 
   .faceExperience {

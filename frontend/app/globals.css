@@ -20,6 +20,21 @@
   --color-ring: #6d3636;
 }
 
+:root {
+  --home-type-eyebrow: clamp(0.75rem, calc(0.72rem + 0.08vw), 0.8125rem);
+  --home-type-section-title: clamp(2.5rem, calc(2rem + 1.75vw), 4.25rem);
+  --home-type-compact-title: clamp(2.25rem, calc(2.05rem + 1.1vw), 3.75rem);
+  --home-type-section-body: clamp(0.9375rem, calc(0.9rem + 0.14vw), 1.0625rem);
+  --home-type-display: clamp(2.75rem, calc(2rem + 2.5vw), 5rem);
+  --home-type-name-display: clamp(3.25rem, calc(2.4rem + 2.6vw), 6rem);
+  --home-type-subsection-title: clamp(1.8rem, calc(1.45rem + 1.2vw), 2.75rem);
+  --home-type-feature-title: clamp(1.4rem, calc(1.15rem + 1vw), 2.25rem);
+  --home-type-card-title: clamp(1.0625rem, calc(0.98rem + 0.32vw), 1.3rem);
+  --home-type-card-body: clamp(0.875rem, calc(0.84rem + 0.13vw), 0.975rem);
+  --home-type-meta-title: clamp(0.95rem, calc(0.9rem + 0.14vw), 1.075rem);
+  --home-type-fine: clamp(0.75rem, calc(0.72rem + 0.08vw), 0.8125rem);
+}
+
 @utility gridContainer {
   display: grid;
   grid-template-columns: 1fr min(92%, 90rem) 1fr;
@@ -95,6 +110,23 @@ button:focus-visible {
     transform: translate3d(0, 52px, 0) scale(0.985);
   }
 
+  [data-hero2-reveal] {
+    animation: home-hero-copy-reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  [data-hero2-reveal='heading'] {
+    animation-delay: 80ms;
+  }
+
+  [data-hero2-reveal='support'] {
+    animation-delay: 220ms;
+  }
+
+  [data-hero2-media] {
+    animation: home-hero-media-reveal 1.05s cubic-bezier(0.22, 1, 0.36, 1)
+      120ms both;
+  }
+
   .motion-enabled [data-reveal] {
     opacity: 0;
     transform: translate3d(0, 64px, 0);
@@ -103,6 +135,30 @@ button:focus-visible {
   .motion-enabled [data-stagger-item] {
     opacity: 0;
     transform: translate3d(0, 52px, 0);
+  }
+}
+
+@keyframes home-hero-copy-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes home-hero-media-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.992);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -715,6 +771,70 @@ button:focus-visible {
   container-type: inline-size;
 }
 
+.homeEyebrow {
+  font-size: var(--home-type-eyebrow);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.homeEyebrowWide {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.homeSectionTitle {
+  font-size: var(--home-type-section-title);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+
+.homeSectionTitleCompact {
+  font-size: var(--home-type-compact-title);
+}
+
+.homeSectionBody {
+  font-size: var(--home-type-section-body);
+  line-height: 1.75;
+  letter-spacing: -0.006em;
+  text-wrap: pretty;
+}
+
+.homeFeatureTitle {
+  font-size: var(--home-type-feature-title);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.homeCardTitle {
+  font-size: var(--home-type-card-title);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.homeCardBody {
+  font-size: var(--home-type-card-body);
+  line-height: 1.7;
+  letter-spacing: -0.004em;
+}
+
+.homeMetaTitle {
+  font-size: var(--home-type-meta-title);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.homeFineText {
+  font-size: var(--home-type-fine);
+  line-height: 1.65;
+}
+
 .homeHeroTitle {
   display: flex;
   flex-direction: column;
@@ -1097,19 +1217,19 @@ button:focus-visible {
 
 .oneElementIntroCopy>p:first-child,
 .oneElementProcessHeader {
-  font-size: 0.7rem;
-  line-height: 1.2;
-  letter-spacing: 0.16em;
+  font-size: var(--home-type-eyebrow);
+  line-height: 1.5;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .oneElementIntroCopy h2 {
   max-width: 12ch;
   margin-top: 1rem;
-  font-size: clamp(2.7rem, 8.8vw, 5.8rem);
+  font-size: var(--home-type-display);
   font-weight: 300;
-  line-height: 0.94;
-  letter-spacing: -0.06em;
+  line-height: 1;
+  letter-spacing: -0.045em;
   text-wrap: balance;
 }
 
@@ -1117,8 +1237,10 @@ button:focus-visible {
   max-width: 41rem;
   margin-top: clamp(1.25rem, 3vw, 2rem);
   color: rgb(255 250 246 / 0.82);
-  font-size: clamp(0.86rem, 1.2vw, 1rem);
+  font-size: var(--home-type-section-body);
   line-height: 1.75;
+  letter-spacing: -0.006em;
+  text-wrap: pretty;
 }
 
 .oneElementProcessInner {
@@ -1161,18 +1283,20 @@ button:focus-visible {
 .oneElementProcessStep h3 {
   margin-top: clamp(2rem, 5vw, 3.25rem);
   color: var(--color-foreground);
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-size: var(--home-type-card-title);
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
 }
 
 .oneElementProcessStep p {
   max-width: 24rem;
   margin-top: 1rem;
   color: var(--color-muted-foreground);
-  font-size: 0.875rem;
-  line-height: 1.75;
+  font-size: var(--home-type-card-body);
+  line-height: 1.7;
+  letter-spacing: -0.004em;
 }
 
 .oneElementTarget {
@@ -1219,36 +1343,41 @@ button:focus-visible {
 
 .oneElementAboutEyebrow {
   color: var(--color-primary);
-  font-size: 0.78rem;
-  line-height: 1.4;
+  font-size: var(--home-type-eyebrow);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 .oneElementAboutCopy h2 {
   max-width: 12ch;
   margin-top: 1rem;
   color: var(--color-primary);
-  font-size: clamp(3rem, 9vw, 5.8rem);
+  font-size: var(--home-type-name-display);
   font-weight: 300;
-  line-height: 0.9;
-  letter-spacing: -0.065em;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .oneElementAboutCopy h3 {
   max-width: 15ch;
   margin-top: clamp(2.5rem, 6vw, 4.5rem);
   color: var(--color-foreground);
-  font-size: clamp(2rem, 5vw, 3.15rem);
+  font-size: var(--home-type-subsection-title);
   font-weight: 300;
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .oneElementAboutCopy>p:not(.oneElementAboutEyebrow) {
   max-width: 42rem;
   margin-top: 1.75rem;
   color: var(--color-muted-foreground);
-  font-size: clamp(0.9rem, 1.3vw, 1rem);
-  line-height: 1.85;
+  font-size: var(--home-type-section-body);
+  line-height: 1.75;
+  letter-spacing: -0.006em;
+  text-wrap: pretty;
 }
 
 .oneElementAboutCopy blockquote {
@@ -1257,8 +1386,9 @@ button:focus-visible {
   padding-left: 1.25rem;
   border-left: 1px solid var(--color-primary);
   color: var(--color-primary);
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  line-height: 1.55;
+  font-size: var(--home-type-card-title);
+  line-height: 1.6;
+  letter-spacing: -0.015em;
 }
 
 .oneElementAboutCopy a {
@@ -1354,11 +1484,10 @@ button:focus-visible {
 
   .oneElementProcessStep h3 {
     margin-top: clamp(2rem, 4svh, 3.25rem);
-    font-size: clamp(1.25rem, 1.7vw, 1.75rem);
   }
 
   .oneElementProcessStep p {
-    font-size: clamp(0.78rem, 0.82vw, 0.875rem);
+    font-size: var(--home-type-card-body);
   }
 
   .oneElementTargetPortrait {
@@ -1386,7 +1515,7 @@ button:focus-visible {
   }
 
   .oneElementAboutCopy h2 {
-    font-size: clamp(4.25rem, 7vw, 7.25rem);
+    font-size: var(--home-type-name-display);
   }
 
   .oneElementStory[data-motion='ready'] .oneElementVisual {
@@ -1418,7 +1547,7 @@ button:focus-visible {
 
   .oneElementProcessStep p {
     margin-top: 0.7rem;
-    line-height: 1.55;
+    line-height: 1.65;
   }
 
   .oneElementTargetAbout {
@@ -1427,18 +1556,18 @@ button:focus-visible {
   }
 
   .oneElementAboutCopy h2 {
-    font-size: clamp(3.8rem, 6vw, 5.4rem);
+    font-size: clamp(3rem, 5vw, 4.5rem);
   }
 
   .oneElementAboutCopy h3 {
     margin-top: 2rem;
-    font-size: clamp(1.8rem, 2.7vw, 2.65rem);
+    font-size: clamp(1.75rem, 2.5vw, 2.4rem);
   }
 
   .oneElementAboutCopy>p:not(.oneElementAboutEyebrow) {
     margin-top: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.65;
+    font-size: var(--home-type-card-body);
+    line-height: 1.7;
   }
 
   .oneElementAboutCopy blockquote,

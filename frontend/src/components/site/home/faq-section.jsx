@@ -21,14 +21,14 @@ export default async function FaqSection() {
     >
       <div className="grid gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <header data-reveal className="self-start">
-          <p className="text-xs text-primary sm:text-sm">{t('faqEyebrow')}</p>
+          <p className="homeEyebrow text-primary">{t('faqEyebrow')}</p>
           <h2
             id="home-faq-title"
-            className="mt-5 max-w-[20ch] text-[clamp(2.25rem,3.7vw,4rem)] font-light leading-[1.01] tracking-[-0.045em] text-primary"
+            className="homeSectionTitle mt-5 max-w-[20ch] text-primary"
           >
             {t('faqTitle')}
           </h2>
-          <p className="mt-7 max-w-md text-sm leading-7 text-muted-foreground sm:text-base">
+          <p className="homeSectionBody mt-6 max-w-md text-muted-foreground">
             {t('faqDescription')}
           </p>
           <Link
@@ -54,7 +54,7 @@ export default async function FaqSection() {
               className="group border-b border-primary/10"
             >
               <summary className="grid list-none cursor-pointer grid-cols-[1fr_2.25rem] items-center gap-4 py-[clamp(1.25rem,2vw,1.75rem)] text-left marker:content-none [&::-webkit-details-marker]:hidden">
-                <h3 className="max-w-[42ch] text-[clamp(1rem,1.15vw,1.2rem)] font-medium leading-[1.45] tracking-[-0.015em] transition-colors duration-300 group-hover:text-primary">
+                <h3 className="homeCardTitle max-w-[42ch] transition-colors duration-300 group-hover:text-primary">
                   {t(`faqItems.${item}.question`)}
                 </h3>
                 <span
@@ -66,7 +66,7 @@ export default async function FaqSection() {
                 </span>
               </summary>
               <div className="grid grid-cols-[1fr_2.25rem] gap-4 pb-[clamp(1.5rem,2.5vw,2.25rem)]">
-                <p className="max-w-[62ch] text-[clamp(0.875rem,0.95vw,0.975rem)] leading-[1.8] text-muted-foreground">
+                <p className="homeCardBody max-w-[62ch] text-muted-foreground">
                   {t(`faqItems.${item}.answer`)}
                 </p>
               </div>

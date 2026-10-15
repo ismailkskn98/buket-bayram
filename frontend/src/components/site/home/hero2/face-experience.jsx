@@ -11,16 +11,16 @@ export default function FaceExperience({ services, imageAlt, caption }) {
   const activeServiceData = services.find((service) => service.id === activeService) || services[0];
 
   return (
-    <figure data-hero-media className={styles.faceExperience}>
+    <figure data-hero2-media className={styles.faceExperience}>
       <div className={styles.visualStage}>
         <span aria-hidden="true" className={styles.faceHalo} />
         <span aria-hidden="true" className={styles.faceOrbit} />
 
         <div className={styles.portraitFrame}>
-          <Image src="/images/hero2/hero-model-before-2.png" alt="" fill preload quality={90} sizes="(min-width: 1280px) 42rem, (min-width: 768px) 36rem, 96vw" className={styles.portraitImage} />
+          <Image src="/images/hero2/hero-model-before-2.webp" alt="" fill preload quality={90} sizes="(min-width: 1280px) 42rem, (min-width: 768px) 36rem, 96vw" className={styles.portraitImage} />
 
           <div aria-hidden="true" className={styles.afterLayer}>
-            <Image src="/images/hero2/hero-model-after.png" alt="" fill preload quality={90} sizes="(min-width: 1280px) 42rem, (min-width: 768px) 36rem, 96vw" className={styles.portraitImage} />
+            <Image src="/images/hero2/hero-model-after.webp" alt="" fill preload quality={90} sizes="(min-width: 1280px) 42rem, (min-width: 768px) 36rem, 96vw" className={styles.portraitImage} />
           </div>
 
           <span aria-hidden="true" className={styles.scanLight} />

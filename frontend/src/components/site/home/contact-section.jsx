@@ -21,13 +21,13 @@ export default async function ContactSection({whatsappUrl}) {
 
         <div data-reveal className="relative flex min-h-[44rem] max-w-xl flex-col justify-between p-7 sm:min-h-[42rem] sm:p-10 lg:min-h-[40rem] lg:p-14">
           <div>
-            <p className="text-xs text-primary sm:text-sm">
+            <p className="homeEyebrow text-primary">
               {t('contactEyebrow')}
             </p>
-            <h2 id="contact-title" className="mt-7 max-w-[11ch] text-[clamp(2.8rem,4.8vw,4.9rem)] font-light leading-[0.94] tracking-[-0.05em] text-primary">
+            <h2 id="contact-title" className="homeSectionTitle homeSectionTitleCompact mt-6 max-w-[14ch] text-primary">
               {t('contactTitle')}
             </h2>
-            <p className="mt-7 max-w-md text-sm leading-7 text-foreground/80 sm:text-base">
+            <p className="homeSectionBody mt-6 max-w-md text-foreground/80">
               {t('contactDescription')}
             </p>
             <Button asChild className="mt-8 h-12 w-full rounded-none px-6 shadow-none sm:w-auto">
@@ -39,13 +39,13 @@ export default async function ContactSection({whatsappUrl}) {
 
           <div className="mt-16 grid gap-5 border-t border-primary/12 pt-5 text-sm sm:grid-cols-2">
             <address className="not-italic">
-              <span className="block text-xs text-primary/60">{t('contactAddressLabel')}</span>
+              <span className="homeFineText block text-primary/60">{t('contactAddressLabel')}</span>
               <span className="mt-2 block max-w-xs leading-6 text-foreground/75">
                 {siteConfig.addressShort}
               </span>
             </address>
             <div>
-              <span className="block text-xs text-primary/60">{t('contactPhoneLabel')}</span>
+              <span className="homeFineText block text-primary/60">{t('contactPhoneLabel')}</span>
               <a href={`tel:${siteConfig.phone}`} className="mt-2 inline-block text-primary hover:underline">
                 {siteConfig.phoneLabel}
               </a>

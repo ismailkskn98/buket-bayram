@@ -31,10 +31,10 @@ export default async function KnowledgeSection() {
     <section aria-labelledby="knowledge-title" className="gridContainer border-t border-primary/8 py-[clamp(5rem,10vw,9rem)]">
       <div>
         <header data-reveal className="mx-auto max-w-3xl text-center">
-          <h2 id="knowledge-title" className="text-[clamp(2.65rem,4.8vw,4.75rem)] font-light leading-[0.97] tracking-[-0.05em] text-primary">
+          <h2 id="knowledge-title" className="homeSectionTitle text-primary">
             {t('knowledgeTitle')}
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
+          <p className="homeSectionBody mx-auto mt-6 max-w-2xl text-muted-foreground">
             {t('knowledgeDescription')}
           </p>
           <Link
@@ -59,10 +59,10 @@ export default async function KnowledgeSection() {
               </div>
               <div className="mt-5 flex items-start justify-between gap-6">
                 <div>
-                  <p className="text-xs text-primary">
+                  <p className="homeEyebrow text-primary">
                     {t(knowledgeTopics[0].category)}
                   </p>
-                  <h3 className="mt-2 max-w-[28ch] text-[clamp(1.45rem,2.2vw,2.25rem)] font-medium leading-[1.15] tracking-[-0.035em]">
+                  <h3 className="homeFeatureTitle mt-2 max-w-[28ch]">
                     {t(knowledgeTopics[0].title)}
                   </h3>
                 </div>
@@ -90,8 +90,8 @@ export default async function KnowledgeSection() {
                   />
                 </div>
                 <div>
-                  <p className="text-xs text-primary">{t(topic.category)}</p>
-                  <h3 className="mt-2 text-lg font-medium leading-snug tracking-[-0.025em] sm:text-xl">
+                  <p className="homeEyebrow text-primary">{t(topic.category)}</p>
+                  <h3 className="homeCardTitle mt-2">
                     {t(topic.title)}
                   </h3>
                   <span className="mt-4 inline-flex border-b border-primary/50 pb-0.5 text-xs text-primary">

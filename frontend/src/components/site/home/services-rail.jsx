@@ -166,19 +166,19 @@ export default function ServicesRail({
     >
       <div className="gridContainer">
         <header className="homeSectionContent">
-          <p data-reveal className="text-xs text-primary sm:text-sm">
+          <p data-reveal className="homeEyebrow text-primary">
             {eyebrow}
           </p>
           <h2
             id="services-title"
             data-reveal
-            className="mt-4 max-w-[20ch] text-[clamp(2.2rem,3.9vw,4rem)] font-light leading-[1.01] tracking-[-0.04em] text-primary"
+            className="homeSectionTitle mt-4 max-w-[20ch] text-primary"
           >
             {title}
           </h2>
           <p
             data-reveal
-            className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
+            className="homeSectionBody mt-5 max-w-xl text-muted-foreground"
           >
             {description}
           </p>
@@ -217,7 +217,7 @@ export default function ServicesRail({
                       />
                       <div className="serviceCardOverlay">
                         <div>
-                          <p className="max-w-[29ch] text-sm leading-6 text-foreground">
+                          <p className="homeCardBody max-w-[29ch] text-foreground">
                             {service.description}
                           </p>
                           <span className="serviceCardOverlayCta mt-5 inline-block pb-0.5 text-xs font-medium text-primary">
@@ -228,13 +228,13 @@ export default function ServicesRail({
                     </div>
 
                     <div className="mt-3.5">
-                      <h3 className="max-w-[24ch] text-[clamp(1rem,1.3vw,1.25rem)] font-medium leading-[1.2] tracking-[-0.025em] text-foreground">
+                      <h3 className="homeCardTitle max-w-[24ch] text-foreground">
                         {service.title}
                       </h3>
                       <span className="serviceCardCta mt-2 inline-block pb-0.5 text-xs text-primary">
                         {linkLabel}
                       </span>
-                      <p className="serviceCardSummary mt-3 text-sm leading-6 text-muted-foreground">
+                      <p className="serviceCardSummary homeCardBody mt-3 text-muted-foreground">
                         {service.description}
                       </p>
                     </div>
