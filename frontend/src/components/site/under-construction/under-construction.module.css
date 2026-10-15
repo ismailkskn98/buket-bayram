@@ -1,0 +1,302 @@
+.section {
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-primary-soft) 34%, var(--color-background));
+}
+
+.shell {
+  position: relative;
+  display: grid;
+  min-height: clamp(34rem, calc(100svh - 4.25rem), 48rem);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  border-block: 1px solid color-mix(in srgb, var(--color-primary) 11%, transparent);
+  padding-block: clamp(1.25rem, 3vh, 2rem);
+}
+
+.topline,
+.bottomline {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: color-mix(in srgb, var(--color-primary) 62%, transparent);
+  font-size: clamp(0.64rem, calc(0.61rem + 0.08vw), 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.statusDot {
+  width: 0.42rem;
+  height: 0.42rem;
+  flex: none;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 0.3rem color-mix(in srgb, var(--color-primary) 8%, transparent);
+}
+
+.routeLabel {
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(17rem, 0.72fr);
+  align-items: end;
+  gap: clamp(3rem, 7vw, 8rem);
+  padding-block: clamp(4rem, 12svh, 8.5rem);
+}
+
+.headingGroup {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin-bottom: clamp(1rem, 2.5vh, 1.75rem);
+  color: color-mix(in srgb, var(--color-primary) 70%, transparent);
+  font-size: clamp(0.68rem, calc(0.64rem + 0.1vw), 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.title {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  color: var(--color-primary);
+  font-size: clamp(3.6rem, 7.3vw, 7.4rem);
+  font-size: clamp(3.6rem, 7.9cqi, 7.4rem);
+  font-weight: 300;
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+  text-wrap: balance;
+}
+
+.title > span {
+  display: block;
+  max-width: 10ch;
+}
+
+.titleAccent {
+  align-self: flex-end;
+  margin-top: 0.13em;
+  color: color-mix(in srgb, var(--color-primary) 30%, var(--color-background));
+}
+
+.message {
+  position: relative;
+  max-width: 24rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 14%, transparent);
+  padding-top: clamp(1.25rem, 2.5vh, 1.75rem);
+}
+
+.index {
+  display: block;
+  margin-bottom: clamp(1.25rem, 3vh, 2rem);
+  color: color-mix(in srgb, var(--color-primary) 48%, transparent);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+
+.pageDescription,
+.notice {
+  text-wrap: pretty;
+}
+
+.pageDescription {
+  color: var(--color-foreground);
+  font-size: clamp(0.94rem, calc(0.9rem + 0.14vw), 1.05rem);
+  line-height: 1.75;
+}
+
+.notice {
+  margin-top: 0.85rem;
+  color: color-mix(in srgb, var(--color-foreground) 64%, transparent);
+  font-size: clamp(0.78rem, calc(0.75rem + 0.09vw), 0.86rem);
+  line-height: 1.7;
+}
+
+.homeLink {
+  display: inline-flex;
+  min-height: 2.9rem;
+  align-items: center;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vh, 2.25rem);
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding-inline: 1.35rem 0.75rem;
+  transition:
+    background-color 300ms ease,
+    transform 300ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.homeLink svg {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary-foreground) 28%, transparent);
+  border-radius: 999px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.2;
+  transition: transform 300ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.homeLink:is(:hover, :focus-visible) {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.homeLink:is(:hover, :focus-visible) svg {
+  transform: translateX(0.18rem);
+}
+
+.bottomline {
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 9%, transparent);
+  padding-top: 1rem;
+}
+
+.orbit {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: clamp(4%, 8vw, 12%);
+  width: clamp(20rem, 37vw, 37rem);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 7%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.orbit::before,
+.orbit::after,
+.orbit span {
+  position: absolute;
+  border-radius: inherit;
+  content: '';
+}
+
+.orbit::before {
+  inset: 13%;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+.orbit::after {
+  inset: 34%;
+  background: color-mix(in srgb, var(--color-primary) 2.75%, transparent);
+}
+
+.orbit span:first-child {
+  top: 7%;
+  left: 28%;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+.orbit span:last-child {
+  right: 6%;
+  bottom: 29%;
+  width: 0.28rem;
+  height: 0.28rem;
+  background: color-mix(in srgb, var(--color-primary) 26%, transparent);
+}
+
+@media (max-width: 767px) {
+  .shell {
+    min-height: auto;
+    padding-block: 1.125rem 1.5rem;
+  }
+
+  .routeLabel {
+    max-width: 48%;
+  }
+
+  .content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2.5rem, 9vw, 4rem);
+    padding-block: clamp(4rem, 12vw, 6rem);
+  }
+
+  .title {
+    font-size: clamp(3rem, 15vw, 5.5rem);
+    line-height: 0.91;
+  }
+
+  .title > span {
+    max-width: 9ch;
+  }
+
+  .titleAccent {
+    align-self: flex-start;
+  }
+
+  .message {
+    max-width: min(100%, 29rem);
+  }
+
+  .orbit {
+    top: 31%;
+    right: -32%;
+    width: min(95vw, 30rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 760px) {
+  .shell {
+    min-height: clamp(31rem, calc(100svh - 4.25rem), 40rem);
+    padding-block: 1rem;
+  }
+
+  .content {
+    gap: clamp(2.5rem, 5vw, 5rem);
+    padding-block: clamp(2.5rem, 8svh, 4rem);
+  }
+
+  .title {
+    font-size: clamp(3.4rem, 6.5vw, 6rem);
+    font-size: clamp(3.4rem, 7.05cqi, 6rem);
+  }
+
+  .index {
+    margin-bottom: 1rem;
+  }
+
+  .notice {
+    margin-top: 0.6rem;
+  }
+
+  .homeLink {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homeLink,
+  .homeLink svg {
+    transition: none;
+  }
+}

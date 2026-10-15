@@ -1,6 +1,10 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 
-import PageIntro from '@/components/site/page-intro';
+import UnderConstruction from '@/components/site/under-construction';
+
+export const metadata = {
+  robots: {index: false, follow: false}
+};
 
 export default async function FaqPage({params}) {
   const {locale} = await params;
@@ -8,10 +12,10 @@ export default async function FaqPage({params}) {
   const t = await getTranslations('Pages');
 
   return (
-    <PageIntro
+    <UnderConstruction
       eyebrow={t('faqEyebrow')}
-      title={t('faqTitle')}
       description={t('faqDescription')}
+      pageTitle={t('faqTitle')}
     />
   );
 }

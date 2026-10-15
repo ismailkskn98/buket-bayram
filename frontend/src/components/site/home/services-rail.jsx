@@ -79,10 +79,10 @@ export default function ServicesRail({ description, eyebrow, linkLabel, services
           viewport.scrollLeft = 0;
 
           const getDistance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-          const getHeaderOffset = () => 0;
+          const getStageOffset = () => Math.max(0, (window.innerHeight - stage.offsetHeight) / 2);
           const getScrollDistance = () => Math.max(getDistance() * 0.62, window.innerWidth * 0.85);
           const updateStickyGeometry = () => {
-            scrollArea.style.setProperty("--services-header-offset", `${getHeaderOffset()}px`);
+            scrollArea.style.setProperty("--services-stage-offset", `${getStageOffset()}px`);
             scrollArea.style.setProperty("--services-scroll-distance", `${getScrollDistance()}px`);
           };
 
@@ -94,7 +94,7 @@ export default function ServicesRail({ description, eyebrow, linkLabel, services
               invalidateOnRefresh: true,
               onRefreshInit: updateStickyGeometry,
               scrub: 1.1,
-              start: () => `top top+=${getHeaderOffset()}`,
+              start: () => `top top+=${getStageOffset()}`,
               trigger: scrollArea,
             },
           });
@@ -103,7 +103,7 @@ export default function ServicesRail({ description, eyebrow, linkLabel, services
 
           return () => {
             delete scrollArea.dataset.motion;
-            scrollArea.style.removeProperty("--services-header-offset");
+            scrollArea.style.removeProperty("--services-stage-offset");
             scrollArea.style.removeProperty("--services-scroll-distance");
             timeline.kill();
           };
@@ -119,7 +119,7 @@ export default function ServicesRail({ description, eyebrow, linkLabel, services
         media.revert();
         animationContext.revert();
         delete scrollArea.dataset.motion;
-        scrollArea.style.removeProperty("--services-header-offset");
+        scrollArea.style.removeProperty("--services-stage-offset");
         scrollArea.style.removeProperty("--services-scroll-distance");
       };
     }

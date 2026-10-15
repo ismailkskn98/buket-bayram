@@ -22,7 +22,7 @@ export default function FaceExperience({ services, imageAlt, caption }) {
             alt=""
             fill
             preload
-            quality={90}
+            quality={95}
             sizes="(min-width: 1920px) 48rem, (min-width: 1200px) 38vw, (min-width: 768px) 39rem, 86vw"
             className={styles.portraitImage}
           />
@@ -33,7 +33,7 @@ export default function FaceExperience({ services, imageAlt, caption }) {
               alt=""
               fill
               preload
-              quality={90}
+              quality={95}
               sizes="(min-width: 1920px) 48rem, (min-width: 1200px) 38vw, (min-width: 768px) 39rem, 86vw"
               className={styles.portraitImage}
             />

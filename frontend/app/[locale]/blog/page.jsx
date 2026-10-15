@@ -1,6 +1,10 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 
-import PageIntro from '@/components/site/page-intro';
+import UnderConstruction from '@/components/site/under-construction';
+
+export const metadata = {
+  robots: {index: false, follow: false}
+};
 
 export default async function BlogPage({params}) {
   const {locale} = await params;
@@ -8,10 +12,10 @@ export default async function BlogPage({params}) {
   const t = await getTranslations('Pages');
 
   return (
-    <PageIntro
+    <UnderConstruction
       eyebrow={t('blogEyebrow')}
-      title={t('blogTitle')}
       description={t('blogDescription')}
+      pageTitle={t('blogTitle')}
     />
   );
 }
