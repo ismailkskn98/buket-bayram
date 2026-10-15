@@ -25,7 +25,7 @@ export default async function SiteFooter() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}`;
 
   return (
-    <footer id="site-footer" className="siteFooter gridContainer overflow-hidden border-t border-primary/15 bg-[#EFEFEF] pt-[clamp(3.5rem,7vw,6.5rem)] text-foreground">
+    <footer id="site-footer" className="siteFooter gridContainer overflow-hidden border-t border-primary/8 bg-[#EFEFEF] pt-[clamp(3.5rem,7vw,6.5rem)] text-foreground">
       <div className="grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-12 sm:grid-cols-2 lg:grid-cols-12">
         <div className="sm:col-span-2 lg:col-span-4">
           <p className="text-[0.68rem] font-medium uppercase tracking-[0.16em] text-primary/60">{footer("specialty")}</p>
@@ -100,7 +100,7 @@ export default async function SiteFooter() {
         </div>
       </div>
 
-      <div className="mt-[clamp(3.5rem,7vw,6rem)] grid gap-5 border-t border-primary/20 pt-5 text-xs leading-5 text-foreground/55 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+      <div className="mt-[clamp(3.5rem,7vw,6rem)] grid gap-5 border-t border-primary/10 pt-5 text-xs leading-5 text-foreground/55 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
         <p className="max-w-3xl">{footer("medicalNotice")}</p>
         <p className="md:text-right">
           © {new Date().getFullYear()} {siteConfig.name}. {footer("rights")}

@@ -135,7 +135,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
         data-open={isOpen}
         onMouseEnter={cancelScheduledClose}
         onMouseLeave={scheduleMenuClose}
-        className="megaMenuPanel fixed inset-x-0 top-[4.25rem] z-20 max-h-[calc(100dvh-4.25rem)] overflow-y-auto overscroll-contain whitespace-normal border-b border-primary/20 bg-background shadow-[0_1.5rem_4rem_color-mix(in_srgb,var(--color-primary)_10%,transparent)]"
+        className="megaMenuPanel fixed inset-x-0 top-[4.25rem] z-20 max-h-[calc(100dvh-4.25rem)] overflow-y-auto overscroll-contain whitespace-normal border-b border-primary/10 bg-background shadow-[0_1.5rem_4rem_color-mix(in_srgb,var(--color-primary)_8%,transparent)]"
       >
         <div className="gridContainer">
           <div className="megaMenuLayout">
@@ -150,7 +150,7 @@ export default function ServicesMegaMenu({groups, labels, services}) {
                   aria-labelledby={`mega-${group.key}`}
                   className="min-w-0"
                 >
-                  <div className="megaMenuGroupHeader flex min-w-0 items-center justify-between gap-3 border-b border-primary/20">
+                  <div className="megaMenuGroupHeader flex min-w-0 items-center justify-between gap-3 border-b border-primary/10">
                     <h2
                       id={`mega-${group.key}`}
                       className="text-[0.6rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground"

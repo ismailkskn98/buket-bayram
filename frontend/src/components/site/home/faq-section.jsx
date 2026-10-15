@@ -17,7 +17,7 @@ export default async function FaqSection() {
   return (
     <section
       aria-labelledby="home-faq-title"
-      className="gridContainer border-y border-primary/15 py-[clamp(4.5rem,8vw,7rem)]"
+      className="gridContainer py-[clamp(4.5rem,8vw,7rem)]"
     >
       <div className="grid gap-[clamp(3rem,6vw,6rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <header data-reveal className="self-start">
@@ -45,13 +45,13 @@ export default async function FaqSection() {
           </Link>
         </header>
 
-        <div data-reveal className="border-t border-primary/25">
+        <div data-reveal className="border-t border-primary/12">
           {faqItems.map((item, index) => (
             <details
               key={item}
               name="home-faq"
               open={index === 0}
-              className="group border-b border-primary/20"
+              className="group border-b border-primary/10"
             >
               <summary className="grid list-none cursor-pointer grid-cols-[1fr_2.25rem] items-center gap-4 py-[clamp(1.25rem,2vw,1.75rem)] text-left marker:content-none [&::-webkit-details-marker]:hidden">
                 <h3 className="max-w-[42ch] text-[clamp(1rem,1.15vw,1.2rem)] font-medium leading-[1.45] tracking-[-0.015em] transition-colors duration-300 group-hover:text-primary">
@@ -59,7 +59,7 @@ export default async function FaqSection() {
                 </h3>
                 <span
                   aria-hidden="true"
-                  className="relative size-9 justify-self-end rounded-full border border-primary/25 transition-colors duration-300 group-hover:border-primary/60 group-open:bg-primary"
+                  className="relative size-9 justify-self-end rounded-full border border-primary/18 transition-colors duration-300 group-hover:border-primary/45 group-open:bg-primary"
                 >
                   <span className="absolute left-1/2 top-1/2 h-px w-3.5 -translate-x-1/2 -translate-y-1/2 bg-primary transition-colors duration-300 group-open:bg-primary-foreground" />
                   <span className="absolute left-1/2 top-1/2 h-3.5 w-px -translate-x-1/2 -translate-y-1/2 bg-primary transition-[transform,background-color] duration-300 group-open:rotate-90 group-open:bg-primary-foreground" />

@@ -28,7 +28,7 @@ export default async function KnowledgeSection() {
   const t = await getTranslations('Home');
 
   return (
-    <section aria-labelledby="knowledge-title" className="gridContainer border-y border-primary/15 py-[clamp(5rem,10vw,9rem)]">
+    <section aria-labelledby="knowledge-title" className="gridContainer border-t border-primary/8 py-[clamp(5rem,10vw,9rem)]">
       <div>
         <header data-reveal className="mx-auto max-w-3xl text-center">
           <h2 id="knowledge-title" className="text-[clamp(2.65rem,4.8vw,4.75rem)] font-light leading-[0.97] tracking-[-0.05em] text-primary">
@@ -75,7 +75,7 @@ export default async function KnowledgeSection() {
 
           <div className="lg:col-span-5">
             {knowledgeTopics.slice(1).map((topic) => (
-              <article key={topic.title} data-reveal className="border-t border-primary/20 py-6 first:pt-0 first:border-t-0 lg:py-7 lg:first:pt-0">
+              <article key={topic.title} data-reveal className="border-t border-primary/10 py-6 first:border-t-0 first:pt-0 lg:py-7 lg:first:pt-0">
               <Link
                 href="/blog"
                 className="group grid grid-cols-[minmax(7.5rem,0.85fr)_1fr] items-center gap-5 sm:grid-cols-[minmax(10rem,0.8fr)_1fr] lg:grid-cols-[minmax(9rem,0.8fr)_1fr]"

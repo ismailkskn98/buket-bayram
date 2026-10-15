@@ -22,7 +22,7 @@ export default async function ResultsSection() {
             {t('resultsDescription')}
           </p>
 
-          <div className="mt-10 max-w-md border-t border-primary/20 pt-5">
+          <div className="mt-10 max-w-md border-t border-primary/10 pt-5">
             <p className="text-sm font-medium text-primary">
               {t('resultsHint')}
             </p>

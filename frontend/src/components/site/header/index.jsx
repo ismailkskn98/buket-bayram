@@ -30,7 +30,7 @@ export default async function SiteHeader() {
   }));
 
   return (
-    <header className="relative z-[60] border-b border-primary-foreground/15 bg-primary text-primary-foreground">
+    <header className="relative z-[60] border-b border-primary-foreground/10 bg-primary text-primary-foreground">
       <div className="gridContainer">
         <div className="grid min-h-[4.25rem] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)]">
           <div className="min-w-0">

@@ -16,7 +16,7 @@
   --color-primary-soft: #eee5e5;
   --color-primary-soft-hover: #e4d5d5;
   --color-primary-foreground: #fffaf5;
-  --color-border: #d9d0ca;
+  --color-border: #e2dcd7;
   --color-ring: #6d3636;
 }
 
@@ -1092,7 +1092,7 @@ button:focus-visible {
   justify-content: space-between;
   gap: 1.5rem;
   padding-top: 0.8rem;
-  border-top: 1px solid color-mix(in srgb, var(--color-primary) 24%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
   color: var(--color-primary);
 }
 
@@ -1110,7 +1110,7 @@ button:focus-visible {
   position: relative;
   z-index: 5;
   padding-top: 1rem;
-  border-top: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .oneElementProcessStep>span {

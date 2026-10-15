@@ -37,7 +37,7 @@ export default async function ContactSection({whatsappUrl}) {
             </Button>
           </div>
 
-          <div className="mt-16 grid gap-5 border-t border-primary/25 pt-5 text-sm sm:grid-cols-2">
+          <div className="mt-16 grid gap-5 border-t border-primary/12 pt-5 text-sm sm:grid-cols-2">
             <address className="not-italic">
               <span className="block text-xs text-primary/60">{t('contactAddressLabel')}</span>
               <span className="mt-2 block max-w-xs leading-6 text-foreground/75">

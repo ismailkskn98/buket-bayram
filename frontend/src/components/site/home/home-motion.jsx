@@ -81,6 +81,27 @@ export default function HomeMotion() {
             }
           });
         });
+
+        gsap.utils.toArray('[data-stagger-group]').forEach((group) => {
+          const items = group.querySelectorAll('[data-stagger-item]');
+
+          if (!items.length) {
+            return;
+          }
+
+          gsap.from(items, {
+            y: 52,
+            opacity: 0,
+            duration: 0.95,
+            stagger: 0.1,
+            ease: 'power4.out',
+            scrollTrigger: {
+              trigger: group,
+              start: 'top 86%',
+              once: true
+            }
+          });
+        });
       });
 
       const refreshFrame = window.requestAnimationFrame(() => {
