@@ -80,7 +80,7 @@ button:focus-visible {
 }
 
 .siteHeaderLogo {
-  width: clamp(10.75rem, 15vw, 13rem);
+  width: clamp(10.75rem, 15vw, 14rem);
   height: auto;
 }
 
@@ -429,6 +429,7 @@ button:focus-visible {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
   .siteMenuPrimaryLink:hover::after,
   .siteMenuServiceLink:hover::after,
   .siteMenuFooterLink:hover::after,
@@ -473,6 +474,7 @@ button:focus-visible {
 }
 
 @media (min-width: 1280px) {
+
   .siteMenuHeaderTrigger,
   .siteMenuOverlayClose {
     display: none;

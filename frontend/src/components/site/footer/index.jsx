@@ -40,7 +40,7 @@ export default async function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="inline-flex size-10 items-center justify-center rounded-full border border-primary/20 text-primary/75 transition-[color,background-color,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-primary/20 text-primary/75 transition-[color,background-color,border-color,transform] duration-300 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[17px] fill-none stroke-current" strokeWidth="1.6">
                 <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" />
@@ -53,7 +53,7 @@ export default async function SiteFooter() {
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
-              className="inline-flex size-10 items-center justify-center rounded-full border border-primary/20 text-primary/75 transition-[color,background-color,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-primary/20 text-primary/75 transition-[color,background-color,border-color,transform] duration-300 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35"
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="size-[17px] fill-current">
                 <path d="M13.6 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.4V13h2.8v8h3.4Z" />

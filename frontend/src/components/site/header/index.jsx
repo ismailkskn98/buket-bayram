@@ -21,11 +21,7 @@ export default async function SiteHeader() {
     href: navigationItem.href,
     label: t(navigationItem.label),
   }));
-  const menuNavigationItems = [
-    { href: "/treatments", label: t("treatments") },
-    ...translatedNavigationItems,
-    { href: "/contact", label: t("contact") },
-  ];
+  const menuNavigationItems = [{ href: "/treatments", label: t("treatments") }, ...translatedNavigationItems, { href: "/contact", label: t("contact") }];
   const translatedServices = serviceCatalog.map((service, index) => ({
     ...service,
     description: tHome(`serviceItems.${service.key}.description`),
@@ -38,16 +34,8 @@ export default async function SiteHeader() {
       <div className="gridContainer">
         <div className="grid min-h-[4.25rem] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[minmax(13rem,1fr)_auto_minmax(13rem,1fr)]">
           <div className="min-w-0">
-            <Link href="/" aria-label={`BB Clinic - ${t("home")}`} className="inline-flex items-center transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:opacity-75">
-              <Image
-                src="/images/logo/logo-yatay.webp"
-                alt=""
-                width={401}
-                height={81}
-                sizes="(max-width: 639px) 10.75rem, 13rem"
-                priority
-                className="siteHeaderLogo"
-              />
+            <Link href="/" aria-label={`BB Clinic - ${t("home")}`} className="inline-flex items-center transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <Image src="/images/logo/logo-yatay.webp" alt="" width={401} height={81} sizes="(max-width: 639px) 10.75rem, 14rem" priority className="siteHeaderLogo mt-1" />
             </Link>
           </div>
           <nav aria-label={t("primaryNavigation")} className="hidden items-center whitespace-nowrap text-xs font-medium text-primary-foreground/75 xl:flex">
