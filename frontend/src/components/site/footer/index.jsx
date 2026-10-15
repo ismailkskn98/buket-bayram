@@ -36,7 +36,7 @@ export default async function SiteFooter() {
 
           <div className="mt-7 flex items-center gap-2.5">
             <a
-              href={`https://www.instagram.com/${siteConfig.instagram}/`}
+              href={siteConfig.instagramUrl}
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
@@ -49,7 +49,7 @@ export default async function SiteFooter() {
               </svg>
             </a>
             <a
-              href={`https://www.facebook.com/${siteConfig.facebook}/`}
+              href={siteConfig.facebookUrl}
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
@@ -87,7 +87,7 @@ export default async function SiteFooter() {
         <div className="sm:col-span-2 lg:col-span-3">
           <p className="text-xs text-primary/60">{footer("contactTitle")}</p>
           <address className="mt-5 not-italic">
-            <p className="max-w-xs text-sm leading-6 text-foreground/70">{siteConfig.address}</p>
+            <p className="max-w-xs whitespace-pre-line text-sm leading-6 text-foreground/70">{siteConfig.address}</p>
             <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
               <a href={`tel:${siteConfig.phone}`} className="footerLink text-foreground/70">
                 {siteConfig.phoneLabel}
