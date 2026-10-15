@@ -43,7 +43,6 @@ export default async function Hero2({whatsappUrl}) {
           services={services}
           imageAlt={t('hero2ImageAlt')}
           caption={t('hero2Caption')}
-          replayLabel={t('hero2Replay')}
         />
 
         <div data-hero-reveal className={styles.supportRail}>

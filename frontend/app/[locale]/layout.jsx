@@ -6,6 +6,7 @@ import {
   setRequestLocale
 } from 'next-intl/server';
 import {notFound} from 'next/navigation';
+import Script from 'next/script';
 
 import SiteFooter from '@/components/site/footer';
 import SiteHeader from '@/components/site/header';
@@ -63,6 +64,11 @@ export default async function LocaleLayout({children, params}) {
 
   return (
     <html lang={locale} className={montserrat.variable}>
+      <head>
+        <Script id="motion-prepaint" strategy="beforeInteractive">
+          {`document.documentElement.classList.add('motion-enabled')`}
+        </Script>
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />

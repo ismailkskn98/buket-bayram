@@ -79,6 +79,33 @@ button:focus-visible {
   background: color-mix(in srgb, var(--color-primary) 24%, transparent);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .motion-enabled [data-hero-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 38px, 0);
+  }
+
+  .motion-enabled [data-hero-line] {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .motion-enabled [data-hero-media] {
+    opacity: 0;
+    transform: translate3d(0, 52px, 0) scale(0.985);
+  }
+
+  .motion-enabled [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 64px, 0);
+  }
+
+  .motion-enabled [data-stagger-item] {
+    opacity: 0;
+    transform: translate3d(0, 52px, 0);
+  }
+}
+
 .siteHeaderLogo {
   width: clamp(10.75rem, 15vw, 14rem);
   height: auto;
