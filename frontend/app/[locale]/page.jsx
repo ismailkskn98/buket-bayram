@@ -8,6 +8,7 @@ import HomeMotion from '@/components/site/home/home-motion';
 import KnowledgeSection from '@/components/site/home/knowledge-section';
 import ResultsSection from '@/components/site/home/results-section';
 import ServicesSection from '@/components/site/home/services-section';
+import TeamSection from '@/components/site/home/team-section';
 import {siteConfig} from '@/config/site';
 
 export default async function HomePage({params}) {
@@ -26,6 +27,7 @@ export default async function HomePage({params}) {
       <ServicesSection />
       <ResultsSection />
       <ApproachAboutSection />
+      <TeamSection />
       <FaqSection />
       <KnowledgeSection />
       <ContactSection whatsappUrl={whatsappUrl} />

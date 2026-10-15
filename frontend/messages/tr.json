@@ -160,6 +160,41 @@
     "aboutPrinciple": "Her cildin ihtiyacı farklı; değerlendirme de kişiye özel.",
     "aboutCta": "Dr. Buket Bayram'ı tanıyın",
     "aboutImageAlt": "Dermatoloğun muayene sırasında hastasının cildini dermatoskopla değerlendirmesi",
+    "teamEyebrow": "Klinik ekibi",
+    "teamTitle": "Aynı özen etrafında buluşan bir ekip.",
+    "teamDescription": "Değerlendirmeden uygulama ve takibe kadar her aşamada açık iletişimi, bilimsel yaklaşımı ve hasta konforunu birlikte gözetiyoruz.",
+    "teamMembers": {
+      "one": {
+        "name": "Dr. Selin Aral",
+        "role": "Dermatoloji Uzmanı",
+        "imageAlt": "Klinik ortamında kadın dermatolog portresi"
+      },
+      "two": {
+        "name": "Dr. Emre Aydın",
+        "role": "Dermatoloji Uzmanı",
+        "imageAlt": "Klinik ortamında erkek dermatolog portresi"
+      },
+      "three": {
+        "name": "Dr. İpek Demir",
+        "role": "Medikal Estetik Hekimi",
+        "imageAlt": "Klinik ortamında kadın hekim portresi"
+      },
+      "four": {
+        "name": "Dr. Kerem Aksoy",
+        "role": "Dermatoloji Uzmanı",
+        "imageAlt": "Aydınlık klinik ortamında erkek hekim portresi"
+      },
+      "five": {
+        "name": "Dr. Derya Şen",
+        "role": "Medikal Estetik Hekimi",
+        "imageAlt": "Aydınlık klinik ortamında kadın hekim portresi"
+      },
+      "six": {
+        "name": "Dr. Lara Ergin",
+        "role": "Klinik Hekimi",
+        "imageAlt": "Dermatoloji kliniğinde kadın hekim portresi"
+      }
+    },
     "faqEyebrow": "Sık sorulan sorular",
     "faqTitle": "Karar vermeden önce merak ettikleriniz.",
     "faqDescription": "Muayene, uygulama ve takip sürecine dair temel başlıkları burada yanıtladık. Kişisel sorularınız için uzman değerlendirmesi gerekir.",
